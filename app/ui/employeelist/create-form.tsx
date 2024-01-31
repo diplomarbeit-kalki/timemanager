@@ -17,7 +17,7 @@ export default async function Form() {
 
     return (
         <form action={createHospitationCons}>
-            <div className="rounded-md bg-gray-50 p-4 md:p-6">
+            <div className="rounded-md bg-gray-50 dark:bg-zinc-900 dark:text-gray-300 p-4 md:p-6">
                 {/* Vorname und Nachname in einer Zeile */}
                 <div className="flex mb-4 gap-4">
                     <div className="flex-1">
@@ -194,12 +194,12 @@ export default async function Form() {
             </div>
             <div className="mt-6 flex justify-end gap-4">
                 <Link
-                    href="/dashboard/offerlesson"
-                    className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
+                    href="/dashboard/employeelist"
+                    className="flex h-10 items-center rounded-lg bg-gray-100 dark:bg-gray-500 px-4 text-sm font-medium text-gray-600 dark:text-white transition-colors hover:bg-gray-200"
                 >
                     Zurück
                 </Link>
-                <Button type="submit">Mitarbeiter hinzufügen</Button>
+                <Button className='dark:bg-cyan-900 dark:hover:bg-cyan-800 dark:text-white' type="submit">Mitarbeiter hinzufügen</Button>
             </div>
         </form>
     );

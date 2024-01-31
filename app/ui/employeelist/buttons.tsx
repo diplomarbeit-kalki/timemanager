@@ -7,7 +7,7 @@ export function CreateEmployee() {
     return (
         <Link
             href="/dashboard/employeelist/create"
-            className="flex h-10 items-center rounded-lg bg-blue-600 dark:bg-cyan-900 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            className="flex h-11 items-center rounded-lg bg-blue-600 dark:bg-cyan-900 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-500 dark:hover:bg-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         >
             <span className="hidden md:block">Mitarbeiter hinzufügen</span>{' '}
             <PlusIcon className="h-5 md:ml-4" />
