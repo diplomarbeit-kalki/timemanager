@@ -1,6 +1,7 @@
 import { fetchFilteredEmployees } from '@/app/lib/data/datafetching';
 import { getSessionUsername } from '@/app/lib/session/sessionactions';
 import { revalidatePath } from 'next/cache';
+import { ShowEmployee, UpdateEmployee, DeleteEmployee } from './buttons';
 
 
 
@@ -97,6 +98,13 @@ export default async function HospitationTable({
                                     <td className="whitespace-nowrap px-5 py-3">{employee.lastname}</td>
                                     <td className="whitespace-nowrap px-5 py-3">{employee.phonenr}</td>
                                     <td className="whitespace-nowrap px-5 py-5">{employee.email}</td>
+                                    <td className="whitespace-nowrap py-3 pl-6 pr-3">
+                                        <div className="flex justify-end gap-3">
+                                            <ShowEmployee id={String(employee._id)} />
+                                            <UpdateEmployee id={String(employee._id)} />
+                                            <DeleteEmployee id={String(employee._id)} />
+                                        </div>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
