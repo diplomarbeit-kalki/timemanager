@@ -114,9 +114,9 @@ async function main() {
         console.error('seed---Fehler beim Verbindungsaufbau zur Datenbank:', error);
     }
 
-    //await seedEmployees(client);
+    await seedEmployees(client);
     //await seedTimestamps(client);
-    await seedUsers(client);
+    //await seedUsers(client);
 
     try {
         await client.close();
