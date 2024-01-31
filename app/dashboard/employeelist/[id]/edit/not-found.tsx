@@ -9,8 +9,8 @@ export default function NotFound() {
       <h2 className="text-xl font-semibold">404 Not Found</h2>
       <p>Mitarbeiter konnte nicht gefunden werden.</p>
       <Link
-        href="/dashboard/offerlesson"
-        className="mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-400"
+        href="/dashboard/employeelist"
+        className="mt-4 rounded-md bg-orange-500 px-4 py-2 text-sm text-white transition-colors hover:bg-orange-400"
       >
         Zurück
       </Link>
