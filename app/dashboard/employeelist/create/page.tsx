@@ -1,12 +1,25 @@
-import { lusitana } from '@/app/ui/fonts';
+import Breadcrumbs from '@/app/ui/employeelist/breadcrumbs';
+import Form from '@/app/ui/employeelist/create-form';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Anbieten',
+}
 
 export default async function Page() {
-
-    return (
-        <div className="w-full">
-            <div className="flex w-full items-center justify-between">
-                <h1 className={`${lusitana.className} text-2xl`}>Create</h1>
-            </div>
-        </div>
-    )
+  return (
+    <main>
+      <Breadcrumbs
+        breadcrumbs={[
+          { label: 'Mitarbeiter', href: '/dashboard/employeelist' },
+          {
+            label: 'Hinzufügen',
+            href: '/dashboard/employeelist/create',
+            active: true,
+          },
+        ]}
+      />
+      <Form/>
+    </main>
+  );
 }
