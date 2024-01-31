@@ -32,7 +32,7 @@ export default async function Form() {
                                     name="firstname"
                                     type="string"
                                     placeholder="Vorname"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 />
                                 <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -50,7 +50,7 @@ export default async function Form() {
                                     name="lastname"
                                     type="string"
                                     placeholder="Nachname"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 />
                                 <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -69,7 +69,7 @@ export default async function Form() {
                                 name="birthdate"
                                 type="string"
                                 placeholder="Geburtsdatum"
-                                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                             />
                             <CakeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                         </div>
@@ -90,7 +90,7 @@ export default async function Form() {
                                     name="street"
                                     type="string"
                                     placeholder="Straße"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 />
                                 <HomeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -108,7 +108,7 @@ export default async function Form() {
                                     name="housenr"
                                     type="string"
                                     placeholder="Hausnummer"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 />
                                 <HashtagIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -130,7 +130,7 @@ export default async function Form() {
                                     name="residence"
                                     type="string"
                                     placeholder="Wohnort"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 />
                                 <BuildingOffice2Icon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -148,7 +148,7 @@ export default async function Form() {
                                     name="postalcode"
                                     type="string"
                                     placeholder="Postleitzahl"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 />
                                 <HashtagIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -167,7 +167,7 @@ export default async function Form() {
                                 name="phonenr"
                                 type="string"
                                 placeholder="Telefonnummer"
-                                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                             />
                             <PhoneIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                         </div>
@@ -185,7 +185,7 @@ export default async function Form() {
                                 name="email"
                                 type="string"
                                 placeholder="E-Mail"
-                                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                             />
                             <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                         </div>

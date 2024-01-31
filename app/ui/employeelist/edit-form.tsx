@@ -23,7 +23,7 @@ export default function Form({
 
     return (
         <form action={updateEmployeeWithId}>
-            <div className="rounded-md bg-gray-50 p-4 md:p-6">
+            <div className="rounded-md bg-gray-50 dark:bg-zinc-900 dark:text-gray-300 p-4 md:p-6">
                 {/* Vorname und Nachname in einer Zeile */}
                 <div className="flex mb-4 gap-4">
                     <div className="flex-1">
@@ -38,7 +38,7 @@ export default function Form({
                                     name="firstname"
                                     type="string"
                                     placeholder="Vorname"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.firstname}
                                 />
                                 <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -57,7 +57,7 @@ export default function Form({
                                     name="lastname"
                                     type="string"
                                     placeholder="Nachname"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.lastname}
                                 />
                                 <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -77,7 +77,7 @@ export default function Form({
                                 name="birthdate"
                                 type="string"
                                 placeholder="Geburtsdatum"
-                                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 defaultValue={employee.birthdate}
                             />
                             <CakeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -99,7 +99,7 @@ export default function Form({
                                     name="street"
                                     type="string"
                                     placeholder="Straße"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.street}
                                 />
                                 <HomeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -118,7 +118,7 @@ export default function Form({
                                     name="housenr"
                                     type="string"
                                     placeholder="Hausnummer"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.housenr}
                                 />
                                 <HashtagIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -141,7 +141,7 @@ export default function Form({
                                     name="residence"
                                     type="string"
                                     placeholder="Wohnort"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.residence}
                                 />
                                 <BuildingOffice2Icon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -160,7 +160,7 @@ export default function Form({
                                     name="postalcode"
                                     type="string"
                                     placeholder="Postleitzahl"
-                                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.postalcode}
                                 />
                                 <HashtagIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -180,7 +180,7 @@ export default function Form({
                                 name="phonenr"
                                 type="string"
                                 placeholder="Telefonnummer"
-                                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 defaultValue={employee.phonenr}
                             />
                             <PhoneIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -199,7 +199,7 @@ export default function Form({
                                 name="email"
                                 type="string"
                                 placeholder="E-Mail"
-                                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 defaultValue={employee.email}
                             />
                             <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -210,11 +210,11 @@ export default function Form({
             <div className="mt-6 flex justify-end gap-4">
                 <Link
                     href="/dashboard/employeelist"
-                    className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
+                    className="flex h-10 items-center rounded-lg bg-gray-100 dark:bg-gray-500 px-4 text-sm font-medium text-gray-600 dark:text-white transition-colors hover:bg-gray-200"
                 >
                     Zurück
                 </Link>
-                <Button type="submit">Bearbeitung abschließen</Button>
+                <Button className='dark:bg-cyan-900 dark:hover:bg-cyan-800 dark:text-white' type="submit">Bearbeitung abschließen</Button>
             </div>
         </form>
     );

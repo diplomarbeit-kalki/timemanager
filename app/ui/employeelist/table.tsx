@@ -68,7 +68,7 @@ export default async function HospitationTable({
                                 <th scope="col" className="px-5 py-5 font-medium sm:pl-6">
                                     Psnr
                                 </th>
-                                <th scope="col" className="px-5 py-5 font-medium sm:pl-6">
+                                <th scope="col" className="px-5 py-5 font-medium sm:pl-6 hidden lg:block">
                                     Benutzername
                                 </th>
                                 <th scope="col" className="px-5 py-5 font-medium sm:pl-6">
@@ -80,7 +80,7 @@ export default async function HospitationTable({
                                 <th scope="col" className="px-5 py-5 font-medium">
                                     Telefonnummer
                                 </th>
-                                <th scope="col" className="px-5 py-5 font-medium">
+                                <th scope="col" className="px-5 py-5 font-medium hidden lg:block">
                                     Email
                                 </th>
                             </tr>
@@ -93,11 +93,11 @@ export default async function HospitationTable({
                                     className="w-full border-b dark:border-gray-600 py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
                                 >
                                     <td className="whitespace-nowrap px-5 py-3">{employee.psnr}</td>
-                                    <td className="whitespace-nowrap px-5 py-3">{employee.username}</td>
+                                    <td className="whitespace-nowrap px-5 py-3 hidden lg:block">{employee.username}</td>
                                     <td className="whitespace-nowrap px-5 py-3">{employee.firstname}</td>
                                     <td className="whitespace-nowrap px-5 py-3">{employee.lastname}</td>
                                     <td className="whitespace-nowrap px-5 py-3">{employee.phonenr}</td>
-                                    <td className="whitespace-nowrap px-5 py-5">{employee.email}</td>
+                                    <td className="whitespace-nowrap px-5 py-5 hidden lg:block">{employee.email}</td>
                                     <td className="whitespace-nowrap py-3 pl-6 pr-3">
                                         <div className="flex justify-end gap-3">
                                             <ShowEmployee id={String(employee._id)} />
