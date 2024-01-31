@@ -23,6 +23,7 @@ const FormSchema = z.object({
 });
 
 const CreateEmployee = FormSchema.omit({ id: true });
+const UpdateEmployee = FormSchema.omit({ id: true });
 
 export async function createEmployee(formData: FormData) {
     const { firstname, lastname, birthdate, street, housenr, residence, postalcode, phonenr, email } = CreateEmployee.parse({
@@ -82,6 +83,43 @@ export async function createEmployee(formData: FormData) {
         redirect('/dashboard/employeelist');
     }
 }
+
+export async function updateEmployee(id: string, formData: FormData) {
+    const { firstname, lastname, birthdate, street, housenr, residence, postalcode, phonenr, email } = UpdateEmployee.parse({
+        firstname: formData.get('firstname'),
+        lastname: formData.get('lastname'),
+        birthdate: formData.get('birthdate'),
+        street: formData.get('street'),
+        housenr: formData.get('housenr'),
+        residence: formData.get('residence'),
+        postalcode: formData.get('postalcode'),
+        phonenr: formData.get('phonenr'),
+        email: formData.get('email')
+    });
+
+    try {
+        await client.connectToDatabase();
+        const collectionObj = client.getCollection("employees");
+
+        const objectId = new ObjectId(id);
+        await collectionObj.updateOne(
+            { _id: objectId },
+            { $set: { firstname: firstname, lastname: lastname, birthdate: birthdate, street: street, housenr: housenr, residence: residence, postalcode: postalcode, phonenr: phonenr, email: email } }
+        );
+
+        console.log("dbactions---Employee mit id: " + id + " bearbeitet");
+        revalidatePath('/dashboard/employeelist');
+        return { message: 'Employee bearbeitet' };
+    }
+    catch (error) {
+        return { message: 'Datenbank Fehler: Hospitation löschen fehlgeschlagen' };
+    }
+    finally {
+        await client.closeDatabaseConnection();
+        redirect('/dashboard/employeelist');
+    }
+}
+
 
 export async function deleteEmployee(id: string) {
 
