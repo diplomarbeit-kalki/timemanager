@@ -34,7 +34,7 @@ export default async function HospitationTable({
                         {employees?.map((employee) => (
                             <div
                                 key={String(employee._id)}
-                                className="mb-2 w-full rounded-md bg-white dark:bg-zinc-950 p-4"
+                                className="mb-2 w-full rounded-md bg-white dark:bg-zinc-900 p-4"
                             >
                                 <div className="flex w-full items-center justify-between pt-4">
                                     <div>
@@ -63,7 +63,7 @@ export default async function HospitationTable({
 
                     </div>
                     <table className="hidden min-w-full text-gray-900 md:table">
-                        <thead className="rounded-lg text-left text-sm font-bold dark:text-gray-400">
+                        <thead className="rounded-lg text-left text-sm font-bold dark:text-gray-600">
                             <tr>
                                 <th scope="col" className="px-5 py-5 font-medium sm:pl-6">
                                     Psnr
@@ -86,7 +86,7 @@ export default async function HospitationTable({
                             </tr>
                         </thead>
 
-                        <tbody className="bg-white dark:bg-zinc-800 dark:text-white">
+                        <tbody className="bg-white dark:bg-zinc-900 dark:text-gray-300">
                             {employees?.map((employee) => (
                                 <tr
                                     key={String(employee._id)}
