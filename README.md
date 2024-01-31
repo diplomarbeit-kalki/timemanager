@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Credits
++ Darkmode: <br>
+    https://www.davegray.codes/posts/light-dark-mode-nextjs-app-router-tailwind
+
++ Icons: <br>
+    https://heroicons.com/
+
++ Pictures: <br>
+    + Loading Page: <br>
+    https://unsplash.com/photos/gray-metal-tong-and-grilled-meat-with-fire-jeiqzOgwwKU
+    
+    + Landing Page (Animation): <br>
+    https://app.lottiefiles.com/animation/e2608b23-c520-49b8-8f78-94b65431c41f?channel=web&source=public-animation&panel=download
+
+

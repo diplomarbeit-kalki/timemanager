@@ -37,6 +37,7 @@ export default function Form({
                                     placeholder="Vorname"
                                     className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.firstname}
+                                    disabled
                                 />
                                 <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -56,6 +57,7 @@ export default function Form({
                                     placeholder="Nachname"
                                     className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.lastname}
+                                    disabled
                                 />
                                 <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -76,6 +78,7 @@ export default function Form({
                                 placeholder="Geburtsdatum"
                                 className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 defaultValue={employee.birthdate}
+                                disabled
                             />
                             <CakeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                         </div>
@@ -98,6 +101,7 @@ export default function Form({
                                     placeholder="Straße"
                                     className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.street}
+                                    disabled
                                 />
                                 <HomeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -117,6 +121,7 @@ export default function Form({
                                     placeholder="Hausnummer"
                                     className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.housenr}
+                                    disabled
                                 />
                                 <HashtagIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -140,6 +145,7 @@ export default function Form({
                                     placeholder="Wohnort"
                                     className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.residence}
+                                    disabled
                                 />
                                 <BuildingOffice2Icon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -159,6 +165,7 @@ export default function Form({
                                     placeholder="Postleitzahl"
                                     className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                     defaultValue={employee.postalcode}
+                                    disabled
                                 />
                                 <HashtagIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                             </div>
@@ -179,6 +186,7 @@ export default function Form({
                                 placeholder="Telefonnummer"
                                 className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 defaultValue={employee.phonenr}
+                                disabled
                             />
                             <PhoneIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                         </div>
@@ -198,6 +206,7 @@ export default function Form({
                                 placeholder="E-Mail"
                                 className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 defaultValue={employee.email}
+                                disabled
                             />
                             <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                         </div>
@@ -207,7 +216,7 @@ export default function Form({
             <div className="mt-6 flex justify-end gap-4">
                 <Link
                     href="/dashboard/employeelist"
-                    className="flex h-10 items-center rounded-lg bg-gray-100 dark:bg-gray-500 px-4 text-sm font-medium text-gray-600 dark:text-white transition-colors hover:bg-gray-200"
+                    className="flex h-10 items-center rounded-lg bg-gray-100 dark:bg-gray-500 px-4 text-sm font-medium text-gray-600 dark:text-white transition-colors hover:bg-gray-200 dark:hover:bg-gray-600"
                 >
                     Zurück
                 </Link>
