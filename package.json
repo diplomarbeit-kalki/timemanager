@@ -1,0 +1,50 @@
+{
+  "name": "timemanager",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "node -r dotenv/config ./scripts/seed.js",
+    "testJS": "node -r dotenv/config ./scripts/testJS.js",
+    "testTS": "node -r dotenv/config ./scripts/testTS.ts",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/node": "20.5.7",
+    "autoprefixer": "10.4.15",
+    "bcrypt": "^5.1.1",
+    "clsx": "^2.1.0",
+    "iron-session": "^8.0.1",
+    "mongodb": "^6.3.0",
+    "next": "14.1.0",
+    "next-auth": "^5.0.0-beta.5",
+    "postcss": "8.4.31",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-router-dom": "^6.21.2",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.2.2",
+    "use-debounce": "^10.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/next-auth": "^3.15.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vercel/style-guide": "^5.0.1",
+    "autoprefixer": "^10.0.1",
+    "dotenv": "^16.3.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5"
+  }
+}
