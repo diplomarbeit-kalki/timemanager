@@ -36,7 +36,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <Providers>
-          {children}
+          <div className={inter.className}>
+            {children}
+          </div>
         </Providers>
       </body>
     </html>
