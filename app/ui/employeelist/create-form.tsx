@@ -33,6 +33,7 @@ export default async function Form() {
                                     type="string"
                                     placeholder="Vorname"
                                     className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    required
                                 />
                                 <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
                             </div>
@@ -51,6 +52,7 @@ export default async function Form() {
                                     type="string"
                                     placeholder="Nachname"
                                     className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    required
                                 />
                                 <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
                             </div>
@@ -67,9 +69,10 @@ export default async function Form() {
                             <input
                                 id="birthdate"
                                 name="birthdate"
-                                type="string"
+                                type="date"
                                 placeholder="Geburtsdatum"
                                 className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                required
                             />
                             <CakeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
                         </div>
@@ -91,6 +94,7 @@ export default async function Form() {
                                     type="string"
                                     placeholder="Straße"
                                     className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    required
                                 />
                                 <HomeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
                             </div>
@@ -106,9 +110,10 @@ export default async function Form() {
                                 <input
                                     id="housenr"
                                     name="housenr"
-                                    type="string"
+                                    type="number"
                                     placeholder="Hausnummer"
-                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    required
                                 />
                                 <HashtagIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
                             </div>
@@ -131,6 +136,7 @@ export default async function Form() {
                                     type="string"
                                     placeholder="Wohnort"
                                     className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    required
                                 />
                                 <BuildingOffice2Icon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
                             </div>
@@ -146,9 +152,10 @@ export default async function Form() {
                                 <input
                                     id="postalcode"
                                     name="postalcode"
-                                    type="string"
+                                    type="number"
                                     placeholder="Postleitzahl"
-                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    className="peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                    required
                                 />
                                 <HashtagIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
                             </div>
@@ -165,9 +172,11 @@ export default async function Form() {
                             <input
                                 id="phonenr"
                                 name="phonenr"
-                                type="string"
+                                type="tel"
+                                // pattern="[0-9]{4} [0-9]{7}"
                                 placeholder="Telefonnummer"
                                 className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                required
                             />
                             <PhoneIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
                         </div>
@@ -183,7 +192,7 @@ export default async function Form() {
                             <input
                                 id="email"
                                 name="email"
-                                type="string"
+                                type="email"
                                 placeholder="E-Mail"
                                 className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                             />
