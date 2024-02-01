@@ -7,8 +7,7 @@ const ITEMS_PER_PAGE = 8;
 
 export async function fetchFilteredEmployees(
     query: string,
-    currentPage: number,
-    username: string
+    currentPage: number
 ) {
     let psnrQuery;
     try {
@@ -133,20 +132,38 @@ export async function fetchEmployeesPages(query: string) {
 export async function fetchEmployeeById(id: ObjectId) {
 
     noStore();
-  
+
     try {
-      await client.connectToDatabase();
-      const collection = client.getCollection("employees");
-  
-      const employee = await collection.findOne({ "_id": id });
-  
-      return employee;
+        await client.connectToDatabase();
+        const collection = client.getCollection("employees");
+
+        const employee = await collection.findOne({ "_id": id });
+
+        return employee;
     }
     catch (error) {
-      console.error('datafetching---Datenbankfehler:', error);
+        console.error('datafetching---Datenbankfehler:', error);
     }
     finally {
-      await client.closeDatabaseConnection();
-      console.log('datafetching---Verbindung geschlossen')
+        await client.closeDatabaseConnection();
+        console.log('datafetching---Verbindung geschlossen')
     }
-  }
+}
+
+export async function fetchUnregisteredtags() {
+
+    noStore();
+
+    try {
+        await client.connectToDatabase();
+        const collection = client.getCollection("unregisteredtags");
+        const result = await collection.find({}).toArray();
+        return result;
+    }
+    catch (error) {
+        console.error('datafetching---Datenbankfehler:', error);
+    }
+    finally {
+        await client.closeDatabaseConnection();
+    }
+}

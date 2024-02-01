@@ -5,7 +5,7 @@ import { ShowEmployee, UpdateEmployee, DeleteEmployee } from './buttons';
 
 
 
-export default async function HospitationTable({
+export default async function EmployeeTable({
     query,
     currentPage,
 }: {
@@ -13,13 +13,7 @@ export default async function HospitationTable({
     currentPage: number;
 }) {
 
-    var username = "";
-    const tryUsername = await getSessionUsername();
-    if (tryUsername) {
-        username = tryUsername;
-    }
-
-    const employees = await fetchFilteredEmployees(query, currentPage, username);
+    const employees = await fetchFilteredEmployees(query, currentPage);
 
     if (employees && employees.length > 0) {
         console.log("table---Hospitationen angekommen");
