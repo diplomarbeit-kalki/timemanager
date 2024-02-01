@@ -1,17 +1,18 @@
 const users = [
     {
         username: 'KALELI',
-        password: '123456'
+        password: 'test123'
     },
     {
         username: 'KALCHR',
-        password: '123456'
+        password: 'test123'
     }
 ];
 
 const employees = [
     {
         psnr: 1,
+        tag: null,
         username: 'KALELI',
         firstname: 'Elias',
         lastname: 'Kalkhofer',
@@ -28,6 +29,7 @@ const employees = [
     },
     {
         psnr: 2,
+        tag: null,
         username: 'KALGAB',
         firstname: 'Gabriel',
         lastname: 'Kalkhofer',
@@ -44,6 +46,7 @@ const employees = [
     },
     {
         psnr: 3,
+        tag: null,
         username: 'KALANN',
         firstname: 'Anna',
         lastname: 'Kalkhofer',
@@ -60,6 +63,7 @@ const employees = [
     },
     {
         psnr: 4,
+        tag: null,
         username: 'KALCHR',
         firstname: 'Christian',
         lastname: 'Kalkhofer',
@@ -76,6 +80,7 @@ const employees = [
     },
     {
         psnr: 5,
+        tag: null,
         username: 'KALEVE',
         firstname: 'Evelyn',
         lastname: 'Kalkhofer',
@@ -92,6 +97,7 @@ const employees = [
     },
     {
         psnr: 6,
+        tag: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -108,6 +114,7 @@ const employees = [
     },
     {
         psnr: 7,
+        tag: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -124,6 +131,7 @@ const employees = [
     },
     {
         psnr: 8,
+        tag: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -140,6 +148,7 @@ const employees = [
     },
     {
         psnr: 9,
+        tag: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -156,6 +165,7 @@ const employees = [
     },
     {
         psnr: 10,
+        tag: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -172,6 +182,7 @@ const employees = [
     },
     {
         psnr: 11,
+        tag: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -188,6 +199,7 @@ const employees = [
     },
     {
         psnr: 12,
+        tag: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -203,6 +215,33 @@ const employees = [
         editeddate: null
     }
 ];
+
+const unregisteredtags = [
+    {
+        uid: "FF:FF:FF:FF:FF:FF:FA",
+        erstelltAm: null
+    },
+    {
+        uid: "FF:FF:FF:FF:FF:FF:FB",
+        erstelltAm: null
+    },
+    {
+        uid: "FF:FF:FF:FF:FF:FF:FC",
+        erstelltAm: null
+    },
+    {
+        uid: "FF:FF:FF:FF:FF:FF:FD",
+        erstelltAm: null
+    },
+    {
+        uid: "FF:FF:FF:FF:FF:FF:FE",
+        erstelltAm: null
+    },
+    {
+        uid: "FF:FF:FF:FF:FF:FF:FF",
+        erstelltAm: null
+    }
+]
 
 const timestamps = [
     {
@@ -254,5 +293,6 @@ const timestamps = [
 module.exports = {
     users,
     employees,
-    timestamps
+    timestamps,
+    unregisteredtags
 };

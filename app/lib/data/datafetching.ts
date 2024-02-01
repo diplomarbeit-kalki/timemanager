@@ -3,7 +3,7 @@ import DatabaseClient from '@/app/lib/mongodb/client';
 import { ObjectId } from 'mongodb';
 
 const client = new DatabaseClient();
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 8;
 
 export async function fetchFilteredEmployees(
     query: string,

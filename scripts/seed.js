@@ -1,4 +1,4 @@
-const { users, employees, timestamps } = require('../app/lib/data/placeholder-data.js');
+const { users, employees, timestamps, unregisteredtags } = require('../app/lib/data/placeholder-data.js');
 const bcrypt = require('bcrypt');
 const { MongoClient } = require('mongodb');;
 
@@ -51,6 +51,7 @@ async function seedEmployees(client) {
 
                 const result = await collectionObj.insertOne({
                     psnr: employee.psnr,
+                    tag: employee.tag,
                     username: employee.username,
                     firstname: employee.firstname,
                     lastname: employee.lastname,
@@ -76,6 +77,33 @@ async function seedEmployees(client) {
     }
     catch (error) {
         console.error('seed---Fehler seeding employees:', error);
+        throw error;
+    }
+}
+
+async function seedUnregisteredtags(client) {
+    try {
+        const insertedUnregisteredtags = await Promise.all(
+            unregisteredtags.map(async (unregisteredtag) => {
+
+                const databaseObj = client.db("kalki");
+                const collectionObj = databaseObj.collection("unregisteredtags");
+
+                const result = await collectionObj.insertOne({
+                    uid: unregisteredtag.uid,
+                    erstelltAm: new Date,
+                });
+            }),
+        );
+
+        console.log(`seed---Seeded ${insertedUnregisteredtags.length} unregisteredtags`);
+
+        return {
+            unregisteredtags: insertedUnregisteredtags,
+        };
+    }
+    catch (error) {
+        console.error('seed---Fehler seeding unregisteredtags:', error);
         throw error;
     }
 }
@@ -114,10 +142,11 @@ async function main() {
         console.error('seed---Fehler beim Verbindungsaufbau zur Datenbank:', error);
     }
 
-    await seedEmployees(client);
-    //await seedTimestamps(client);
     //await seedUsers(client);
-
+    //await seedEmployees(client);
+    await seedUnregisteredtags(client);
+    //await seedTimestamps(client);
+    
     try {
         await client.close();
         console.log('seed---Verbindung zur Datenbank erfolgreich geschlossen');
