@@ -1,0 +1,67 @@
+"use client"
+import React, { useState, useEffect } from 'react';
+
+const days: string[] = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+
+const Number: React.FC<{ value: number }> = ({ value = 0 }) => {
+    const result = String(value).padStart(2, '0');
+    return (
+        <div className="digital">
+            <p>{result}</p>
+        </div>
+    );
+};
+
+const Word: React.FC<{ value: string, hidden?: boolean }> = ({ value }) => {
+    return (
+        <div className="digital">
+            <p>{value}</p>
+        </div>
+    );
+};
+
+export const AnalogClock: React.FC = () => {
+    const [hour, setHour] = useState<number>(0);
+    const [minute, setMinute] = useState<number>(0);
+    const [second, setSecond] = useState<number>(0);
+    const [day, setDay] = useState<number>(0);
+
+    useEffect(() => {
+        const update = () => {
+            const date = new Date();
+            setHour(date.getHours());
+            setMinute(date.getMinutes());
+            setSecond(date.getSeconds());
+            setDay(date.getDay());
+        };
+
+        update();
+
+        const interval = setInterval(() => {
+            update();
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg dark:text-slate-100 flex flex-col flex-1 justify-center items-center">
+            <div className="text-2xl flex justify-center items-center gap-8 pb-4">
+                {days.map((value, index) => (
+                    <div key={value} className={`text-${index !== day ? 'gray-400 opacity-50' : 'black'}`}>
+                        <Word value={value} hidden={index !== day} />
+                    </div>
+                ))}
+            </div>
+            <div className="flex gap-10">
+                <div className="flex items-center text-8xl">
+                    <Number value={hour} />
+                    <Word value={':'} />
+                    <Number value={minute} />
+                    <Word value={':'} />
+                    <Number value={second} />
+                </div>
+            </div>
+        </div>
+    );
+};
