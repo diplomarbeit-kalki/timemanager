@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function EmployeeRegistration() {
     return (
         <div className="flex flex-row justify-center overflow-hidden">
-          <div className="px-20 lg:px-28 pt-0 md:border-r-2 lg:border-r-2">
+          <div className="px-20 lg:px-28 pt-4 md:border-r-2 lg:border-r-2">
           <div className="block md:hidden lg:hidden mb-14 lg:mt-24 p-4 lg:p-6 bg-zinc-300 dark:bg-zinc-900 text-zinc-700 dark:text-white text-center rounded-lg border border-gray-300 dark:border-gray-500">
               Kommt
             </div>
