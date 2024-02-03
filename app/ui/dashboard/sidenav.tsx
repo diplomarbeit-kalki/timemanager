@@ -27,7 +27,7 @@ export default function SideNav() {
                             <PowerIcon className="w-6" />
                             <div className="hidden md:block">Abmelden</div>
                         </button>
-                        <div className="inline-flex items-center justify-center whitespace-nowrap text-center hover:bg-gray-200 dark:hover:bg-zinc-700 rounded-full transition-all duration-300 w-10 h-10 circle-container">
+                        <div className="items-center justify-center whitespace-nowrap text-center hover:bg-gray-200 dark:hover:bg-zinc-700 rounded-full transition-all duration-300 w-10 h-10 circle-container hidden md:inline-flex lg:inline-flex">
                             <ThemeSwitch />
                         </div>
                     </div>

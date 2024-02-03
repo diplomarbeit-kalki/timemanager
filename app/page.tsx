@@ -19,7 +19,9 @@ export default function Home() {
               <Link href="/login">
                 <button className="bg-blue-500 hover:bg-blue-600 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black rounded-lg p-4">Login</button>
               </Link>
-              <button className="bg-slate-500 hover:bg-slate-600 dark:bg-gray-300 dark:hover:bg-gray-400 rounded-lg p-4 text-white dark:text-black">Mehr Erfahren</button>
+              <Link href="/timeclock">
+                <button className="bg-slate-500 hover:bg-slate-600 dark:bg-gray-300 dark:hover:bg-gray-400 rounded-lg p-4 text-white dark:text-black">Stempeluhr</button>
+              </Link>
             </div>
           </div>
           <div className="hidden lg:block md:block w-72 h-72 ml-20">

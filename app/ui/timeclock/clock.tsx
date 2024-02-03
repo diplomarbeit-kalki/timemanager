@@ -45,16 +45,16 @@ export const AnalogClock: React.FC = () => {
     }, []);
 
     return (
-        <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg dark:text-slate-100 flex flex-col flex-1 justify-center items-center">
-            <div className="text-2xl flex justify-center items-center gap-8 pb-4">
+        <div className="bg-white dark:bg-zinc-900 p-4 rounded-2xl dark:text-slate-100 flex flex-col justify-center items-center mx-10">
+            <div className="text-sm md:text-2xl lg:text-2xl flex justify-center items-center gap-4 md:gap-8 lg:gap-12 pb-4 transition-all">
                 {days.map((value, index) => (
-                    <div key={value} className={`text-${index !== day ? 'gray-400 opacity-50' : 'black'}`}>
+                    <div key={value} className={`text-${index !== day ? 'gray-400 opacity-50' : 'black'} dark:text-${index !== day ? 'gray-400 opacity-50' : 'white'}`}>
                         <Word value={value} hidden={index !== day} />
                     </div>
                 ))}
             </div>
             <div className="flex gap-10">
-                <div className="flex items-center text-8xl">
+                <div className="flex items-center text-6xl md:text-8xl lg:text-8xl">
                     <Number value={hour} />
                     <Word value={':'} />
                     <Number value={minute} />
