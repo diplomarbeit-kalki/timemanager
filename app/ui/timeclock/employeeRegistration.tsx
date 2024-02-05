@@ -1,7 +1,6 @@
 'use client';
 import Image from "next/image"
 import React, { useState } from "react";
-import { number } from "zod";
 
 export default function EmployeeRegistration() {
   const [employeeId, setEmployeeId] = useState("");
@@ -12,15 +11,6 @@ export default function EmployeeRegistration() {
     document.getElementById("employeeId")?.focus();
   };
 
-  const handleInputChange = (e: { target: { value: any; }; }) => {
-    const inputValue = e.target.value;
-    const parsedValue = parseInt(inputValue);
-  
-    if (!isNaN(parsedValue) && parsedValue >= 1 && parsedValue <= 999) {
-      setEmployeeId(inputValue);
-    }
-  };
-
   const handleClearClick = () => {
     setEmployeeId("");
     // Fokus auf das Input-Feld setzen
@@ -29,13 +19,14 @@ export default function EmployeeRegistration() {
 
   const handleSubmit = async () => {
     try {
-      console.log("Submit Button clicked")
-      const response = await fetch('DEIN_REST_API_ENDPOINT', {
+      console.log("Submit Button clicked");
+      const timestamp = new Date();
+      const response = await fetch('http://172.17.77.76:3001/timestampsperday', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ employeeId }),
+        body: JSON.stringify({ "psnr": employeeId, "timestamp": timestamp }),
       });
 
       if (response.ok) {
@@ -116,18 +107,18 @@ export default function EmployeeRegistration() {
 
       <div className="flex flex-row justify-center overflow-hidden">
         <div className="px-20 lg:px-28 pt-8 md:border-r-2 lg:border-r-2">
-          <div className="block md:hidden lg:hidden mb-14 lg:mt-24 p-4 lg:p-6 bg-zinc-300 dark:bg-zinc-900 text-zinc-700 dark:text-white text-center rounded-lg border border-gray-300 dark:border-gray-500">
-                Kommt
-          </div>
-            <div className="relative h-64 w-64 lg:h-80 lg:w-80">
+            <div className="relative h-64 w-64 mx-auto">
               <Image
                 src='/profile_picture_demo.jpg'
                 alt="Logo"
-                layout="fill"
+                fill
                 objectFit="cover"
                 className="rounded-2xl outline outline-zinc-400 dark:outline-zinc-600 outline-2 outline-offset-[6px]" // you can use other classes here too
               />
             </div>
+            <div className="block md:hidden lg:hidden mt-10 p-4 lg:p-6 bg-zinc-300 dark:bg-zinc-900 text-zinc-700 dark:text-white text-center rounded-lg border border-gray-300 dark:border-gray-500">
+                Kommt
+          </div>
             <div className="flex md:hidden lg:hidden sm:flex mt-10">
               <input
                     id="employeeId"
@@ -137,7 +128,7 @@ export default function EmployeeRegistration() {
                     value={employeeId}
                     onChange={(e) => setEmployeeId(e.target.value)}
                     placeholder="Mitarbeiternummer"
-                    className="peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none block rounded-lg border bg-white dark:bg-zinc-800 border-gray-200 dark:border-gray-500 py-4 pl-2 text-sm outline-none placeholder:text-gray-500"
+                    className="peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none block rounded-lg border bg-white dark:bg-zinc-800 border-gray-200 dark:border-gray-500 py-4 pl-2 text-md outline-none placeholder:text-gray-500"
                     required
                   />
               <div className="pl-4 flex">
@@ -149,7 +140,7 @@ export default function EmployeeRegistration() {
                 </button>
               </div>
             </div>
-            <div className="hidden md:block lg:block mt-6 lg:mt-24 p-4 lg:p-6 bg-zinc-300 dark:bg-zinc-900 text-zinc-700 dark:text-white text-center rounded-lg border border-gray-300 dark:border-gray-500">
+            <div className="hidden md:block lg:block mt-6 lg:mt-12 p-4 lg:p-6 bg-zinc-300 dark:bg-zinc-900 text-zinc-700 dark:text-white text-center rounded-lg border border-gray-300 dark:border-gray-500">
               Kommt
             </div>
           </div>
