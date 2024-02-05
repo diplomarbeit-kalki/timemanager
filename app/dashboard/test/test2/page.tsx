@@ -12,6 +12,7 @@ export default function Page() {
 
         ws.onmessage = (event) => {
             setMessage(event.data);
+            console.log("Daten vom Server erhalten: " + event.data);
         };
 
         return () => {
