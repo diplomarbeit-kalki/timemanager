@@ -3,11 +3,11 @@ import Image from "next/image"
 export default function EmployeeRegistration() {
     return (
         <div className="flex flex-row justify-center overflow-hidden">
-          <div className="px-20 lg:px-28 pt-4 md:border-r-2 lg:border-r-2">
+          <div className="px-20 lg:px-28 pt-8 md:border-r-2 lg:border-r-2">
           <div className="block md:hidden lg:hidden mb-14 lg:mt-24 p-4 lg:p-6 bg-zinc-300 dark:bg-zinc-900 text-zinc-700 dark:text-white text-center rounded-lg border border-gray-300 dark:border-gray-500">
               Kommt
             </div>
-            <div className="relative h-60 w-60 lg:h-80 lg:w-80 transition-all">
+            <div className="relative h-60 w-60 lg:h-80 lg:w-80">
               <Image
                 src='/profile_picture_demo.jpg'
                 alt="Logo"
@@ -21,6 +21,8 @@ export default function EmployeeRegistration() {
                   id="employeeId"
                   name="employeeId"
                   type="number"
+                  min="0"
+                  max="999"
                   placeholder="Mitarbeiternummer"
                   className="peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none block rounded-lg border border-gray-200 dark:border-gray-500 py-4 lg:py-6 pl-2 w-full text-sm outline-none placeholder:text-gray-500"
                   required
