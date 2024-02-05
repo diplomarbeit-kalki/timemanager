@@ -1,10 +1,10 @@
 const users = [
     {
-        username: 'KALELI',
+        username: 'kaleli',
         password: 'test123'
     },
     {
-        username: 'KALCHR',
+        username: 'kalchr',
         password: 'test123'
     }
 ];
@@ -12,7 +12,7 @@ const users = [
 const employees = [
     {
         psnr: 1,
-        tag: null,
+        tag: "FF:FF:FF:FF:FF:FF:FA",
         username: 'KALELI',
         firstname: 'Elias',
         lastname: 'Kalkhofer',
@@ -218,34 +218,30 @@ const employees = [
 
 const unregisteredtags = [
     {
-        uid: "FF:FF:FF:FF:FF:FF:FA",
-        erstelltAm: null
-    },
-    {
         uid: "FF:FF:FF:FF:FF:FF:FB",
-        erstelltAm: null
+        createddate: null
     },
     {
         uid: "FF:FF:FF:FF:FF:FF:FC",
-        erstelltAm: null
+        createddate: null
     },
     {
         uid: "FF:FF:FF:FF:FF:FF:FD",
-        erstelltAm: null
+        createddate: null
     },
     {
         uid: "FF:FF:FF:FF:FF:FF:FE",
-        erstelltAm: null
+        createddate: null
     },
     {
         uid: "FF:FF:FF:FF:FF:FF:FF",
-        erstelltAm: null
+        createddate: null
     }
 ]
 
 const timestamps = [
     {
-        employeePerosnalnummer: 1,
+        emppsnr: 1,
         date: "2024-01-01",
         timestamps: [
             {
@@ -267,7 +263,7 @@ const timestamps = [
         ]
     },
     {
-        employeePerosnalnummer: 2,
+        emppsnr: 2,
         date: "2024-01-01",
         timestamps: [
             {
@@ -289,7 +285,7 @@ const timestamps = [
         ]
     },
     {
-        employeePerosnalnummer: 1,
+        emppsnr: 1,
         date: "2024-01-02",
         timestamps: [
             {
@@ -311,7 +307,7 @@ const timestamps = [
         ]
     },
     {
-        employeePerosnalnummer: 2,
+        emppsnr: 2,
         date: "2024-01-02",
         timestamps: [
             {

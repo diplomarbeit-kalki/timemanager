@@ -63,8 +63,8 @@ async function seedEmployees(client) {
                     postalcode: employee.postalcode,
                     phonenr: employee.phonenr,
                     email: employee.email,
-                    erstelltAm: new Date,
-                    bearbeitetAm: new Date,
+                    createddate: new Date,
+                    editeddate: new Date,
                 });
             }),
         );
@@ -91,7 +91,7 @@ async function seedUnregisteredtags(client) {
 
                 const result = await collectionObj.insertOne({
                     uid: unregisteredtag.uid,
-                    erstelltAm: new Date,
+                    createddate: new Date,
                 });
             }),
         );
@@ -126,7 +126,7 @@ async function seedTimestamps(client) {
         };
     }
     catch (error) {
-        console.error('seed---Fehler seeding employees:', error);
+        console.error('seed---Fehler seeding timestamps:', error);
         throw error;
     }
 }
@@ -142,9 +142,9 @@ async function main() {
         console.error('seed---Fehler beim Verbindungsaufbau zur Datenbank:', error);
     }
 
-    //await seedUsers(client);
-    //await seedEmployees(client);
-    //await seedUnregisteredtags(client);
+    await seedUsers(client);
+    await seedEmployees(client);
+    await seedUnregisteredtags(client);
     await seedTimestamps(client);
     
     try {
