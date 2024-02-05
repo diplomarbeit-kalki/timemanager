@@ -114,7 +114,7 @@ async function seedTimestamps(client) {
             timestamps.map(async (timestamp) => {
 
                 const databaseObj = client.db("kalki");
-                const collectionObj = databaseObj.collection("timestamps");
+                const collectionObj = databaseObj.collection("timestampsperday");
                 const result = await collectionObj.insertOne(timestamp);
             }),
         );
@@ -144,8 +144,8 @@ async function main() {
 
     //await seedUsers(client);
     //await seedEmployees(client);
-    await seedUnregisteredtags(client);
-    //await seedTimestamps(client);
+    //await seedUnregisteredtags(client);
+    await seedTimestamps(client);
     
     try {
         await client.close();

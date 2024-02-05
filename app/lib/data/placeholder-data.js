@@ -246,45 +246,89 @@ const unregisteredtags = [
 const timestamps = [
     {
         employeePerosnalnummer: 1,
-        date: "2024-01-27",
+        date: "2024-01-01",
         timestamps: [
             {
                 type: "kommt",
-                time: new Date("2024-01-27T05:00:00Z")
+                time: new Date("2024-01-01T05:00:00Z")
             },
             {
                 type: "geht",
-                time: new Date("2024-01-27T12:00:00Z")
+                time: new Date("2024-01-01T12:00:00Z")
             },
             {
                 type: "kommt",
-                time: new Date("2024-01-27T13:00:00Z")
+                time: new Date("2024-01-01T13:00:00Z")
             },
             {
                 type: "geht",
-                time: new Date("2024-01-27T18:00:00Z")
+                time: new Date("2024-01-01T18:00:00Z")
             }
         ]
     },
     {
         employeePerosnalnummer: 2,
-        date: "2024-01-27",
+        date: "2024-01-01",
         timestamps: [
             {
                 type: "kommt",
-                time: new Date("2024-01-27T06:00:00Z")
+                time: new Date("2024-01-01T06:00:00Z")
             },
             {
                 type: "geht",
-                time: new Date("2024-01-27T12:30:00Z")
+                time: new Date("2024-01-01T12:30:00Z")
             },
             {
                 type: "kommt",
-                time: new Date("2024-01-27T13:00:00Z")
+                time: new Date("2024-01-01T13:00:00Z")
             },
             {
                 type: "geht",
-                time: new Date("2024-01-27T16:00:00Z")
+                time: new Date("2024-01-01T16:00:00Z")
+            }
+        ]
+    },
+    {
+        employeePerosnalnummer: 1,
+        date: "2024-01-02",
+        timestamps: [
+            {
+                type: "kommt",
+                time: new Date("2024-01-02T05:00:00Z")
+            },
+            {
+                type: "geht",
+                time: new Date("2024-01-02T12:00:00Z")
+            },
+            {
+                type: "kommt",
+                time: new Date("2024-01-02T13:00:00Z")
+            },
+            {
+                type: "geht",
+                time: new Date("2024-01-02T18:00:00Z")
+            }
+        ]
+    },
+    {
+        employeePerosnalnummer: 2,
+        date: "2024-01-02",
+        timestamps: [
+            {
+                type: "kommt",
+                time: new Date("2024-01-02T06:00:00Z")
+            },
+            {
+                type: "geht",
+                time: new Date("2024-01-02T12:30:00Z")
+            },
+            {
+                type: "kommt",
+                time: new Date("2024-01-02T13:00:00Z")
+            },
+            {
+                type: "geht",
+                time: new Date("2024-01-02T16:00:00Z")
             }
         ]
     }
