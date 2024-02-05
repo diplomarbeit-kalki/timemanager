@@ -107,16 +107,16 @@ export default function EmployeeRegistration() {
 
       <div className="flex flex-row justify-center overflow-hidden">
         <div className="px-20 lg:px-28 pt-8 md:border-r-2 lg:border-r-2">
-            <div className="relative h-60 w-60 mx-auto">
+            <div className="relative h-64 w-64 mx-auto">
               <Image
                 src='/profile_picture_demo.jpg'
                 alt="Logo"
-                layout="fill"
+                fill
                 objectFit="cover"
                 className="rounded-2xl outline outline-zinc-400 dark:outline-zinc-600 outline-2 outline-offset-[6px]" // you can use other classes here too
               />
             </div>
-            <div className="block md:hidden lg:hidden mt-10 lg:mt-24 p-4 lg:p-6 bg-zinc-300 dark:bg-zinc-900 text-zinc-700 dark:text-white text-center rounded-lg border border-gray-300 dark:border-gray-500">
+            <div className="block md:hidden lg:hidden mt-10 p-4 lg:p-6 bg-zinc-300 dark:bg-zinc-900 text-zinc-700 dark:text-white text-center rounded-lg border border-gray-300 dark:border-gray-500">
                 Kommt
           </div>
             <div className="flex md:hidden lg:hidden sm:flex mt-10">
@@ -140,7 +140,7 @@ export default function EmployeeRegistration() {
                 </button>
               </div>
             </div>
-            <div className="hidden md:block lg:block mt-6 lg:mt-24 p-4 lg:p-6 bg-zinc-300 dark:bg-zinc-900 text-zinc-700 dark:text-white text-center rounded-lg border border-gray-300 dark:border-gray-500">
+            <div className="hidden md:block lg:block mt-6 lg:mt-12 p-4 lg:p-6 bg-zinc-300 dark:bg-zinc-900 text-zinc-700 dark:text-white text-center rounded-lg border border-gray-300 dark:border-gray-500">
               Kommt
             </div>
           </div>
