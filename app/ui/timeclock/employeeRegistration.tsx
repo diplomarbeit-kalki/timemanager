@@ -7,12 +7,15 @@ export default function EmployeeRegistration() {
   const [message, setMessage] = React.useState<string>("Keine Websocket Verbindung");
 
   useEffect(() => {
-
     const ws = new WebSocket('ws://localhost:3002');
 
     ws.onmessage = (event) => {
       setMessage(event.data);
       console.log("Daten vom Server erhalten: " + event.data);
+      setTimeout(() => {
+        setMessage("Warte auf NFC Tags");
+    }, 5000);
+
     };
 
     return () => {
@@ -38,7 +41,7 @@ export default function EmployeeRegistration() {
     try {
       console.log("Submit Button clicked");
       const timestamp = new Date();
-      const response = await fetch('http://172.17.77.76:3001/timestampsperday', {
+      const response = await fetch('http://localhost:3001/timestampsperday', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
