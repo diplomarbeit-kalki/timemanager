@@ -32,11 +32,11 @@ export default async function TransponderTable() {
                                             {unregisteredtag.uid}
                                         </p>
                                         <p className="text-xl font-medium">
-                                            {unregisteredtag.erstelltAm.getHours()}:{unregisteredtag.erstelltAm.getMinutes()}
+                                            {unregisteredtag.createddate.getHours()}:{unregisteredtag.createddate.getMinutes()}
 
                                         </p>
                                         <p className="text-xl font-medium">
-                                            {unregisteredtag.erstelltAm.getDate()}.{unregisteredtag.erstelltAm.getMonth() + 1}.{unregisteredtag.erstelltAm.getFullYear()}
+                                            {unregisteredtag.createddate.getDate()}.{unregisteredtag.createddate.getMonth() + 1}.{unregisteredtag.createddate.getFullYear()}
                                         </p>
                                     </div>
                                 </div>
@@ -66,8 +66,8 @@ export default async function TransponderTable() {
                                     className="w-full border-b dark:border-gray-600 py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
                                 >
                                     <td className="whitespace-nowrap px-5 py-3">{unregisteredtag.uid}</td>
-                                    <td className="whitespace-nowrap px-5 py-5">{unregisteredtag.erstelltAm.getHours()}:{unregisteredtag.erstelltAm.getMinutes()}</td>
-                                    <td className="whitespace-nowrap px-5 py-5">{unregisteredtag.erstelltAm.getDate()}.{unregisteredtag.erstelltAm.getMonth() + 1}.{unregisteredtag.erstelltAm.getFullYear()}</td>
+                                    <td className="whitespace-nowrap px-5 py-5">{unregisteredtag.createddate.getHours()}:{unregisteredtag.createddate.getMinutes()}</td>
+                                    <td className="whitespace-nowrap px-5 py-5">{unregisteredtag.createddate.getDate()}.{unregisteredtag.createddate.getMonth() + 1}.{unregisteredtag.createddate.getFullYear()}</td>
                                 </tr>
                             ))}
                         </tbody>
