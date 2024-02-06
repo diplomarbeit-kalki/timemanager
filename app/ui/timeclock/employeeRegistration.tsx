@@ -90,7 +90,10 @@ export default function EmployeeRegistration() {
             src='/profile_picture_demo.jpg'
             alt="Logo"
             fill
-            objectFit="cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{
+              objectFit: 'cover',
+            }}
             className="rounded-2xl outline outline-zinc-400 dark:outline-zinc-600 outline-2 outline-offset-[6px]" // you can use other classes here too
           />
         </div>
