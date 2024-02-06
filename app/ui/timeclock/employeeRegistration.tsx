@@ -5,30 +5,16 @@ import React, { useState, useEffect } from "react";
 
 export default function EmployeeRegistration() {
   const [message, setMessage] = React.useState<string>("Keine Websocket Verbindung");
-  // Clsx Test
+  
+  // Clsx Color adaption for Status field
   const statusKommt = message.includes('kommt');
   const statusGeht = message.includes('geht');
 
   const messageStyle = clsx(
-    'hidden md:block lg:block',
+    'sm:block md:block lg:block',
     'select-none',
     'rounded-lg',
-    'mt-6 lg:mt-12', 
-    'p-4 lg:p-6', 
-    'text-zinc-700 dark:text-white text-center', 
-    'border border-gray-300 dark:border-gray-500',
-    {
-      'bg-green-500': statusKommt,
-      'bg-red-500': statusGeht,
-      'bg-zinc-300 dark:bg-zinc-900': !statusKommt && !statusGeht,
-    }
-  )
-
-  const messageStyleMobile = clsx(
-    'block md:hidden lg:hidden',
-    'select-none',
-    'rounded-lg',
-    'mt-10 lg:mt-12', 
+    'mt-8 lg:mt-12', 
     'p-4 lg:p-6', 
     'text-zinc-700 dark:text-white text-center', 
     'border border-gray-300 dark:border-gray-500',
@@ -107,8 +93,8 @@ export default function EmployeeRegistration() {
             className="rounded-2xl outline outline-zinc-400 dark:outline-zinc-600 outline-2 outline-offset-[6px]" // you can use other classes here too
           />
         </div>
-        <div className={messageStyleMobile}> {message} </div>
-        <div className="flex md:hidden lg:hidden sm:flex mt-10">
+        <div className={messageStyle}> {message} </div>
+        <div className="flex md:hidden lg:hidden sm:flex mt-6">
           <input
             id="employeeId"
             name="employeeId"
@@ -129,7 +115,6 @@ export default function EmployeeRegistration() {
             </button>
           </div>
         </div>
-        <div className={messageStyle}> {message} </div>
       </div>
 
       <div className="hidden md:flex lg:flex flex-col gap-12 px-20 py-6">
