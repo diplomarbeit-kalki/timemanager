@@ -167,3 +167,22 @@ export async function fetchUnregisteredtags() {
         await client.closeDatabaseConnection();
     }
 }
+
+export async function fetchTimestampsFromDay(
+    psnr: number,
+    date: string
+) {
+    noStore();
+    try {
+        await client.connectToDatabase();
+        const collection = client.getCollection("timestampsperday");
+        const result = await collection.find({ "emppsnr": psnr , "date": date }).toArray();
+        return result;
+    }
+    catch (error) {
+        console.error('datafetching---Datenbankfehler:', error);
+    }
+    finally {
+        await client.closeDatabaseConnection();
+    }
+}
