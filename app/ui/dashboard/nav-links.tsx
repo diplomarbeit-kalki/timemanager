@@ -4,6 +4,7 @@ import {
 HomeIcon,
   UserGroupIcon,
   KeyIcon,
+  TicketIcon,
   ClockIcon,
   EyeIcon,
 } from "@heroicons/react/24/outline";
@@ -15,7 +16,8 @@ const links = [
   { name: "Home", href: "/dashboard", icon: HomeIcon },
   { name: "Mitarbeiter", href: "/dashboard/employeelist", icon: UserGroupIcon },
   { name: "Transponder", href: "/dashboard/transponder", icon: KeyIcon },
-  { name: "Zeitstempel", href: "/dashboard/timestamps", icon: ClockIcon },
+  { name: "Zeitstempel", href: "/dashboard/timestamps", icon: TicketIcon },
+  { name: "Arbeitszeiten", href: "/dashboard/timesheet", icon: ClockIcon },
   { name: "Test 1", href: "/dashboard/test/test1", icon: EyeIcon },
   { name: "Test 2", href: "/dashboard/test/test2", icon: EyeIcon },
 ];

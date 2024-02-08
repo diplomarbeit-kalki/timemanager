@@ -1,28 +1,27 @@
 import { lusitana } from '@/app/ui/fonts';
-import TimestampsTable from '@/app/ui/timestamps/table';
-import { SearchPsnr, SearchDate } from '@/app/ui/timestamps/search';
-import { CreateTimestamp } from '@/app/ui/timestamps/buttons';
+import TimesheetTable from '@/app/ui/timesheet/table';
+import { SearchPsnr, SearchFirstDate, SearchLastDate } from '@/app/ui/timesheet/search';
 
 export default async function Page({
     searchParams,
 }: {
     searchParams?: {
         psnr?: number;
-        date?: string;
+        firstdate?: string;
+        lastdate?: string;
     };
 }) {
-
     const psnr = Number(searchParams?.psnr) || 0;
-    const date = searchParams?.date || '';
+    const firstdate = searchParams?.firstdate || '';
+    const lastdate = searchParams?.lastdate || '';
 
-    // Einbaufähig: <CreateTimestamp/>
     return (
         <div className="w-full">
             <div className="flex w-full items-center justify-between">
                 <h1 className={`${lusitana.className} text-2xl`}>Zeitstempel</h1>
             </div>
             <div className="mt-4 md:mt-8">
-                <div className="flex items-center gap-x-4"> {/* Abstand zwischen den Elementen */}
+                <div className="flex items-center gap-x-4">
                     <div className="flex items-center gap-2">
                         <span>Psnr:</span>
                         <div className="flex-grow">
@@ -30,15 +29,21 @@ export default async function Page({
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
-                        <span>Datum:</span>
+                        <span>Anfangsdatum:</span>
                         <div className="flex-grow">
-                            <SearchDate placeholder="YYYY-MM-DD" />
+                            <SearchFirstDate placeholder="YYYY-MM-DD" />
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span>Enddatum:</span>
+                        <div className="flex-grow">
+                            <SearchLastDate placeholder="YYYY-MM-DD" />
                         </div>
                     </div>
                 </div>
             </div>
             <div className="mt-6">
-                <TimestampsTable psnr={psnr} date={date} />
+                <TimesheetTable psnr={psnr} firstdate={firstdate} lastdate={lastdate}/>
             </div>
         </div>
     )
