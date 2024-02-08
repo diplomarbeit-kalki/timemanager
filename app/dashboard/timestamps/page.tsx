@@ -12,9 +12,8 @@ export default async function Page({
     };
 }) {
 
-    const psnr = Number(searchParams?.psnr) || 1;
+    const psnr = Number(searchParams?.psnr) || 0;
     const date = searchParams?.date || '';
-
 
     // Einbaufähig: <CreateTimestamp/>
     return (
