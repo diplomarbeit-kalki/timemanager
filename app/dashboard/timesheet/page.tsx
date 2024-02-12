@@ -20,23 +20,26 @@ export default async function Page({
             <div className="flex w-full items-center justify-between">
                 <h1 className={`${lusitana.className} text-2xl`}>Zeitstempel</h1>
             </div>
-            <div className="mt-4 md:mt-8">
-                <div className="flex items-center gap-x-4">
-                    <div className="flex items-center gap-2">
-                        <span>Psnr:</span>
-                        <div className="flex-grow">
+            <div className='mt-4 md:mt-8'>
+                <div 
+                // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                className='grid grid-flow-row md:grid-flow-col lg:grid-flow-col gap-4 md:gap-10 lg:gap-10'
+                >
+                    <div className="flex flex-col gap-2">
+                        <span className='text-gray-300'>Personalnummer</span>
+                        <div className="flow-root">
                             <SearchPsnr placeholder="PSNR" />
                         </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <span>Anfangsdatum:</span>
-                        <div className="flex-grow">
+                    <div className="flex flex-col gap-2">
+                        <span className='text-gray-300'>Anfangsdatum</span>
+                        <div className="flow-root">
                             <SearchFirstDate placeholder="YYYY-MM-DD" />
                         </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <span>Enddatum:</span>
-                        <div className="flex-grow">
+                    <div className="flex flex-col gap-2">
+                        <span className='text-gray-300'>Enddatum</span>
+                        <div className="flow-root">
                             <SearchLastDate placeholder="YYYY-MM-DD" />
                         </div>
                     </div>
