@@ -8,7 +8,7 @@ export default function Page() {
                 <h1 className={`${lusitana.className} text-2xl`}>Testpage 1</h1>
             </div>
             <br></br>
-            <h1 className={`${lusitana.className} text-2xl`}>Siehe in der Serverkonsole die Ergebnise der testaction</h1>
+            <h1 className={`${lusitana.className} text-2xl`}>Siehe in der Serverkonsole die Ergebnisse der testaction</h1>
             <br></br>
             <div className="flex w-full items-center justify-between">
                 <ButtonForTests />

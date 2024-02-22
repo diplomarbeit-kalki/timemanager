@@ -2,6 +2,7 @@ import { fetchFilteredEmployees } from '@/app/lib/data/datafetching';
 import { getSessionUsername } from '@/app/lib/session/sessionactions';
 import { revalidatePath } from 'next/cache';
 import { ShowEmployee, UpdateEmployee, DeleteEmployee } from './buttons';
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from 'react';
 
 
 
@@ -15,17 +16,13 @@ export default async function EmployeeTable({
 
     const employees = await fetchFilteredEmployees(query, currentPage);
 
-    if (employees && employees.length > 0) {
-        console.log("table---Hospitationen angekommen");
-    }
-
     return (
         <div className="mt-6 flow-root">
             <div className="inline-block min-w-full align-middle">
                 <div className="rounded-lg bg-gray-50 dark:bg-zinc-950 p-2 md:pt-0">
                     <div className="md:hidden">
 
-                        {employees?.map((employee) => (
+                        {employees?.map((employee: { _id: any; psnr: number; username: string; firstname: string; lastname: string; phonenr: string; email: string; }) => (
                             <div
                                 key={String(employee._id)}
                                 className="mb-2 w-full rounded-md bg-white dark:bg-zinc-900 p-4"
@@ -81,7 +78,7 @@ export default async function EmployeeTable({
                         </thead>
 
                         <tbody className="bg-white dark:bg-zinc-900 dark:text-gray-300">
-                            {employees?.map((employee) => (
+                            {employees?.map((employee: { _id: any; psnr: number; username: string; firstname: string; lastname: string; phonenr: string; email: string; }) => (
                                 <tr
                                     key={String(employee._id)}
                                     className="w-full border-b dark:border-gray-600 py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"

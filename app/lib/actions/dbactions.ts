@@ -58,8 +58,8 @@ export async function createEmployee(formData: FormData) {
         postalcode: postalcode,
         phonenr: phonenr,
         email: email,
-        erstelltAm: new Date,
-        bearbeitetAm: new Date,
+        createddate: new Date,
+        editeddate: new Date,
     };
 
     try {
@@ -104,7 +104,7 @@ export async function updateEmployee(id: string, formData: FormData) {
         const objectId = new ObjectId(id);
         await collectionObj.updateOne(
             { _id: objectId },
-            { $set: { firstname: firstname, lastname: lastname, birthdate: birthdate, street: street, housenr: housenr, residence: residence, postalcode: postalcode, phonenr: phonenr, email: email } }
+            { $set: { firstname: firstname, lastname: lastname, birthdate: birthdate, street: street, housenr: housenr, residence: residence, postalcode: postalcode, phonenr: phonenr, email: email, editeddate: new Date } }
         );
 
         console.log("dbactions---Employee mit id: " + id + " bearbeitet");

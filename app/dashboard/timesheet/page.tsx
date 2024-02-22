@@ -18,7 +18,7 @@ export default async function Page({
     return (
         <div className="w-full">
             <div className="flex w-full items-center justify-between">
-                <h1 className={`${lusitana.className} text-2xl`}>Zeitstempel</h1>
+                <h1 className={`${lusitana.className} text-2xl`}>Arbeitszeiten</h1>
             </div>
             <div className="mt-4 md:mt-8">
                 <div className="flex items-center gap-x-4">

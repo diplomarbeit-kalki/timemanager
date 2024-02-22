@@ -24,7 +24,6 @@ class DatabaseClient {
         try {
             await this.client.connect();
             this.database = this.client.db(process.env.MONGODB_DB);
-            console.log('client---Erfolgreich mit der Datenbank verbunden');
         } catch (error) {
             console.error('client---Fehler beim Verbindungsaufbau zur Datenbank:', error);
         }
@@ -33,7 +32,6 @@ class DatabaseClient {
     async closeDatabaseConnection() {
         try {
             await this.client.close();
-            console.log('client---Verbindung zur Datenbank erfolgreich geschlossen');
         } catch (error) {
             console.error('client---Fehler beim Schließen der Datenbankverbindung:', error);
         }
@@ -53,7 +51,6 @@ class DatabaseClient {
 
     async find(collectionName: string, query: object): Promise<Document[]> {
         const collection = this.getCollection(collectionName);
-        console.log('client---Suche nach ' + JSON.stringify(query));
         const result = await collection.find(query).toArray();
         return result;
     }
