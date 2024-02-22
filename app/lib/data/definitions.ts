@@ -5,7 +5,7 @@ export type User = {
 };
 
 export type EmployeeForm = {
-  id: string,
+  id: string;
   firstname: string;
   lastname: string;
   birthdate: string;

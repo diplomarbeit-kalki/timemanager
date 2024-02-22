@@ -7,8 +7,7 @@ import { ObjectId } from 'mongodb';
 export default async function Page({ params }: { params: { id: string } }) {
 
     const id = params.id;
-    const oid = new ObjectId(id);
-    const employee = await fetchEmployeeById(oid);
+    const employee = await fetchEmployeeById(id);
 
     if (!employee) {
         notFound();

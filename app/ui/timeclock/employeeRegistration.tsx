@@ -61,7 +61,7 @@ export default function EmployeeRegistration() {
     try {
       console.log("Submit Button clicked");
       const timestamp = new Date();
-      const response = await fetch('http://localhost:3001/timestampsperday', {
+      const response = await fetch('http://localhost:3001/timerecords', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
