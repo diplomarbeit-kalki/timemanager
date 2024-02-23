@@ -1,4 +1,4 @@
-const { users, employees, timestamps, unregisteredtags } = require('../app/lib/data/placeholder-data.js');
+const { users, employees, timerecords, unregisteredtags } = require('../app/lib/data/placeholder-data.js');
 const bcrypt = require('bcrypt');
 const { MongoClient } = require('mongodb');;
 
@@ -14,9 +14,7 @@ async function seedUsers(client) {
             users.map(async (user) => {
 
                 const hashedPassword = await bcrypt.hash(user.password, 10);
-
                 const databaseObj = client.db("kalki");
-
                 const collectionObj = databaseObj.collection("users");
 
                 const result = await collectionObj.insertOne({
@@ -43,7 +41,7 @@ async function seedEmployees(client) {
         const insertedEmployees = await Promise.all(
             employees.map(async (employee) => {
 
-                const hashedPassword = await bcrypt.hash(employee.password, 10);
+                //const hashedPassword = await bcrypt.hash(employee.password, 10);
 
                 const databaseObj = client.db("kalki");
 
@@ -52,10 +50,11 @@ async function seedEmployees(client) {
                 const result = await collectionObj.insertOne({
                     psnr: employee.psnr,
                     tag: employee.tag,
+                    profilepicture: employee.profilepicture,
                     username: employee.username,
                     firstname: employee.firstname,
                     lastname: employee.lastname,
-                    password: hashedPassword,
+                    //password: hashedPassword,
                     birthdate: employee.birthdate,
                     street: employee.street,
                     housenr: employee.housenr,
@@ -108,25 +107,25 @@ async function seedUnregisteredtags(client) {
     }
 }
 
-async function seedTimestamps(client) {
+async function seedTimerecords(client) {
     try {
-        const insertedTimestamps = await Promise.all(
-            timestamps.map(async (timestamp) => {
+        const insertedTimerecords = await Promise.all(
+            timerecords.map(async (timerecord) => {
 
                 const databaseObj = client.db("kalki");
-                const collectionObj = databaseObj.collection("timestampsperday");
-                const result = await collectionObj.insertOne(timestamp);
+                const collectionObj = databaseObj.collection("timerecords");
+                const result = await collectionObj.insertOne(timerecord);
             }),
         );
 
-        console.log(`seed---Seeded ${insertedTimestamps.length} timestamps`);
+        console.log(`seed---Seeded ${insertedTimerecords.length} timerecords`);
 
         return {
-            timestamps: insertedTimestamps,
+            timerecords: insertedTimerecords,
         };
     }
     catch (error) {
-        console.error('seed---Fehler seeding timestamps:', error);
+        console.error('seed---Fehler seeding tiemrecords:', error);
         throw error;
     }
 }
@@ -145,7 +144,7 @@ async function main() {
     await seedUsers(client);
     await seedEmployees(client);
     await seedUnregisteredtags(client);
-    await seedTimestamps(client);
+    await seedTimerecords(client);
     
     try {
         await client.close();

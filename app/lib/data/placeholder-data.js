@@ -13,10 +13,10 @@ const employees = [
     {
         psnr: 1,
         tag: "FF:FF:FF:FF:FF:FF:FA",
+        profilepicture: '/profilepictures/1_Elias_Kalkhofer.jpg',
         username: 'KALELI',
         firstname: 'Elias',
         lastname: 'Kalkhofer',
-        password: '123456',
         birthdate: "01.01.2003",
         street: "Sesamstraße",
         housenr: "1",
@@ -30,10 +30,10 @@ const employees = [
     {
         psnr: 2,
         tag: null,
+        profilepicture: '/profilepictures/2_Gabriel_Kalkhofer.jpg',
         username: 'KALGAB',
         firstname: 'Gabriel',
         lastname: 'Kalkhofer',
-        password: '123456',
         birthdate: "01.01.2005",
         street: "Sesamstraße",
         housenr: "1",
@@ -47,10 +47,10 @@ const employees = [
     {
         psnr: 3,
         tag: null,
+        profilepicture: '/profilepictures/3_Anna_Kalkhofer.jpg',
         username: 'KALANN',
         firstname: 'Anna',
         lastname: 'Kalkhofer',
-        password: '123456',
         birthdate: "01.01.2009",
         street: "Sesamstraße",
         housenr: "1",
@@ -67,7 +67,6 @@ const employees = [
         username: 'KALCHR',
         firstname: 'Christian',
         lastname: 'Kalkhofer',
-        password: '123456',
         birthdate: "01.01.1979",
         street: "Sesamstraße",
         housenr: "1",
@@ -81,10 +80,10 @@ const employees = [
     {
         psnr: 5,
         tag: null,
+        profilepicture: '/profilepictures/5_Evelyn_Kalkhofer.jpg',
         username: 'KALEVE',
         firstname: 'Evelyn',
         lastname: 'Kalkhofer',
-        password: '123456',
         birthdate: "01.01.1981",
         street: "Sesamstraße",
         housenr: "1",
@@ -101,7 +100,6 @@ const employees = [
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
-        password: '123456',
         birthdate: "01.01.2000",
         street: "Sesamstraße",
         housenr: "1",
@@ -118,7 +116,6 @@ const employees = [
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
-        password: '123456',
         birthdate: "01.01.2000",
         street: "Sesamstraße",
         housenr: "1",
@@ -135,7 +132,6 @@ const employees = [
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
-        password: '123456',
         birthdate: "01.01.2000",
         street: "Sesamstraße",
         housenr: "1",
@@ -152,7 +148,6 @@ const employees = [
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
-        password: '123456',
         birthdate: "01.01.2000",
         street: "Sesamstraße",
         housenr: "1",
@@ -169,7 +164,6 @@ const employees = [
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
-        password: '123456',
         birthdate: "01.01.2000",
         street: "Sesamstraße",
         housenr: "1",
@@ -186,7 +180,6 @@ const employees = [
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
-        password: '123456',
         birthdate: "01.01.2000",
         street: "Sesamstraße",
         housenr: "1",
@@ -203,7 +196,6 @@ const employees = [
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
-        password: '123456',
         birthdate: "01.01.2000",
         street: "Sesamstraße",
         housenr: "1",
@@ -239,92 +231,108 @@ const unregisteredtags = [
     }
 ]
 
-const timestamps = [
+const timerecords = [
     {
         emppsnr: 1,
         date: "2024-01-01",
-        timestamps: [
+        stamps: [
             {
+                number: 1,
                 type: "kommt",
-                time: new Date("2024-01-01T05:00:00Z")
+                timestamp: new Date("2024-01-01T05:00:00Z")
             },
             {
+                number: 2,
                 type: "geht",
-                time: new Date("2024-01-01T12:00:00Z")
+                timestamp: new Date("2024-01-01T12:00:00Z")
             },
             {
+                number: 3,
                 type: "kommt",
-                time: new Date("2024-01-01T13:00:00Z")
+                timestamp: new Date("2024-01-01T13:00:00Z")
             },
             {
+                number: 4,
                 type: "geht",
-                time: new Date("2024-01-01T18:00:00Z")
+                timestamp: new Date("2024-01-01T18:00:00Z")
             }
         ]
     },
     {
         emppsnr: 2,
         date: "2024-01-01",
-        timestamps: [
+        stamps: [
             {
+                number: 1,
                 type: "kommt",
-                time: new Date("2024-01-01T06:00:00Z")
+                timestamp: new Date("2024-01-01T05:00:00Z")
             },
             {
+                number: 2,
                 type: "geht",
-                time: new Date("2024-01-01T12:30:00Z")
+                timestamp: new Date("2024-01-01T12:00:00Z")
             },
             {
+                number: 3,
                 type: "kommt",
-                time: new Date("2024-01-01T13:00:00Z")
+                timestamp: new Date("2024-01-01T13:00:00Z")
             },
             {
+                number: 4,
                 type: "geht",
-                time: new Date("2024-01-01T16:00:00Z")
+                timestamp: new Date("2024-01-01T18:00:00Z")
             }
         ]
     },
     {
         emppsnr: 1,
         date: "2024-01-02",
-        timestamps: [
+        stamps: [
             {
+                number: 1,
                 type: "kommt",
-                time: new Date("2024-01-02T05:00:00Z")
+                timestamp: new Date("2024-01-02T05:00:00Z")
             },
             {
+                number: 2,
                 type: "geht",
-                time: new Date("2024-01-02T12:00:00Z")
+                timestamp: new Date("2024-01-02T12:00:00Z")
             },
             {
+                number: 3,
                 type: "kommt",
-                time: new Date("2024-01-02T13:00:00Z")
+                timestamp: new Date("2024-01-02T13:00:00Z")
             },
             {
+                number: 4,
                 type: "geht",
-                time: new Date("2024-01-02T18:00:00Z")
+                timestamp: new Date("2024-01-02T18:00:00Z")
             }
         ]
     },
     {
         emppsnr: 2,
         date: "2024-01-02",
-        timestamps: [
+        stamps: [
             {
+                number: 1,
                 type: "kommt",
-                time: new Date("2024-01-02T06:00:00Z")
+                timestamp: new Date("2024-01-02T05:00:00Z")
             },
             {
+                number: 2,
                 type: "geht",
-                time: new Date("2024-01-02T12:30:00Z")
+                timestamp: new Date("2024-01-02T12:00:00Z")
             },
             {
+                number: 3,
                 type: "kommt",
-                time: new Date("2024-01-02T13:00:00Z")
+                timestamp: new Date("2024-01-02T13:00:00Z")
             },
             {
+                number: 4,
                 type: "geht",
-                time: new Date("2024-01-02T16:00:00Z")
+                timestamp: new Date("2024-01-02T18:00:00Z")
             }
         ]
     }
@@ -333,6 +341,6 @@ const timestamps = [
 module.exports = {
     users,
     employees,
-    timestamps,
+    timerecords,
     unregisteredtags
 };

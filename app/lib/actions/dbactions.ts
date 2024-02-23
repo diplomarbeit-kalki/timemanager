@@ -47,10 +47,11 @@ export async function createEmployee(formData: FormData) {
 
     const employee = {
         psnr: newPsnr,
+        tag: null,
+        pictureSrc: null,
         username: createUsername(firstname, lastname),
         firstname: firstname,
         lastname: lastname,
-        password: null,
         birthdate: birthdate,
         street: street,
         housenr: housenr,

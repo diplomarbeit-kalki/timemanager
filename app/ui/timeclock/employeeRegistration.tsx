@@ -1,12 +1,11 @@
 'use client';
 import clsx from "clsx";
 import Image from "next/image"
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 export default function EmployeeRegistration() {
   const [message, setMessage] = React.useState<string>("Keine Websocket Verbindung");
-  const [pictureSrc, setPictureSrc] = React.useState<string>(`/profile_picture_demo.jpg`);
+  const [pictureSrc, setPictureSrc] = React.useState<string>(`/profilepictures/placeholder.jpg`);
   const [employeeId, setEmployeeId] = useState("");
   const [imageLoaded, setImageLoaded] = useState(true);
 
@@ -14,7 +13,7 @@ export default function EmployeeRegistration() {
     setImageLoaded(false);
   };
 
-  const imageUrl = imageLoaded ? pictureSrc : '/profile_picture_demo.jpg';
+  const imageUrl = imageLoaded ? pictureSrc : '/profilepictures/placeholder.jpg';
 
   // Clsx Color adaption for Status field
   const statusKommt = message.includes('kommt');
@@ -38,18 +37,18 @@ export default function EmployeeRegistration() {
   useEffect(() => {
     const ws = new WebSocket('ws://localhost:3002');
 
-    ws.onmessage = (event) => {
+    ws.onmessage = async (event) => {
       const receivedObj = JSON.parse(event.data);
       if (receivedObj.message) {
         setMessage(receivedObj.message);
       }
-      if (receivedObj.psnr) {
-        setPictureSrc(`/employees/${receivedObj.psnr}.jpg`);
+      if (receivedObj.profilepicture) {
+        setPictureSrc(receivedObj.profilepicture);
       }
       console.log("Daten vom Server erhalten: " + event.data);
       setTimeout(() => {
         setMessage("Warte auf NFC Tags");
-        setPictureSrc("/profile_picture_demo.jpg");
+        setPictureSrc('/profilepictures/placeholder.jpg');
       }, 5000);
     };
 
