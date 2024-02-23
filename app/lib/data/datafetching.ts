@@ -1,8 +1,6 @@
 import { unstable_noStore as noStore } from 'next/cache';
-import DatabaseClient from '@/app/lib/mongodb/client';
 import axios from 'axios';
 
-const client = new DatabaseClient();
 const ITEMS_PER_PAGE = 5;
 
 export async function fetchFilteredEmployees(query: string, currentPage: number) {
