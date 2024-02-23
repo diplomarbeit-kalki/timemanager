@@ -7,6 +7,14 @@ import React, { useState, useEffect } from "react";
 export default function EmployeeRegistration() {
   const [message, setMessage] = React.useState<string>("Keine Websocket Verbindung");
   const [pictureSrc, setPictureSrc] = React.useState<string>(`/profile_picture_demo.jpg`);
+  const [employeeId, setEmployeeId] = useState("");
+  const [imageLoaded, setImageLoaded] = useState(true);
+
+  const handleImageError = () => {
+    setImageLoaded(false);
+  };
+
+  const imageUrl = imageLoaded ? pictureSrc : '/profile_picture_demo.jpg';
 
   // Clsx Color adaption for Status field
   const statusKommt = message.includes('kommt');
@@ -31,10 +39,17 @@ export default function EmployeeRegistration() {
     const ws = new WebSocket('ws://localhost:3002');
 
     ws.onmessage = (event) => {
-      setMessage(event.data);
+      const receivedObj = JSON.parse(event.data);
+      if (receivedObj.message) {
+        setMessage(receivedObj.message);
+      }
+      if (receivedObj.psnr) {
+        setPictureSrc(`/employees/${receivedObj.psnr}.jpg`);
+      }
       console.log("Daten vom Server erhalten: " + event.data);
       setTimeout(() => {
         setMessage("Warte auf NFC Tags");
+        setPictureSrc("/profile_picture_demo.jpg");
       }, 5000);
     };
 
@@ -42,8 +57,6 @@ export default function EmployeeRegistration() {
       ws.close();
     };
   }, []);
-
-  const [employeeId, setEmployeeId] = useState("");
 
   const handleNumberClick = (number: number) => {
     setEmployeeId((prevEmployeeId) => prevEmployeeId + number.toString());
@@ -73,10 +86,6 @@ export default function EmployeeRegistration() {
       if (response.ok) {
         // Erfolgreich
         console.log('Daten erfolgreich an den REST-Service gesendet');
-        setPictureSrc(`/employees/${employeeId}.jpg`);
-        setTimeout(() => {
-          setPictureSrc("/profile_picture_demo.jpg");
-        }, 5000);
       } else {
         // Fehler beim Server
         console.error('Fehler beim Senden der Daten an den REST-Service');
@@ -92,8 +101,9 @@ export default function EmployeeRegistration() {
       <div className="px-20 lg:px-28 pt-8 md:border-r-2 lg:border-r-2">
         <div className="relative h-64 w-64 mx-auto">
           <Image
-            src={pictureSrc}
-            alt="Proflbild"
+            src={imageUrl}
+            alt="Profilbild"
+            onError={handleImageError}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             style={{
