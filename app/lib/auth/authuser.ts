@@ -1,11 +1,8 @@
 "use server"
-import DatabaseClient from '@/app/lib/mongodb/client';
 import type { User } from '@/app/lib/data/definitions';
 import axios from 'axios';
 
 export async function getUser(username: string): Promise<User | undefined> {
-
-    const client = new DatabaseClient();
     try {
         const apiUrl = `http://localhost:3001/users/byUsername?username=${username}`;
         const response = await axios.get(apiUrl);
