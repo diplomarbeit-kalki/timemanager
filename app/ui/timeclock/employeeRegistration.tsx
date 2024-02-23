@@ -6,7 +6,8 @@ import React, { useState, useEffect } from "react";
 
 export default function EmployeeRegistration() {
   const [message, setMessage] = React.useState<string>("Keine Websocket Verbindung");
-  
+  const [pictureSrc, setPictureSrc] = React.useState<string>(`/profile_picture_demo.jpg`);
+
   // Clsx Color adaption for Status field
   const statusKommt = message.includes('kommt');
   const statusGeht = message.includes('geht');
@@ -15,9 +16,9 @@ export default function EmployeeRegistration() {
     'sm:block md:block lg:block',
     'select-none',
     'rounded-lg',
-    'mt-8 lg:mt-12', 
-    'p-4 lg:p-6', 
-    'text-zinc-700 dark:text-white text-center', 
+    'mt-8 lg:mt-12',
+    'p-4 lg:p-6',
+    'text-zinc-700 dark:text-white text-center',
     'border border-gray-300 dark:border-gray-500',
     {
       'bg-green-500': statusKommt,
@@ -34,8 +35,7 @@ export default function EmployeeRegistration() {
       console.log("Daten vom Server erhalten: " + event.data);
       setTimeout(() => {
         setMessage("Warte auf NFC Tags");
-    }, 5000);
-
+      }, 5000);
     };
 
     return () => {
@@ -61,6 +61,7 @@ export default function EmployeeRegistration() {
     try {
       console.log("Submit Button clicked");
       const timestamp = new Date();
+      console.log(`POST Anfrage: { "psnr": ${employeeId}, "timestamp": ${JSON.stringify(timestamp)} }`);
       const response = await fetch('http://localhost:3001/timerecords', {
         method: 'POST',
         headers: {
@@ -72,6 +73,10 @@ export default function EmployeeRegistration() {
       if (response.ok) {
         // Erfolgreich
         console.log('Daten erfolgreich an den REST-Service gesendet');
+        setPictureSrc(`/employees/${employeeId}.jpg`);
+        setTimeout(() => {
+          setPictureSrc("/profile_picture_demo.jpg");
+        }, 5000);
       } else {
         // Fehler beim Server
         console.error('Fehler beim Senden der Daten an den REST-Service');
@@ -87,8 +92,8 @@ export default function EmployeeRegistration() {
       <div className="px-20 lg:px-28 pt-8 md:border-r-2 lg:border-r-2">
         <div className="relative h-64 w-64 mx-auto">
           <Image
-            src='/profile_picture_demo.jpg'
-            alt="Logo"
+            src={pictureSrc}
+            alt="Proflbild"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             style={{
