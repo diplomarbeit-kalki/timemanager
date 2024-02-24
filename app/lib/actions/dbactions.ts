@@ -120,3 +120,19 @@ export async function deleteEmployee(id: string) {
         console.log("dbActions---Fehler: " + error);
     }
 }
+
+export async function deleteTransponder(id: string) {
+
+    try {
+        const response = await axios.delete(`http://localhost:3001/unregisteredtags/withId/${id}`);
+        if (response.status === 200) {
+            console.log("dbActions---Transponder mit id: " + id + " gelöscht");
+        } else {
+            throw new Error('Failed to delete transponder');
+        }
+        revalidatePath('/dashboard/transponder');
+    }
+    catch (error) {
+        console.log("dbActions---Fehler: " + error);
+    }
+}

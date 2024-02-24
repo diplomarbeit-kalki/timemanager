@@ -1,7 +1,5 @@
 import { fetchUnregisteredtags } from '@/app/lib/data/datafetching';
-import { getSessionUsername } from '@/app/lib/session/sessionactions';
-import { revalidatePath } from 'next/cache';
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from 'react';
+import { AssignTransponder, DeleteTransponder } from '@/app/ui/transponder/buttons';
 
 interface UnregisteredTag {
     _id: string;
@@ -32,7 +30,7 @@ export default async function TransponderTable() {
                                                 {unregisteredtag.uid}
                                             </p>
                                             <p className="text-xl font-medium">
-                                                {createdDate.getHours()}:{createdDate.getMinutes()}
+                                                {createdDate.getHours().toString().padStart(2, '0')}:{createdDate.getMinutes().toString().padStart(2, '0')}
 
                                             </p>
                                             <p className="text-xl font-medium">
@@ -69,8 +67,13 @@ export default async function TransponderTable() {
                                         className="w-full border-b dark:border-gray-600 py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
                                     >
                                         <td className="whitespace-nowrap px-5 py-3">{unregisteredtag.uid}</td>
-                                        <td className="whitespace-nowrap px-5 py-5">{createdDate.getHours()}:{createdDate.getMinutes()}</td>
-                                        <td className="whitespace-nowrap px-5 py-5">{createdDate.getDate()}.{createdDate.getMonth() + 1}.{createdDate.getFullYear()}</td>
+                                        <td className="whitespace-nowrap px-5 py-5">{createdDate.getHours().toString().padStart(2, '0')}:{createdDate.getMinutes().toString().padStart(2, '0')}</td>
+                                        <td className="whitespace-nowrap px-5 py-5">{createdDate.getDate()}.{createdDate.getMonth() + 1}.{createdDate.getFullYear()}
+                                            <div className="flex justify-end gap-3">
+                                                <AssignTransponder id={String(unregisteredtag._id)} />
+                                                <DeleteTransponder id={String(unregisteredtag._id)} />
+                                            </div>
+                                        </td>
                                     </tr>
                                 );
                             })}
