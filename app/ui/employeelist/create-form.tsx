@@ -13,10 +13,10 @@ import { createEmployee } from '@/app/lib/actions/dbactions';
 
 export default async function Form() {
 
-    const createHospitationCons = createEmployee.bind(null);
+    const createEmployeeCons = createEmployee.bind(null);
 
     return (
-        <form action={createHospitationCons}>
+        <form action={createEmployeeCons}>
             <div className="rounded-md bg-gray-50 dark:bg-zinc-900 dark:text-gray-300 p-4 md:p-6">
                 {/* Vorname und Nachname in einer Zeile */}
                 <div className="flex mb-4 gap-4">

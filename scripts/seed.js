@@ -1,4 +1,4 @@
-const { users, employees, timerecords, unregisteredtags } = require('../app/lib/data/placeholder-data.js');
+const { users, employees, timerecords, transponders } = require('../app/lib/data/placeholder-data.js');
 const bcrypt = require('bcrypt');
 const { MongoClient } = require('mongodb');;
 
@@ -80,25 +80,25 @@ async function seedEmployees(client) {
     }
 }
 
-async function seedUnregisteredtags(client) {
+async function seedTransponders(client) {
     try {
-        const insertedUnregisteredtags = await Promise.all(
-            unregisteredtags.map(async (unregisteredtag) => {
+        const insertedTransponders = await Promise.all(
+            transponders.map(async (transponder) => {
 
                 const databaseObj = client.db("kalki");
-                const collectionObj = databaseObj.collection("unregisteredtags");
+                const collectionObj = databaseObj.collection("transponders");
 
                 const result = await collectionObj.insertOne({
-                    uid: unregisteredtag.uid,
+                    uid: transponder.uid,
                     createddate: new Date,
                 });
             }),
         );
 
-        console.log(`seed---Seeded ${insertedUnregisteredtags.length} unregisteredtags`);
+        console.log(`seed---Seeded ${insertedTransponders.length} transponders`);
 
         return {
-            unregisteredtags: insertedUnregisteredtags,
+            transponders: insertedTransponders,
         };
     }
     catch (error) {
@@ -143,9 +143,9 @@ async function main() {
 
     await seedUsers(client);
     await seedEmployees(client);
-    await seedUnregisteredtags(client);
+    await seedTransponders(client);
     await seedTimerecords(client);
-    
+
     try {
         await client.close();
         console.log('seed---Verbindung zur Datenbank erfolgreich geschlossen');

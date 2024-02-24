@@ -1,7 +1,16 @@
 import { lusitana } from '@/app/ui/fonts';
 import TransponderTable from '@/app/ui/transponder/table';
+import { AssignTransponderModal, DeleteTransponderModal } from "@/app/ui/transponder/modal";
 
-export default async function Page() {
+type SearchParamProps = {
+    searchParams: Record<string, string> | null | undefined;
+};
+
+export default async function Page({ searchParams }: SearchParamProps) {
+
+    const showAssignTransponder = searchParams?.showAssignTransponder;
+    const showDeleteTransponder = searchParams?.showDeleteTransponder;
+    const id = searchParams?.id;
 
     return (
         <div className="w-full">
@@ -13,6 +22,8 @@ export default async function Page() {
             <div>
                 <TransponderTable />
             </div>
+            {showAssignTransponder && <AssignTransponderModal id={String(id)}/>}
+            {showDeleteTransponder && <DeleteTransponderModal id={String(id)}/>}
         </div>
     )
 }
