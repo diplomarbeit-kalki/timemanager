@@ -131,22 +131,22 @@ export async function assignTransponder(id: string, formData: FormData) {
     const { psnr } = AssignTransponder.parse({
         psnr: formData.get('psnr')
     });
-    console.log("Psnr: " + psnr);
-    console.log("Id: " + id);
     const apiUrl = `http://localhost:3001/transponders/byId/${id}`;
     const transponder = await axios.get(apiUrl);
-    console.log("Data: " + JSON.stringify(transponder.data));
     const tag = transponder.data.uid;
-    console.log("Tag: " + tag);
     const body = {
         "tag": tag
     };
-    console.log("body: " + JSON.stringify(body));
     try {
         const response = await axios.put(`http://localhost:3001/employees/withPsnr/${psnr}`, body);
         if (response.status === 200) {
             console.log("dbActions---Mitarbeiter mit psnr: " + psnr + " erfolgreich Tag hinzugefügt");
-        } else {
+            const response2 = await axios.delete(`http://localhost:3001/transponders/withId/${id}`);
+            if (response.status === 200) {
+                console.log("dbActions---Transponder erfolgreich gelöscht");
+            }
+        }
+        else {
             throw new Error('Failed to update employee');
         }
         revalidatePath('/dashboard/transponder');
