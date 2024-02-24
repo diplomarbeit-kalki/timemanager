@@ -81,7 +81,6 @@ export async function fetchTimestampsFromDay(
         return response.data;
     }
     catch (error) {
-        console.error('datafetching---Fehler:', error);
     }
 }
 
@@ -97,6 +96,5 @@ export async function fetchTimerecordsFromPeriod(
         return response.data;
     }
     catch (error) {
-        console.error('datafetching---Fehler:', error);
     }
 }

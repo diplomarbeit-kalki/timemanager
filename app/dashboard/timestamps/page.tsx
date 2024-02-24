@@ -1,7 +1,6 @@
 import { lusitana } from '@/app/ui/fonts';
 import TimestampsTable from '@/app/ui/timestamps/table';
 import { SearchPsnr, SearchDate } from '@/app/ui/timestamps/search';
-import { CreateTimestamp } from '@/app/ui/timestamps/buttons';
 
 export default async function Page({
     searchParams,
