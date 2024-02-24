@@ -12,7 +12,7 @@ const users = [
 const employees = [
     {
         psnr: 1,
-        tag: "FF:FF:FF:FF:FF:FF:FA",
+        tag: null,
         profilepicture: '/profilepictures/1_Elias_Kalkhofer.jpg',
         username: 'KALELI',
         firstname: 'Elias',
@@ -208,25 +208,53 @@ const employees = [
     }
 ];
 
-const unregisteredtags = [
+const transponders = [
     {
-        uid: "FF:FF:FF:FF:FF:FF:FB",
+        uid: "AA:AA:AA:AA:AA:AA:AA",
         createddate: null
     },
     {
-        uid: "FF:FF:FF:FF:FF:FF:FC",
+        uid: "BB:BB:BB:BB:BB:BB:BB",
         createddate: null
     },
     {
-        uid: "FF:FF:FF:FF:FF:FF:FD",
+        uid: "CC:CC:CC:CC:CC:CC:CC",
         createddate: null
     },
     {
-        uid: "FF:FF:FF:FF:FF:FF:FE",
+        uid: "DD:DD:DD:DD:DD:DD:DD",
+        createddate: null
+    },
+    {
+        uid: "EE:EE:EE:EE:EE:EE:EE",
         createddate: null
     },
     {
         uid: "FF:FF:FF:FF:FF:FF:FF",
+        createddate: null
+    },
+    {
+        uid: "AF:AF:AF:AF:AF:AF:AF",
+        createddate: null
+    },
+    {
+        uid: "BF:BF:BF:BF:BF:BF:BF",
+        createddate: null
+    },
+    {
+        uid: "CF:CF:CF:CF:CF:CF:CF",
+        createddate: null
+    },
+    {
+        uid: "DF:DF:DF:DF:DF:DF:DF",
+        createddate: null
+    },
+    {
+        uid: "EF:EF:EF:EF:EF:EF:EF",
+        createddate: null
+    },
+    {
+        uid: "FA:FA:FA:FA:FA:FA:FA",
         createddate: null
     }
 ]
@@ -291,7 +319,7 @@ const timerecords = [
             {
                 number: 1,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T05:00:00Z")
+                timestamp: new Date("2024-01-02T06:00:00Z")
             },
             {
                 number: 2,
@@ -301,7 +329,7 @@ const timerecords = [
             {
                 number: 3,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T13:00:00Z")
+                timestamp: new Date("2024-01-02T12:30:00Z")
             },
             {
                 number: 4,
@@ -317,7 +345,7 @@ const timerecords = [
             {
                 number: 1,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T05:00:00Z")
+                timestamp: new Date("2024-01-02T06:00:00Z")
             },
             {
                 number: 2,
@@ -327,7 +355,7 @@ const timerecords = [
             {
                 number: 3,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T13:00:00Z")
+                timestamp: new Date("2024-01-02T12:30:00Z")
             },
             {
                 number: 4,
@@ -342,5 +370,5 @@ module.exports = {
     users,
     employees,
     timerecords,
-    unregisteredtags
+    transponders
 };

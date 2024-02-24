@@ -1,4 +1,4 @@
-import { fetchUnregisteredtags } from '@/app/lib/data/datafetching';
+import { fetchTransponders } from '@/app/lib/data/datafetching';
 import { AssignTransponder, DeleteTransponder } from '@/app/ui/transponder/buttons';
 
 interface UnregisteredTag {
@@ -9,7 +9,7 @@ interface UnregisteredTag {
 
 export default async function TransponderTable() {
 
-    const unregisteredtags = await fetchUnregisteredtags();
+    const unregisteredtags = await fetchTransponders();
 
     return (
         <div className="mt-6 flow-root">

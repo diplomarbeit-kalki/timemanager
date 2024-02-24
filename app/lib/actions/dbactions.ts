@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import axios from 'axios';
 
-const FormSchema = z.object({
+const EmployeeFormSchema = z.object({
     id: z.string(),
     firstname: z.string(),
     lastname: z.string(),
@@ -17,8 +17,15 @@ const FormSchema = z.object({
     email: z.string()
 });
 
-const CreateEmployee = FormSchema.omit({ id: true });
-const UpdateEmployee = FormSchema.omit({ id: true });
+const AssignTagFormSchema = z.object({
+    psnr: z.string()
+});
+
+const CreateEmployee = EmployeeFormSchema.omit({ id: true });
+const UpdateEmployee = EmployeeFormSchema.omit({ id: true });
+const AssignTransponder = AssignTagFormSchema.omit({});
+
+
 
 export async function createEmployee(formData: FormData) {
     const { firstname, lastname, birthdate, street, housenr, residence, postalcode, phonenr, email } = CreateEmployee.parse({
@@ -104,7 +111,6 @@ export async function updateEmployee(id: string, formData: FormData) {
     }
 }
 
-
 export async function deleteEmployee(id: string) {
 
     try {
@@ -121,10 +127,42 @@ export async function deleteEmployee(id: string) {
     }
 }
 
+export async function assignTransponder(id: string, formData: FormData) {
+    const { psnr } = AssignTransponder.parse({
+        psnr: formData.get('psnr')
+    });
+    console.log("Psnr: " + psnr);
+    console.log("Id: " + id);
+    const apiUrl = `http://localhost:3001/transponders/byId/${id}`;
+    const transponder = await axios.get(apiUrl);
+    console.log("Data: " + JSON.stringify(transponder.data));
+    const tag = transponder.data.uid;
+    console.log("Tag: " + tag);
+    const body = {
+        "tag": tag
+    };
+    console.log("body: " + JSON.stringify(body));
+    try {
+        const response = await axios.put(`http://localhost:3001/employees/withPsnr/${psnr}`, body);
+        if (response.status === 200) {
+            console.log("dbActions---Mitarbeiter mit psnr: " + psnr + " erfolgreich Tag hinzugefügt");
+        } else {
+            throw new Error('Failed to update employee');
+        }
+        revalidatePath('/dashboard/transponder');
+    }
+    catch (error) {
+        console.log("dbActions---Fehler: " + error);
+    }
+    finally {
+        redirect('/dashboard/transponder');
+    }
+}
+
 export async function deleteTransponder(id: string) {
 
     try {
-        const response = await axios.delete(`http://localhost:3001/unregisteredtags/withId/${id}`);
+        const response = await axios.delete(`http://localhost:3001/transponders/withId/${id}`);
         if (response.status === 200) {
             console.log("dbActions---Transponder mit id: " + id + " gelöscht");
         } else {
@@ -134,5 +172,8 @@ export async function deleteTransponder(id: string) {
     }
     catch (error) {
         console.log("dbActions---Fehler: " + error);
+    }
+    finally {
+        redirect('/dashboard/transponder');
     }
 }

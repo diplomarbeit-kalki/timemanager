@@ -58,10 +58,10 @@ export async function fetchEmployeeById(id: string) {
     }
 }
 
-export async function fetchUnregisteredtags() {
+export async function fetchTransponders() {
     noStore();
     try {
-        const apiUrl = `http://localhost:3001/unregisteredtags`;
+        const apiUrl = `http://localhost:3001/transponders`;
         const response = await axios.get(apiUrl);
         return response.data;
     }
