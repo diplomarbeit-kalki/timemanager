@@ -3,13 +3,11 @@ import { ShowEmployee, UpdateEmployee, DeleteEmployee } from './buttons';
 
 export default async function EmployeeTable({
     query,
-    currentPage,
 }: {
     query: string;
-    currentPage: number;
 }) {
 
-    const employees = await fetchFilteredEmployees(query, currentPage);
+    const employees = await fetchFilteredEmployees(query);
 
     return (
         <div className="mt-6 flow-root">

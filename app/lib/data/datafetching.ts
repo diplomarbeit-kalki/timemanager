@@ -3,10 +3,10 @@ import axios from 'axios';
 
 const ITEMS_PER_PAGE = 5;
 
-export async function fetchFilteredEmployees(query: string, currentPage: number) {
+export async function fetchFilteredEmployees(query: string) {
     noStore();
     try {
-        const apiUrl = `http://localhost:3001/employees/filtered?query=${query}&itemsPerPage=${ITEMS_PER_PAGE}&currentPage=${currentPage}`;
+        const apiUrl = `http://localhost:3001/employees/filtered?query=${query}`;
         const response = await axios.get(apiUrl);
         return response.data;
     }
