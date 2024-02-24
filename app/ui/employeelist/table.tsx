@@ -1,10 +1,5 @@
 import { fetchFilteredEmployees } from '@/app/lib/data/datafetching';
-import { getSessionUsername } from '@/app/lib/session/sessionactions';
-import { revalidatePath } from 'next/cache';
 import { ShowEmployee, UpdateEmployee, DeleteEmployee } from './buttons';
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from 'react';
-
-
 
 export default async function EmployeeTable({
     query,
