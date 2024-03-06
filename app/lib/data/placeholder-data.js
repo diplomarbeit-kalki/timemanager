@@ -282,9 +282,13 @@ const timerecords = [
             {
                 number: 4,
                 type: "geht",
-                timestamp: new Date("2024-01-01T18:00:00Z")
+                timestamp: new Date("2024-01-01T14:00:00Z")
             }
-        ]
+        ],
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
     },
     {
         emppsnr: 2,
@@ -334,9 +338,13 @@ const timerecords = [
             {
                 number: 4,
                 type: "geht",
-                timestamp: new Date("2024-01-02T18:00:00Z")
+                timestamp: new Date("2024-01-02T13:00:00Z")
             }
-        ]
+        ],
+        workingtime: "06:30",
+        workingminutes: "390",
+        breaktime: "00:30",
+        breakminutes: "30",
     },
     {
         emppsnr: 2,
@@ -363,6 +371,96 @@ const timerecords = [
                 timestamp: new Date("2024-01-02T18:00:00Z")
             }
         ]
+    },
+    {
+        emppsnr: 1,
+        date: "2024-01-03",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: new Date("2024-01-02T06:15:00Z")
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: new Date("2024-01-02T12:00:00Z")
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: new Date("2024-01-02T12:45:00Z")
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: new Date("2024-01-02T13:00:00Z")
+            }
+        ],
+        workingtime: "05:30",
+        workingminutes: "330",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 1,
+        date: "2024-01-04",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: new Date("2024-01-02T06:00:00Z")
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: new Date("2024-01-02T12:00:00Z")
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: new Date("2024-01-02T12:25:00Z")
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: new Date("2024-01-02T14:30:00Z")
+            }
+        ],
+        workingtime: "08:05",
+        workingminutes: "485",
+        breaktime: "00:25",
+        breakminutes: "25",
+    },
+    {
+        emppsnr: 1,
+        date: "2024-01-05",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: new Date("2024-01-02T07:15:00Z")
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: new Date("2024-01-02T12:20:00Z")
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: new Date("2024-01-02T12:50:00Z")
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: new Date("2024-01-02T14:00:00Z")
+            }
+        ],
+        workingtime: "06:15",
+        workingminutes: "375",
+        breaktime: "00:30",
+        breakminutes: "30",
     }
 ]
 
