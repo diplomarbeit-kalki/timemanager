@@ -26,7 +26,7 @@ export default async function Page({
       <div className="mt-4 flex items-center justify-between md:mt-8">
         <div className="flex w-full justify-between items-center">
           <div className="flex-grow mr-2">
-            <Search placeholder="Hospitationen durchsuchen ..." />
+            <Search placeholder="Mitarbeiter suchen ..." />
           </div>
           <CreateEmployee />
         </div>
