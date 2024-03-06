@@ -125,6 +125,9 @@ export async function deleteEmployee(id: string) {
     catch (error) {
         console.log("dbActions---Fehler: " + error);
     }
+    finally {
+        redirect('/dashboard/employeelist');
+    }
 }
 
 export async function assignTransponder(id: string, formData: FormData) {

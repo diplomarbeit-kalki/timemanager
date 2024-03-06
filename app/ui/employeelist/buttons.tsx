@@ -40,14 +40,12 @@ export function UpdateEmployee({ id }: { id: string }) {
 }
 
 export function DeleteEmployee({ id }: { id: string }) {
-    const deleteEmployeeWithId = deleteEmployee.bind(null, id);
-
     return (
-        <form action={deleteEmployeeWithId}>
-            <button className="rounded-md border border-gray-400 dark:border-gray-500 p-2 bg-red-300 dark:bg-red-500 hover:bg-red-400 dark:hover:bg-red-600">
-                <span className="sr-only">Delete</span>
-                <TrashIcon className="w-5" />
-            </button>
-        </form>
+        <Link
+            href={`/dashboard/employeelist/?showDeleteEmployee=true&id=${id}`}
+            className="rounded-md border border-gray-400 dark:border-gray-500 p-2 bg-red-300 dark:bg-red-600 hover:bg-red-400 dark:hover:bg-red-700 dark:text-gray-300"
+        >
+            <TrashIcon className="w-5" />
+        </Link>
     );
 }
