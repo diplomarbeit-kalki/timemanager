@@ -24,12 +24,11 @@ export default async function Page({
         <h1 className={`${lusitana.className} text-2xl`}>Mitarbeiter</h1>
       </div>
       <div className="mt-4 flex items-center justify-between md:mt-8">
-        <div className="flex w-full justify-between items-center">
-          <div className="flex-grow mr-2">
+        <div className="flex flex-row gap-4 w-full justify-between items-center">
+          <div className="flex-grow">
             <Search placeholder="Mitarbeiter suchen ..." />
           </div>
           <EmployeeArchive />
-
           <CreateEmployee />
         </div>
       </div>
