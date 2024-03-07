@@ -1,4 +1,4 @@
-const { users, employees, timerecords, transponders } = require('../app/lib/data/placeholder-data.js');
+const { users, employees, timerecords, transponders, employeesArchive } = require('../app/lib/data/placeholder-data.js');
 const bcrypt = require('bcrypt');
 const { MongoClient } = require('mongodb');;
 
@@ -80,6 +80,46 @@ async function seedEmployees(client) {
     }
 }
 
+async function seedEmployeesArchive(client) {
+    try {
+        const insertedEmployeesArchive = await Promise.all(
+            employeesArchive.map(async (employeeArchive) => {
+
+                const databaseObj = client.db("kalki");
+                const collectionObj = databaseObj.collection("employeesArchive");
+
+                const result = await collectionObj.insertOne({
+                    psnr: employeeArchive.psnr,
+                    tag: employeeArchive.tag,
+                    profilepicture: employeeArchive.profilepicture,
+                    username: employeeArchive.username,
+                    firstname: employeeArchive.firstname,
+                    lastname: employeeArchive.lastname,
+                    birthdate: employeeArchive.birthdate,
+                    street: employeeArchive.street,
+                    housenr: employeeArchive.housenr,
+                    residence: employeeArchive.residence,
+                    postalcode: employeeArchive.postalcode,
+                    phonenr: employeeArchive.phonenr,
+                    email: employeeArchive.email,
+                    createddate: new Date,
+                    editeddate: new Date,
+                });
+            }),
+        );
+
+        console.log(`seed---Seeded ${insertedEmployeesArchive.length} employeesArchived`);
+
+        return {
+            employeesArchive: insertedEmployeesArchive,
+        };
+    }
+    catch (error) {
+        console.error('seed---Fehler seeding employeesArchived:', error);
+        throw error;
+    }
+}
+
 async function seedTransponders(client) {
     try {
         const insertedTransponders = await Promise.all(
@@ -143,6 +183,7 @@ async function main() {
 
     await seedUsers(client);
     await seedEmployees(client);
+    await seedEmployeesArchive(client);
     await seedTransponders(client);
     await seedTimerecords(client);
 

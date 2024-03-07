@@ -111,6 +111,46 @@ export async function updateEmployee(id: string, formData: FormData) {
     }
 }
 
+export async function archiveEmployee(id: string) {
+
+    try {
+        console.log("ID:" + id);
+        const response = await axios.put(`http://localhost:3001/employeesArchive/intoArchive/withId/${id}`);
+        if (response.status === 200) {
+            console.log("dbActions---Mitarbeiter mit id: " + id + " erfolgreich archiviert");
+        } else {
+            throw new Error('Failed to archive employee');
+        }
+        revalidatePath('/dashboard/employeelist');
+    }
+    catch (error) {
+        console.log("dbActions---Fehler: " + error);
+    }
+    finally {
+        redirect('/dashboard/employeelist');
+    }
+}
+
+export async function restoreEmployee(id: string) {
+
+    try {
+        console.log("ID:" + id);
+        const response = await axios.put(`http://localhost:3001/employees/fromArchive/withId/${id}`);
+        if (response.status === 200) {
+            console.log("dbActions---Mitarbeiter mit id: " + id + " erfolgreich wiederhergestellt");
+        } else {
+            throw new Error('Failed to resotre employee');
+        }
+        revalidatePath('/dashboard/employeelist/archive');
+    }
+    catch (error) {
+        console.log("dbActions---Fehler: " + error);
+    }
+    finally {
+        redirect('/dashboard/employeelist/archive');
+    }
+}
+
 export async function deleteEmployee(id: string) {
 
     try {
@@ -120,13 +160,32 @@ export async function deleteEmployee(id: string) {
         } else {
             throw new Error('Failed to delete employee');
         }
-        revalidatePath('/dashboard/employeelist');
+        revalidatePath('/dashboard/employeelist/archive');
     }
     catch (error) {
         console.log("dbActions---Fehler: " + error);
     }
     finally {
-        redirect('/dashboard/employeelist');
+        redirect('/dashboard/employeelist/archive');
+    }
+}
+
+export async function deleteEmployeeArchive(id: string) {
+
+    try {
+        const response = await axios.delete(`http://localhost:3001/employeesArchive/withId/${id}`);
+        if (response.status === 200) {
+            console.log("dbActions---Mitarbeiter mit id: " + id + " gelöscht");
+        } else {
+            throw new Error('Failed to delete employee');
+        }
+        revalidatePath('/dashboard/employeelist/archive');
+    }
+    catch (error) {
+        console.log("dbActions---Fehler: " + error);
+    }
+    finally {
+        redirect('/dashboard/employeelist/archive');
     }
 }
 

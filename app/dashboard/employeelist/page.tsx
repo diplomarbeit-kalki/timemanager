@@ -1,21 +1,21 @@
 import { lusitana } from '@/app/ui/fonts';
-import EmployeeTable from '@/app/ui/employeelist/table';
+import EmployeesTable from '@/app/ui/employeelist/employees-table';
 import Search from '@/app/ui/employeelist/search';
-import { CreateEmployee } from '@/app/ui/employeelist/buttons';
-import { DeleteEmployeeModal } from "@/app/ui/employeelist/modal";
+import { EmployeeArchive, CreateEmployee } from '@/app/ui/employeelist/buttons';
+import { ArchiveEmployeeModal } from "@/app/ui/employeelist/modal";
 
 export default async function Page({
   searchParams,
 }: {
   searchParams?: {
     query?: string;
-    showDeleteEmployee?: string;
+    showArchiveEmployee?: string;
     id?: string;
   };
 }) {
 
   const query = searchParams?.query || '';
-  const showDeleteEmployee = searchParams?.showDeleteEmployee;
+  const showArchiveEmployee = searchParams?.showArchiveEmployee;
   const id = searchParams?.id;
 
   return (
@@ -28,14 +28,15 @@ export default async function Page({
           <div className="flex-grow mr-2">
             <Search placeholder="Mitarbeiter suchen ..." />
           </div>
+          <EmployeeArchive />
+
           <CreateEmployee />
         </div>
       </div>
       <div>
-        <EmployeeTable query={query} />
+        <EmployeesTable query={query} />
       </div>
-      {showDeleteEmployee && <DeleteEmployeeModal id={String(id)} />}
+      {showArchiveEmployee && <ArchiveEmployeeModal id={String(id)} />}
     </div>
-
   )
 }
