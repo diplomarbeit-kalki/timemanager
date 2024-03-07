@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export async function getUser(username: string): Promise<User | undefined> {
     try {
-        const apiUrl = `http://localhost:3001/users/byUsername?username=${username}`;
+        const apiUrl = `http://localhost:3001/users/byUsername/${username}`;
         const response = await axios.get(apiUrl);
         return response.data;
     }

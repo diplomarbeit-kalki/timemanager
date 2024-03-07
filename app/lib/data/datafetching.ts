@@ -15,41 +15,10 @@ export async function fetchFilteredEmployees(query: string) {
     }
 }
 
-export async function fetchNextFreePsnr() {
-    noStore();
-    try {
-        const apiUrl = `http://localhost:3001/employees/nextFreePsnr`;
-        const response = await axios.get(apiUrl);
-        return response.data;
-    }
-    catch (error) {
-        console.error('datafetching---Fehler:', error);
-    }
-}
-
-
-export async function fetchEmployeesPages(query: string) {
-    noStore();
-    try {
-        var apiUrl;
-        if (query == "") {
-            apiUrl = `http://localhost:3001/employees/numberOfPages?itemsPerPage=${ITEMS_PER_PAGE}`;
-        }
-        else {
-            apiUrl = `http://localhost:3001/employees/numberOfPages?query=${query}&itemsPerPage=${ITEMS_PER_PAGE}`;
-        }
-        const response = await axios.get(apiUrl);
-        return response.data;
-    }
-    catch (error) {
-        console.error('datafetching---Fehler:', error);
-    }
-}
-
 export async function fetchEmployeeById(id: string) {
     noStore();
     try {
-        const apiUrl = `http://localhost:3001/employees/byId?id=${id}`;
+        const apiUrl = `http://localhost:3001/employees/byId/${id}`;
         const response = await axios.get(apiUrl);
         return response.data;
     }
