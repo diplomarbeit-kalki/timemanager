@@ -37,7 +37,7 @@ export function SearchPsnr({ placeholder }: { placeholder: string }) {
                 }}
                 defaultValue={searchParams.get('psnr')?.toString()}
             />
-            <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-white" />
+            <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-gray-200" />
         </div>
     );
 }
@@ -74,7 +74,7 @@ export function SearchFirstDate({ placeholder }: { placeholder: string }) {
                 }}
                 defaultValue={searchParams.get('firstdate')?.toString()}
             />
-            <CalendarIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-white" />
+            <CalendarIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-gray-200" />
         </div>
     );
 }
@@ -111,7 +111,7 @@ export function SearchLastDate({ placeholder }: { placeholder: string }) {
                 }}
                 defaultValue={searchParams.get('lastdate')?.toString()}
             />
-            <CalendarIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-white" />
+            <CalendarIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-gray-200" />
         </div>
     );
 }
