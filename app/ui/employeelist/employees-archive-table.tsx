@@ -1,13 +1,14 @@
-import { fetchFilteredEmployees } from '@/app/lib/data/datafetching';
-import { ShowEmployee, UpdateEmployee, DeleteEmployee } from './buttons';
+import { fetchFilteredEmployeesArchive } from '@/app/lib/data/datafetching';
+import { ShowEmployeeArchive, RestoreEmployee, DeleteEmployee } from './buttons';
 
-export default async function EmployeeTable({
+
+export default async function EmployeesArchiveTable({
     query,
 }: {
     query: string;
 }) {
 
-    const employees = await fetchFilteredEmployees(query);
+    const employees = await fetchFilteredEmployeesArchive(query);
 
     return (
         <div className="mt-6 flow-root">
@@ -84,8 +85,8 @@ export default async function EmployeeTable({
                                     <td className="whitespace-nowrap px-5 py-5 hidden lg:block">{employee.email}</td>
                                     <td className="whitespace-nowrap py-3 pl-6 pr-3">
                                         <div className="flex justify-end gap-3">
-                                            <ShowEmployee id={String(employee._id)} />
-                                            <UpdateEmployee id={String(employee._id)} />
+                                            <ShowEmployeeArchive id={String(employee._id)} />
+                                            <RestoreEmployee id={String(employee._id)} />
                                             <DeleteEmployee id={String(employee._id)} />
                                         </div>
                                     </td>

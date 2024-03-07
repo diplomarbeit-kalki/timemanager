@@ -1,10 +1,5 @@
 import Breadcrumbs from '@/app/ui/employeelist/breadcrumbs';
 import Form from '@/app/ui/employeelist/create-form';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Anbieten',
-}
 
 export default async function Page() {
   return (

@@ -95,54 +95,6 @@ const employees = [
         editeddate: null
     },
     {
-        psnr: 6,
-        tag: null,
-        username: 'TESVOR',
-        firstname: 'Vorname',
-        lastname: 'Nachname',
-        birthdate: "2000-01-01",
-        street: "Sesamstraße",
-        housenr: "1",
-        residence: "Sesamdorf",
-        postalcode: "4545",
-        phonenr: "066012345678",
-        email: "test@gmail.com",
-        createddate: null,
-        editeddate: null
-    },
-    {
-        psnr: 7,
-        tag: null,
-        username: 'TESVOR',
-        firstname: 'Vorname',
-        lastname: 'Nachname',
-        birthdate: "2000-01-01",
-        street: "Sesamstraße",
-        housenr: "1",
-        residence: "Sesamdorf",
-        postalcode: "4545",
-        phonenr: "066012345678",
-        email: "test@gmail.com",
-        createddate: null,
-        editeddate: null
-    },
-    {
-        psnr: 8,
-        tag: null,
-        username: 'TESVOR',
-        firstname: 'Vorname',
-        lastname: 'Nachname',
-        birthdate: "2000-01-01",
-        street: "Sesamstraße",
-        housenr: "1",
-        residence: "Sesamdorf",
-        postalcode: "4545",
-        phonenr: "066012345678",
-        email: "test@gmail.com",
-        createddate: null,
-        editeddate: null
-    },
-    {
         psnr: 9,
         tag: null,
         username: 'TESVOR',
@@ -192,6 +144,54 @@ const employees = [
     },
     {
         psnr: 12,
+        tag: null,
+        username: 'TESVOR',
+        firstname: 'Vorname',
+        lastname: 'Nachname',
+        birthdate: "2000-01-01",
+        street: "Sesamstraße",
+        housenr: "1",
+        residence: "Sesamdorf",
+        postalcode: "4545",
+        phonenr: "066012345678",
+        email: "test@gmail.com",
+        createddate: null,
+        editeddate: null
+    },
+    {
+        psnr: 13,
+        tag: null,
+        username: 'TESVOR',
+        firstname: 'Vorname',
+        lastname: 'Nachname',
+        birthdate: "2000-01-01",
+        street: "Sesamstraße",
+        housenr: "1",
+        residence: "Sesamdorf",
+        postalcode: "4545",
+        phonenr: "066012345678",
+        email: "test@gmail.com",
+        createddate: null,
+        editeddate: null
+    },
+    {
+        psnr: 14,
+        tag: null,
+        username: 'TESVOR',
+        firstname: 'Vorname',
+        lastname: 'Nachname',
+        birthdate: "2000-01-01",
+        street: "Sesamstraße",
+        housenr: "1",
+        residence: "Sesamdorf",
+        postalcode: "4545",
+        phonenr: "066012345678",
+        email: "test@gmail.com",
+        createddate: null,
+        editeddate: null
+    },
+    {
+        psnr: 15,
         tag: null,
         username: 'TESVOR',
         firstname: 'Vorname',
@@ -314,7 +314,11 @@ const timerecords = [
                 type: "geht",
                 timestamp: new Date("2024-01-01T18:00:00Z")
             }
-        ]
+        ],
+        workingtime: "13:00",
+        workingminutes: "780",
+        breaktime: "01:00",
+        breakminutes: "60",
     },
     {
         emppsnr: 1,
@@ -464,9 +468,61 @@ const timerecords = [
     }
 ]
 
+const employeesArchive = [
+    {
+        psnr: 6,
+        tag: null,
+        username: 'MAYELI',
+        firstname: 'Elias',
+        lastname: 'Mayer',
+        birthdate: "2003-01-01",
+        street: "Sesamstraße",
+        housenr: "1",
+        residence: "Sesamdorf",
+        postalcode: "4545",
+        phonenr: "066012345678",
+        email: "mayer.elias@gmail.com",
+        createddate: null,
+        editeddate: null
+    },
+    {
+        psnr: 7,
+        tag: null,
+        username: 'MAYGAB',
+        firstname: 'Gabriel',
+        lastname: 'Mayer',
+        birthdate: "2005-01-01",
+        street: "Sesamstraße",
+        housenr: "1",
+        residence: "Sesamdorf",
+        postalcode: "4545",
+        phonenr: "066012345678",
+        email: "mayer.gabriel.dominik@gmail.com",
+        createddate: null,
+        editeddate: null
+    },
+    {
+        psnr: 8,
+        tag: null,
+        username: 'MAYANN',
+        firstname: 'Anna',
+        lastname: 'Mayer',
+        birthdate: "2009-01-01",
+        street: "Sesamstraße",
+        housenr: "1",
+        residence: "Sesamdorf",
+        postalcode: "4545",
+        phonenr: "066012345678",
+        email: "mayer.anna@gmail.com",
+        createddate: null,
+        editeddate: null
+    }
+]
+
 module.exports = {
     users,
     employees,
     timerecords,
-    transponders
+    transponders,
+    employeesArchive
 };
