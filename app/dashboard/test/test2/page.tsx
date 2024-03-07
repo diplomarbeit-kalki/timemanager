@@ -3,7 +3,7 @@ import { lusitana } from '@/app/ui/fonts';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import { fetchTestPdf } from '@/app/lib/data/datafetching';
 
-export async function DownloadButton({ }: {}) {
+function DownloadButton({ }: {}) {
 
     const testfunctionCons = fetchTestPdf.bind(null);
 
