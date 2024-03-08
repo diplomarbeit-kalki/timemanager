@@ -33,9 +33,9 @@ export default async function Page({
                     ]}
                 />
             </div>
-            <div className="mt-4 flex items-center justify-between md:mt-8">
-                <div className="flex w-full justify-between items-center">
-                    <div className="flex-grow mr-2">
+            <div className="-mt-1 flex items-center justify-between md:mt-2 lg:mt-2">
+                <div className="flex flex-row gap-4 w-full justify-between items-center">
+                    <div className="flex-grow">
                         <Search placeholder="Archivierten Mitarbeiter suchen ..." />
                     </div>
                 </div>

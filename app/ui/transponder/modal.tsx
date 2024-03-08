@@ -1,27 +1,30 @@
 import { assignTransponder, deleteTransponder } from "@/app/lib/actions/dbactions";
+import Selector from "@/app/ui/transponder/selector";
 import Link from "next/link";
 
 export function AssignTransponderModal({ id }: { id: string }) {
 
-    const assignTransponderCons = assignTransponder.bind(null, id);
+    const assignTransponderConst = assignTransponder.bind(null, id);
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
             <div className="p-8 w-102 shadow-lg rounded-md bg-white dark:bg-zinc-950">
                 <div className="text-left">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Mitarbeiter einem Transponder zuordnen</h3>
                     <div className="py-3">
-                        <p className="text-lg text-gray-500 dark:text-gray-400">Transponder ID: <span className="text-gray-900 dark:text-white">{id}</span></p>
+                        {/* <p className="text-lg text-gray-500 dark:text-gray-400">Transponder ID: <span className="text-gray-900 dark:text-white">{id}</span></p> */}
                         <p className="text-lg text-gray-900 dark:text-gray-400 mt-4 mb-2">Wählen Sie einen Mitarbeiter aus</p>
-                        <form action={assignTransponderCons}>
-                            <input
+                        <form action={assignTransponderConst}>
+                            {/* <input
                                 id="psnr"
                                 name="psnr"
-                                type="number"
+                                type="text"
                                 placeholder="Personalnummer"
                                 min="0"
                                 className="peer block w-full rounded-md border bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                                 required
-                            />
+                            /> */}
+                            <Selector />
+                            
 
                             <div className="flex flex-row justify-end mt-8 gap-4">
                                 <Link
