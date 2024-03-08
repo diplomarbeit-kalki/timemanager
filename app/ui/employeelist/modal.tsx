@@ -1,4 +1,4 @@
-import { archiveEmployee, restoreEmployee, deleteEmployeeArchive } from '@/app/lib/actions/dbactions';
+import { archiveEmployee, restoreEmployee, deleteEmployeeArchive, deleteTagFromEmployee } from '@/app/lib/actions/dbactions';
 import Link from "next/link";
 
 export function DeleteEmployeeModal({ id }: { id: string }) {
@@ -91,6 +91,39 @@ export function RestoreEmployeeModal({ id }: { id: string }) {
                                 <button className="px-4 py-2 bg-green-600 text-white text-base font-medium rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-gray-300">
                                     <span>
                                         Aktivieren
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export function DeleteTagFromEmployeeModal({ id }: { id: string }) {
+
+    const deleteTagFromEmployeeCons = deleteTagFromEmployee.bind(null, id);
+    const backUrl = `/dashboard/employeelist/${id}/edit`;
+    return (
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
+            <div className="p-8 w-102 shadow-lg rounded-md bg-white dark:bg-zinc-950">
+                <div className="text-center">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Tag entfernen</h3>
+                    <div className="mt-2 px-7 py-3">
+                        <p className="text-lg text-gray-900 dark:text-gray-400">Wollen Sie den Tag wirklich entfernen? </p>
+                        <form action={deleteTagFromEmployeeCons}>
+                            <div className="flex flex-row justify-end mt-8 gap-4">
+                                <Link
+                                    href={backUrl}
+                                    className="px-4 py-2 bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-700 text-white text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-300"
+                                >
+                                    Zurück
+                                </Link>
+                                <button className="px-4 py-2 bg-red-600 text-white text-base font-medium rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                                    <span>
+                                        Entfernen
                                     </span>
                                 </button>
                             </div>

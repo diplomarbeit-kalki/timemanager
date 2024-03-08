@@ -2,12 +2,23 @@ import Form from '@/app/ui/employeelist/edit-form';
 import Breadcrumbs from '@/app/ui/employeelist/breadcrumbs';
 import { fetchEmployeeById } from '@/app/lib/data/datafetching';
 import { notFound } from 'next/navigation';
-import { ObjectId } from 'mongodb';
+import { DeleteTagFromEmployeeModal  } from "@/app/ui/employeelist/modal";
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({
+    params,
+    searchParams
+}: {
+    params: {
+        id: string
+    };
+    searchParams?: {
+        showDeleteTag?: string;
+    };
+}) {
 
     const id = params.id;
     const employee = await fetchEmployeeById(id);
+    const showDeleteTag = searchParams?.showDeleteTag;
 
     if (!employee) {
         notFound();
@@ -40,6 +51,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                 ]}
             />
             <Form employee={employeeForm} />
+            {showDeleteTag && <DeleteTagFromEmployeeModal id={String(id)} />}
         </main>
     );
 }
