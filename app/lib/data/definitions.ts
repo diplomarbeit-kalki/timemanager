@@ -15,4 +15,5 @@ export type EmployeeForm = {
   postalcode: string;
   phonenr: string;
   email: string;
+  tag: string;
 }

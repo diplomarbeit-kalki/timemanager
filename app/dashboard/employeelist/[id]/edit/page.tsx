@@ -24,6 +24,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         postalcode: employee.postalcode,
         phonenr: employee.phonenr,
         email: employee.email,
+        tag: employee.tag
     }
 
     return (

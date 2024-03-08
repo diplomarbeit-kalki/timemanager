@@ -14,7 +14,8 @@ const EmployeeFormSchema = z.object({
     residence: z.string(),
     postalcode: z.string(),
     phonenr: z.string(),
-    email: z.string()
+    email: z.string(),
+    tag: z.string()
 });
 const CreateEmployee = EmployeeFormSchema.omit({ id: true });
 const UpdateEmployee = EmployeeFormSchema.omit({ id: true });
@@ -46,7 +47,7 @@ export async function createEmployee(formData: FormData) {
         residence: residence,
         postalcode: postalcode,
         phonenr: phonenr,
-        email: email,
+        email: email
     };
 
     try {
@@ -88,7 +89,7 @@ export async function updateEmployee(id: string, formData: FormData) {
         residence: residence,
         postalcode: postalcode,
         phonenr: phonenr,
-        email: email,
+        email: email
     };
 
     try {

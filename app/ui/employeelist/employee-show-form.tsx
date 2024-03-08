@@ -6,7 +6,8 @@ import {
     HashtagIcon,
     BuildingOffice2Icon,
     PhoneIcon,
-    AtSymbolIcon
+    AtSymbolIcon,
+    KeyIcon
 } from '@heroicons/react/24/outline';
 import { EmployeeForm } from '@/app/lib/data/definitions';
 import Link from 'next/link';
@@ -64,6 +65,7 @@ export default function Form({
                         </div>
                     </div>
                 </div>
+
                 {/* Geburtsdatum */}
                 <div className="mb-4">
                     <label htmlFor="birthdate" className="mb-2 block text-sm font-medium">
@@ -151,6 +153,7 @@ export default function Form({
                             </div>
                         </div>
                     </div>
+
                     <div className="flex-1">
                         {/* Postleitzahl */}
                         <label htmlFor="postalcode" className="mb-2 block text-sm font-medium">
@@ -172,6 +175,7 @@ export default function Form({
                         </div>
                     </div>
                 </div>
+
                 {/* Telefonnummer */}
                 <div className="mb-4">
                     <label htmlFor="phonenr" className="mb-2 block text-sm font-medium">
@@ -192,6 +196,7 @@ export default function Form({
                         </div>
                     </div>
                 </div>
+
                 {/* E-Mail */}
                 <div className="mb-4">
                     <label htmlFor="email" className="mb-2 block text-sm font-medium">
@@ -212,7 +217,29 @@ export default function Form({
                         </div>
                     </div>
                 </div>
+
+                {/* Transponder-ID */}
+                <div className="mb-4">
+                    <label htmlFor="transponder" className="mb-2 block text-sm font-medium">
+                        Transponder-ID:
+                    </label>
+                    <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                            <input
+                                id="transponder"
+                                name="transponder"
+                                type="string"
+                                placeholder="Transponder-ID"
+                                className="peer block w-full rounded-md border border-gray-200 bg-gray-50 dark:bg-zinc-950 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                defaultValue={employee.tag}
+                                disabled
+                            />
+                            <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div className="mt-6 flex justify-end gap-4">
                 <Link
                     href="/dashboard/employeelist"

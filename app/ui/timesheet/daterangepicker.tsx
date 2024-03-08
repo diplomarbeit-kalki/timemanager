@@ -229,12 +229,12 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
                       <button
                         type="button"
                         key={i}
-                        className={`rounded-lg border dark:border-zinc-600 flex min-w-full p-2 justify-center hover:bg-blue-700 dark:hover:bg-zinc-400 hover:text-white dark:hover:text-black ${
+                        className={`rounded-lg border dark:border-zinc-600 flex min-w-full p-2 justify-center hover:bg-blue-700 dark:hover:bg-zinc-500 hover:text-white dark:hover:text-black ${
                           dateFns.isSameDay(
                             new Date(currYear, currMonth, v),
                             dateRange.startDate!
                           )
-                            ? "bg-blue-700 dark:bg-zinc-400 text-white dark:text-black"
+                            ? "bg-blue-700 dark:bg-zinc-500 text-white dark:text-black"
                             : ""
                         } ${
                           dateFns.isSameDay(
@@ -248,7 +248,7 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
                             new Date(currYear, currMonth, v),
                             dateRange.endDate!
                           )
-                            ? "bg-blue-700 dark:bg-zinc-400 text-white dark:text-black"
+                            ? "bg-blue-700 dark:bg-zinc-500 text-white dark:text-black"
                             : ""
                         } ${
                           isBetween(
