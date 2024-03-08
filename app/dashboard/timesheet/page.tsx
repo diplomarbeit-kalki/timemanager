@@ -1,7 +1,7 @@
 import { lusitana } from '@/app/ui/fonts';
 import TimesheetTable from '@/app/ui/timesheet/table';
 import { SearchPsnr, SearchFirstDate, SearchLastDate } from '@/app/ui/timesheet/search';
-import DateRangePicker from '@/app/ui/timesheet/calendar';
+import DateRangePicker from '@/app/ui/timesheet/daterangepicker';
 
 export default async function Page({
     searchParams,
@@ -45,11 +45,13 @@ export default async function Page({
                         </div>
                     </div> */}
                     <div className='flex flex-col gap-2'>
-                        <span>Arbeitszeitraum auswählen (Anfangsdatum bis Enddatum)</span>
+                        <span className='text-gray-300'>Arbeitszeitraum auswählen</span>
                         <div>
                             <DateRangePicker />
                         </div>
                     </div>
+
+                    <div className='flex flex-col mx-20'></div>
                 </div>
             </div>
             <div className="mt-6">
