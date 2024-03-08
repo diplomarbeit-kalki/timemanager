@@ -4,6 +4,8 @@ import { PowerIcon } from "@heroicons/react/24/outline";
 import { signOut } from '@/auth';
 import ThemeSwitch from "../ThemeSwitch";
 
+import Image from "next/image"
+
 export default function SideNav() {
     return (
         <div className="flex h-full flex-col px-3 py-4 md:px-2">
@@ -18,6 +20,13 @@ export default function SideNav() {
             <div className="flex grow flex-row justify-between space-x-1 md:flex-col md:space-x-0 md:space-y-2">
                 <NavLinks />
                 <div className="hidden h-auto w-full grow rounded-md bg-gray-50 dark:bg-zinc-900 md:block"></div>
+                {/* <div className="flex flex-wrap items-center cursor-pointer border border-gray-500 rounded-full px-2 py-1">
+                    <Image src='/public/profilepictures/1_Elias_Kalkhofer.jpg' width={9} height={9} className="w-9 h-9 rounded-full border-2 border-white" alt={"Thumbnail Picture"} />
+                    <div className="ml-4">
+                        <p className="text-sm text-white">Tobias Mitterwallner</p>
+                        <p className="text-xs text-gray-300">Administrator</p>
+                    </div>
+                </div> */}
                 <form action={async () => {
                     'use server';
                     await signOut();
