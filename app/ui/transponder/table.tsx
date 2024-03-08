@@ -68,7 +68,7 @@ export default async function TransponderTable() {
                                     >
                                         <td className="whitespace-nowrap px-5 py-3">{unregisteredtag.uid}</td>
                                         <td className="whitespace-nowrap px-5 py-5">{createdDate.getHours().toString().padStart(2, '0')}:{createdDate.getMinutes().toString().padStart(2, '0')}</td>
-                                        <td className="whitespace-nowrap px-5 py-5">{createdDate.getDate()}.{createdDate.getMonth() + 1}.{createdDate.getFullYear()}</td>
+                                        <td className="whitespace-nowrap px-5 py-5">{createdDate.getDate().toString().padStart(2, '0')}.{(createdDate.getMonth() + 1).toString().padStart(2, '0')}.{createdDate.getFullYear()}</td>
                                         <td className="whitespace-nowrap px-5 py-5">
                                             <div className="flex justify-end gap-3">
                                                 <AssignTransponder id={String(unregisteredtag._id)} />

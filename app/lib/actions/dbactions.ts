@@ -16,16 +16,13 @@ const EmployeeFormSchema = z.object({
     phonenr: z.string(),
     email: z.string()
 });
+const CreateEmployee = EmployeeFormSchema.omit({ id: true });
+const UpdateEmployee = EmployeeFormSchema.omit({ id: true });
 
 const AssignTagFormSchema = z.object({
     psnr: z.string()
 });
-
-const CreateEmployee = EmployeeFormSchema.omit({ id: true });
-const UpdateEmployee = EmployeeFormSchema.omit({ id: true });
 const AssignTransponder = AssignTagFormSchema.omit({});
-
-
 
 export async function createEmployee(formData: FormData) {
     const { firstname, lastname, birthdate, street, housenr, residence, postalcode, phonenr, email } = CreateEmployee.parse({
@@ -198,7 +195,7 @@ export async function assignTransponder(id: string, formData: FormData) {
     const tag = transponder.data.uid;
     const body = {
         "tag": tag
-    };
+    };;
     try {
         const response = await axios.put(`http://localhost:3001/employees/withPsnr/${psnr}`, body);
         if (response.status === 200) {

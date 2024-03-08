@@ -11,26 +11,25 @@ interface Employee {
   psnr: number;
   firstname: string;
   lastname: string;
-//   profilepicture: string;
 }
 
 const Selector: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[] | null>(null);
-  const [queryA, setQueryA] = useState("");
+  const [query, setQuery] = useState("");
   const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/employees/withoutTransponder/filtered?query=${queryA}`)
+    fetch(`http://localhost:3001/employees/withoutTransponder/filtered?query=${query}`)
       .then((res) => res.json())
       .then((data: Employee[]) => {
         setEmployees(data);
       });
-  }, [queryA]);
+  }, [query]);
 
   const handleSearch = useDebouncedCallback((term: string) => { // Specify type for term
-    setQueryA(`${term}`);
-  }, 300);
+    setQuery(`${term}`);
+  }, 500);
 
   const handleClick = (employee: Employee) => {
     if (employee._id !== selectedEmployee?._id) {
@@ -49,6 +48,8 @@ const Selector: React.FC = () => {
         {selectedEmployee ? (
           <>
             {selectedEmployee.psnr} {selectedEmployee.firstname} {selectedEmployee.lastname}
+            {/* Versteckter input für psnr */}
+            <input type="hidden" name="psnr" value={`${selectedEmployee.psnr}`} />
           </>
         ) : (
           "Mitarbeiter auswählen"
@@ -56,32 +57,32 @@ const Selector: React.FC = () => {
         <ChevronDownIcon className="h-5 md:ml-4" />
       </div>
       <ul className={clsx('bg-white dark:bg-zinc-900 text-gray-500 dark:text-gray-300 mt-2 rounded-b-md overflow-y-auto', {
-            'max-h-64': open,
-            'max-h-0': !open
-        })}>
+        'max-h-64': open,
+        'max-h-0': !open
+      })}>
         <div className='flex items-center px-2 sticky top-0 bg-white dark:bg-zinc-900 border-b-2 border-gray-200 dark:border-zinc-700 dark:text-gray-300'>
-            <MagnifyingGlassIcon className='h-5' />
-            <input
-              type="text"
-              onChange={(e) => handleSearch(e.target.value)} // Use target.value for search term
-              placeholder='Mitarbeiter suchen'
-              className='bg-white dark:bg-zinc-900 placeholder:text-gray-500 dark:placeholder:text-gray-500 p-2 outline-none'
-            />
+          <MagnifyingGlassIcon className='h-5' />
+          <input
+            type="text"
+            onChange={(e) => handleSearch(e.target.value)} // Use target.value for search term
+            placeholder='Mitarbeiter suchen'
+            className='bg-white dark:bg-zinc-900 placeholder:text-gray-500 dark:placeholder:text-gray-500 p-2 outline-none'
+          />
         </div>
         {employees?.map((employee) => (
-            <li
-                key={employee._id}
-                className={clsx(
-                    'p-2 text-sm hover:bg-gray-200 dark:hover:bg-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300',
-                    employee.psnr,
-                    employee.firstname,
-                    employee.lastname,
-                    { 'bg-gray-100 dark:bg-zinc-800': selectedEmployee?._id === employee._id }
-                )}
-                onClick={() => handleClick(employee)}
-                >
-                {employee.psnr} {employee.firstname} {employee.lastname}
-            </li>
+          <li
+            key={employee._id}
+            className={clsx(
+              'p-2 text-sm hover:bg-gray-200 dark:hover:bg-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300',
+              employee.psnr,
+              employee.firstname,
+              employee.lastname,
+              { 'bg-gray-100 dark:bg-zinc-800': selectedEmployee?._id === employee._id }
+            )}
+            onClick={() => handleClick(employee)}
+          >
+            {employee.psnr} {employee.firstname} {employee.lastname}
+          </li>
         ))}
       </ul>
     </div>
