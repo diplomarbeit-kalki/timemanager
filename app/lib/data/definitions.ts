@@ -5,8 +5,8 @@ export type User = {
 };
 
 export type EmployeeForm = {
-  tag: string | number | readonly string[] | undefined;
   id: string;
+  tag: string | undefined;
   firstname: string;
   lastname: string;
   birthdate: string;
@@ -16,5 +16,4 @@ export type EmployeeForm = {
   postalcode: string;
   phonenr: string;
   email: string;
-  tag: string;
 }

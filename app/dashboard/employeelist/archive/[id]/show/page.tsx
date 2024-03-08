@@ -1,4 +1,4 @@
-import Form from '@/app/ui/employeelist/employeeArchive-show-form';
+import Form from '@/app/ui/employeelist/employee-archive-show-form';
 import Breadcrumbs from '@/app/ui/employeelist/breadcrumbs';
 import { fetchEmployeeArchiveById } from '@/app/lib/data/datafetching';
 import { notFound } from 'next/navigation';
@@ -23,6 +23,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         postalcode: employee.postalcode,
         phonenr: employee.phonenr,
         email: employee.email,
+        tag: employee.tag,
     }
 
     return (
