@@ -14,18 +14,7 @@ export function AssignTransponderModal({ id }: { id: string }) {
                         {/* <p className="text-lg text-gray-500 dark:text-gray-400">Transponder ID: <span className="text-gray-900 dark:text-white">{id}</span></p> */}
                         <p className="text-lg text-gray-900 dark:text-gray-400 mt-4 mb-2">Wählen Sie einen Mitarbeiter aus</p>
                         <form action={assignTransponderConst}>
-                            {/* <input
-                                id="psnr"
-                                name="psnr"
-                                type="text"
-                                placeholder="Personalnummer"
-                                min="0"
-                                className="peer block w-full rounded-md border bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-                                required
-                            /> */}
                             <Selector />
-                            
-
                             <div className="flex flex-row justify-end mt-8 gap-4">
                                 <Link
                                     href="/dashboard/transponder"
@@ -33,8 +22,7 @@ export function AssignTransponderModal({ id }: { id: string }) {
                                 >
                                     Zurück
                                 </Link>
-
-                                <button className="px-4 py-2 bg-green-600 text-white text-base font-medium rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                                <button className="px-4 py-2 bg-green-600 text-white text-base font-medium rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-gray-300 " type="submit">
                                     <span>
                                         Zuweisen
                                     </span>
