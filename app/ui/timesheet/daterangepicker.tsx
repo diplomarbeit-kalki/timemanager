@@ -229,6 +229,7 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
                       <button
                         type="button"
                         key={i}
+                        // TODO: Fix bg-color bug with boundary days in selected Range
                         className={`rounded-lg border dark:border-zinc-600 flex min-w-full p-2 justify-center hover:bg-blue-700 dark:hover:bg-zinc-400 hover:text-white dark:hover:text-black ${
                           dateFns.isSameDay(
                             new Date(currYear, currMonth, v),
