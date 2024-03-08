@@ -1,6 +1,7 @@
 import { lusitana } from '@/app/ui/fonts';
 import TimestampsTable from '@/app/ui/timestamps/table';
 import { SearchPsnr, SearchDate } from '@/app/ui/timestamps/search';
+import SimpleDatePicker from '@/app/ui/timestamps/simpledatepicker';
 
 export default async function Page({
     searchParams,
@@ -23,15 +24,15 @@ export default async function Page({
             <div className="mt-4 md:mt-8">
                 <div className='grid grid-flow-row md:grid-flow-col lg:grid-flow-col gap-4 md:gap-10 lg:gap-10'>
                     <div className='flex flex-col gap-2'>
-                        <span className='text-gray-300'>Personalnummer</span>
+                        <span className='text-gray-600 dark:text-gray-300'>Personalnummer</span>
                         <div className='flow-root'>
                             <SearchPsnr placeholder='PSNR' />
                         </div>
                     </div>
                     <div className='flex flex-col gap-2'>
-                        <span className='text-gray-300'>Datum</span>
+                        <span className='text-gray-600 dark:text-gray-300'>Datum</span>
                         <div className='flow-root'>
-                            <SearchDate placeholder='YYYY-MM-DD' />
+                            <SimpleDatePicker />
                         </div>
                     </div>
                 </div>

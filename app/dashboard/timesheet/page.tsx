@@ -27,7 +27,7 @@ export default async function Page({
                 className='grid grid-flow-row md:grid-flow-col lg:grid-flow-col gap-4 md:gap-10 lg:gap-10'
                 >
                     <div className="flex flex-col gap-2">
-                        <span className='text-gray-300'>Personalnummer</span>
+                        <span className='text-gray-600 dark:text-gray-300'>Personalnummer</span>
                         <div className="flow-root">
                             <SearchPsnr placeholder="PSNR" />
                         </div>
@@ -45,13 +45,11 @@ export default async function Page({
                         </div>
                     </div> */}
                     <div className='flex flex-col gap-2'>
-                        <span className='text-gray-300'>Arbeitszeitraum auswählen</span>
+                        <span className='text-gray-600 dark:text-gray-300'>Arbeitszeitraum auswählen</span>
                         <div>
                             <DateRangePicker />
                         </div>
                     </div>
-
-                    <div className='flex flex-col mx-20'></div>
                 </div>
             </div>
             <div className="mt-6">
