@@ -21,20 +21,21 @@ export default async function Page({
                 <h1 className={`${lusitana.className} text-2xl`}>Zeitstempel</h1>
             </div>
             <div className="mt-4 md:mt-8">
-                <div className="flex items-center gap-x-4"> {/* Abstand zwischen den Elementen */}
-                    <div className="flex items-center gap-2">
-                        <span>Psnr:</span>
-                        <div className="flex-grow">
-                            <SearchPsnr placeholder="PSNR" />
+                <div className='grid grid-flow-row md:grid-flow-col lg:grid-flow-col gap-4 md:gap-10 lg:gap-10'>
+                    <div className='flex flex-col gap-2'>
+                        <span className='text-gray-300'>Personalnummer</span>
+                        <div className='flow-root'>
+                            <SearchPsnr placeholder='PSNR' />
                         </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <span>Datum:</span>
-                        <div className="flex-grow">
-                            <SearchDate placeholder="YYYY-MM-DD" />
+                    <div className='flex flex-col gap-2'>
+                        <span className='text-gray-300'>Datum</span>
+                        <div className='flow-root'>
+                            <SearchDate placeholder='YYYY-MM-DD' />
                         </div>
                     </div>
                 </div>
+
             </div>
             <div className="mt-6">
                 <TimestampsTable psnr={psnr} date={date} />
