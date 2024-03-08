@@ -93,3 +93,14 @@ export function DeleteEmployee({ id }: { id: string }) {
         </Link>
     );
 }
+
+export function DeleteTransponderFromEmployee({ id }: { id: string }) {
+    return (
+        <Link
+            href={`/dashboard/employeelist/${id}/edit?showDeleteTag=true`}
+            className="rounded-md border border-gray-400 dark:border-gray-500 p-2 bg-red-300 dark:bg-red-600 hover:bg-red-400 dark:hover:bg-red-700 dark:text-gray-300"
+        >
+             <TrashIcon className="w-5" />
+        </Link>
+    );
+}

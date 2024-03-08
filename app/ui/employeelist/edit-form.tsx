@@ -13,7 +13,7 @@ import { EmployeeForm } from '@/app/lib/data/definitions';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { updateEmployee } from '@/app/lib/actions/dbactions';
-import { DeleteTransponder } from '../transponder/buttons';
+import { DeleteTransponderFromEmployee } from '@/app/ui/employeelist/buttons';
 
 export default function Form({
     employee
@@ -247,7 +247,7 @@ export default function Form({
                     </div>
 
                     <div className='mt-7 flex'>
-                        <DeleteTransponder id={String()} />
+                        <DeleteTransponderFromEmployee id={employee.id}/>
                     </div>
                 </div>
 

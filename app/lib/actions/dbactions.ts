@@ -187,6 +187,27 @@ export async function deleteEmployeeArchive(id: string) {
     }
 }
 
+export async function deleteTagFromEmployee(id: string) {
+    id = id.toString();
+    const url = `/dashboard/employeelist/${id}/edit`;
+    console.log("URL: " + url);
+    try {
+        const response = await axios.delete(`http://localhost:3001/employees/tag/withId/${id}`);
+        if (response.status === 200) {
+            console.log(`dbactions---Tag von Employee mit id ${id} entfernt.`);
+        } else {
+            throw new Error('Failed to delete employee');
+        }
+        revalidatePath(url);
+    }
+    catch (error) {
+        console.log("dbActions---Fehler: " + error);
+    }
+    finally {
+        redirect(url);
+    }
+}
+
 export async function assignTransponder(id: string, formData: FormData) {
     const { psnr } = AssignTransponder.parse({
         psnr: formData.get('psnr')
