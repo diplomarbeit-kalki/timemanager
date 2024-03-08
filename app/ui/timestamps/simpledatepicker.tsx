@@ -100,12 +100,12 @@ const SimpleDatePicker: FC<Props> = ({ initialDate, onUpdate }) => {
     }
   };
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleCalendarClose);
-    return () => {
-      document.removeEventListener("mousedown", handleCalendarClose);
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", handleCalendarClose);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleCalendarClose);
+  //   };
+  // }, []);
 
   // Open modal on small and medium screens
   const openModal = () => {
