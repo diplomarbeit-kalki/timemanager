@@ -92,7 +92,7 @@ const SimpleDatePicker: FC<Props> = ({ initialDate, onUpdate }) => {
 
   const handleDateClick = (date: Date) => {
     setSelectedDate(date);
-    const formattedDate = dateFns.format(date, "yyyy-MM-dd");
+    const formattedDate = dateFns.format(date, "dd-MM-yyyy");
     const currentParams = new URLSearchParams(window.location.search);
     currentParams.set('date', formattedDate);
     const newUrl = `${window.location.pathname}?${currentParams.toString()}`;

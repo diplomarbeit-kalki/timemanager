@@ -44,14 +44,16 @@ export default async function TimesheetTable({
                         </thead>
                         <tbody className="bg-white dark:bg-zinc-900 dark:text-gray-300">
                             {timerecords?.map((timerecord: { _id: string, date: string, workingtime: string, workingminutes: string, breaktime: string, breakminutes: string }) => {
-                                const createdDate = new Date(timerecord.date);
+                                const dateParts = timerecord.date.split('-').map(part => parseInt(part));
+                                const date = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+                                const dayOfWeek = date.getDay();
                                 return (
                                     <tr
                                         key={timerecord._id}
                                         className="w-full border-b dark:border-gray-600 py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
                                     >
                                         <td className="whitespace-nowrap px-5 py-3">{timerecord.date}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{daysOfWeek[createdDate.getDay()]}</td>
+                                        <td className="whitespace-nowrap px-5 py-3">{daysOfWeek[dayOfWeek]}</td>
                                         <td className="whitespace-nowrap px-5 py-3">{timerecord.workingtime}</td>
                                         <td className="whitespace-nowrap px-5 py-3">{timerecord.workingminutes}</td>
                                         <td className="whitespace-nowrap px-5 py-3">{timerecord.breaktime}</td>

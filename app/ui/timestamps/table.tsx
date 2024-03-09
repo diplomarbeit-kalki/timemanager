@@ -13,11 +13,9 @@ export default async function TimestampsTable({
     psnr: number,
     date: string
 }) {
-    const timestampsperday = await fetchTimestampsFromDay(psnr, date);
-    var stamps;
-
-    if (timestampsperday) {
-        stamps = timestampsperday.stamps;
+    var timestampsFromDay = await fetchTimestampsFromDay(psnr, date);
+    if (!timestampsFromDay) {
+        timestampsFromDay = [];
     }
 
     return (
@@ -26,8 +24,7 @@ export default async function TimestampsTable({
                 <div className="rounded-lg bg-gray-50 dark:bg-zinc-950 p-2 md:pt-0">
                     <div className="md:hidden">
 
-                        {stamps?.map((stamp: Timestamp, index: number) => {
-                            const timestamp = new Date(stamp.timestamp);
+                        {timestampsFromDay?.stamps?.map((stamp: Timestamp, index: number) => {
                             return (
                                 <div
                                     key={index}
@@ -39,10 +36,10 @@ export default async function TimestampsTable({
                                                 {stamp.number}
                                             </p>
                                             <p className="text-xl font-medium">
-                                                {timestamp.toLocaleDateString()}
+                                                {timestampsFromDay.date}
                                             </p>
                                             <p className="text-xl font-medium">
-                                                {timestamp.toLocaleTimeString()}
+                                                {stamp.timestamp}
                                             </p>
                                             <p className="text-xl font-medium">
                                                 {stamp.type}
@@ -72,17 +69,16 @@ export default async function TimestampsTable({
                             </tr>
                         </thead>
                         <tbody className="bg-white dark:bg-zinc-900 dark:text-gray-300">
-                            {stamps?.map((stamp: Timestamp, index: number) => {
-                                const timestamp = new Date(stamp.timestamp);
+                            {timestampsFromDay?.stamps?.map((stamps: Timestamp, index: number) => {
                                 return (
                                     <tr
                                         key={index}
                                         className="w-full border-b dark:border-gray-600 py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
                                     >
-                                        <td className="whitespace-nowrap px-5 py-3">{stamp.number}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{timestamp.getDate().toString().padStart(2, '0')}.{(timestamp.getMonth() + 1).toString().padStart(2, '0')}.{timestamp.getFullYear()}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{timestamp.getHours().toString().padStart(2, '0')}:{timestamp.getMinutes().toString().padStart(2, '0')}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{stamp.type}</td>
+                                        <td className="whitespace-nowrap px-5 py-3">{stamps.number}</td>
+                                        <td className="whitespace-nowrap px-5 py-3">{timestampsFromDay.date}</td>
+                                        <td className="whitespace-nowrap px-5 py-3">{stamps.timestamp}</td>
+                                        <td className="whitespace-nowrap px-5 py-3">{stamps.type}</td>
                                     </tr>
                                 );
                             })}

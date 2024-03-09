@@ -72,14 +72,16 @@ export default function EmployeeRegistration() {
   const handleSubmit = async () => {
     try {
       console.log("Submit Button clicked");
-      const timestamp = new Date();
+      const timestampRaw = new Date();
+      const date= `${timestampRaw.getDate().toString().padStart(2, '0')}-${(timestampRaw.getMonth()+1).toString().padStart(2, '0')}-${timestampRaw.getFullYear()}`;
+      const timestamp = `${timestampRaw.getHours().toString().padStart(2, '0')}:${timestampRaw.getMinutes().toString().padStart(2, '0')}:${timestampRaw.getSeconds().toString().padStart(2, '0')}`;
       console.log(`POST Anfrage: { "psnr": ${employeeId}, "timestamp": ${JSON.stringify(timestamp)} }`);
       const response = await fetch('http://localhost:3001/timerecords', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ "psnr": employeeId, "timestamp": timestamp }),
+        body: JSON.stringify({ "psnr": employeeId, "date": date, "timestamp": timestamp }),
       });
 
       if (response.ok) {

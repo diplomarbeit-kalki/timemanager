@@ -92,8 +92,8 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
       setIsCalendarOpen(false);
       // Setze den Wert des Eingabefelds auf den ausgewählten Zeitraum
       setInputValue(`${dateFns.format(dateRange.startDate, "dd.MM.yyyy", { locale: de })} - ${dateFns.format(dateRange.endDate, "dd.MM.yyyy", { locale: de })}`);
-      const formattedFirstDate = dateFns.format(dateRange.startDate, "yyyy-MM-dd");
-      const formattedLastDate = dateFns.format(dateRange.endDate, "yyyy-MM-dd");
+      const formattedFirstDate = dateFns.format(dateRange.startDate, "dd-MM-yyyy");
+      const formattedLastDate = dateFns.format(dateRange.endDate, "dd-MM-yyyy");
       const currentParams = new URLSearchParams(window.location.search);
       currentParams.set('firstdate', formattedFirstDate);
       currentParams.set('lastdate', formattedLastDate);
