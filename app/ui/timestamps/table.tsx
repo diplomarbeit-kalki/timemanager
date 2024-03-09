@@ -80,8 +80,8 @@ export default async function TimestampsTable({
                                         className="w-full border-b dark:border-gray-600 py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
                                     >
                                         <td className="whitespace-nowrap px-5 py-3">{stamp.number}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{timestamp.toLocaleDateString()}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{timestamp.toLocaleTimeString()}</td>
+                                        <td className="whitespace-nowrap px-5 py-3">{timestamp.getDate().toString().padStart(2, '0')}.{(timestamp.getMonth() + 1).toString().padStart(2, '0')}.{timestamp.getFullYear()}</td>
+                                        <td className="whitespace-nowrap px-5 py-3">{timestamp.getHours().toString().padStart(2, '0')}:{timestamp.getMinutes().toString().padStart(2, '0')}</td>
                                         <td className="whitespace-nowrap px-5 py-3">{stamp.type}</td>
                                     </tr>
                                 );

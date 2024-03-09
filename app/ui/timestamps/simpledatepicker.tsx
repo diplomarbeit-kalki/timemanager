@@ -92,6 +92,11 @@ const SimpleDatePicker: FC<Props> = ({ initialDate, onUpdate }) => {
 
   const handleDateClick = (date: Date) => {
     setSelectedDate(date);
+    const formattedDate = dateFns.format(date, "yyyy-MM-dd");
+    const currentParams = new URLSearchParams(window.location.search);
+    currentParams.set('date', formattedDate);
+    const newUrl = `${window.location.pathname}?${currentParams.toString()}`;
+    window.history.pushState({}, '', newUrl);
   };
 
   const handleCalendarClose = (event: MouseEvent) => {
@@ -156,7 +161,7 @@ const SimpleDatePicker: FC<Props> = ({ initialDate, onUpdate }) => {
                         setCurrYear(d.getFullYear());
                       }}
                     >
-                      <ChevronLeftIcon className="w-4 h-4"/>
+                      <ChevronLeftIcon className="w-4 h-4" />
                     </button>
                     <button
                       type="button"
@@ -169,7 +174,7 @@ const SimpleDatePicker: FC<Props> = ({ initialDate, onUpdate }) => {
                         setCurrYear(d.getFullYear());
                       }}
                     >
-                      <ChevronRightIcon className="w-4 h-4"/>
+                      <ChevronRightIcon className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -187,15 +192,13 @@ const SimpleDatePicker: FC<Props> = ({ initialDate, onUpdate }) => {
                       <button
                         type="button"
                         key={i}
-                        className={`rounded-lg border dark:border-zinc-600 flex min-w-full p-2 justify-center hover:bg-blue-700 dark:hover:bg-zinc-500 hover:text-white dark:hover:text-black ${
-                          dateFns.isSameDay(new Date(currYear, currMonth, v), selectedDate)
-                            ? "bg-blue-700 dark:bg-zinc-500 text-white dark:text-black"
-                            : ""
-                        } ${
-                          dateFns.isSameDay(new Date(currYear, currMonth, v), new Date())
+                        className={`rounded-lg border dark:border-zinc-600 flex min-w-full p-2 justify-center hover:bg-blue-700 dark:hover:bg-zinc-500 hover:text-white dark:hover:text-black ${dateFns.isSameDay(new Date(currYear, currMonth, v), selectedDate)
+                          ? "bg-blue-700 dark:bg-zinc-500 text-white dark:text-black"
+                          : ""
+                          } ${dateFns.isSameDay(new Date(currYear, currMonth, v), new Date())
                             ? "ring-blue-400 dark:ring-cyan-600 ring-2"
                             : ""
-                        }`}
+                          }`}
                         onClick={() => handleDateClick(new Date(currYear, currMonth, v))}
                       >
                         {v}
