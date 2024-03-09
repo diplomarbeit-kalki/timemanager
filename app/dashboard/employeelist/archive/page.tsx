@@ -2,6 +2,11 @@ import Breadcrumbs from '@/app/ui/employeelist/breadcrumbs';
 import EmployeesArchiveTable from '@/app/ui/employeelist/employees-archive-table';
 import Search from '@/app/ui/employeelist/search';
 import { DeleteEmployeeModal, RestoreEmployeeModal } from "@/app/ui/employeelist/modal";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Archiv',
+  };
 
 export default async function Page({
     searchParams,

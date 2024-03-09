@@ -2,6 +2,11 @@ import { lusitana } from '@/app/ui/fonts';
 import TimestampsTable from '@/app/ui/timestamps/table';
 import { SearchPsnr, SearchDate } from '@/app/ui/timestamps/search';
 import SimpleDatePicker from '@/app/ui/timestamps/simpledatepicker';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Zeitstempel',
+  };
 
 export default async function Page({
     searchParams,

@@ -2,6 +2,11 @@ import Form from '@/app/ui/employeelist/employee-archive-show-form';
 import Breadcrumbs from '@/app/ui/employeelist/breadcrumbs';
 import { fetchEmployeeArchiveById } from '@/app/lib/data/datafetching';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Mitarbeiter ansehen',
+  };
 
 export default async function Page({ params }: { params: { id: string } }) {
 

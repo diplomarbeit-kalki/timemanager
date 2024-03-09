@@ -2,6 +2,11 @@ import { lusitana } from '@/app/ui/fonts';
 import TimesheetTable from '@/app/ui/timesheet/table';
 import { SearchPsnr, SearchFirstDate, SearchLastDate } from '@/app/ui/timesheet/search';
 import DateRangePicker from '@/app/ui/timesheet/daterangepicker';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Arbeitszeiten',
+  };
 
 export default async function Page({
     searchParams,

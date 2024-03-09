@@ -1,6 +1,11 @@
 import { lusitana } from '@/app/ui/fonts';
 import TransponderTable from '@/app/ui/transponder/table';
 import { AssignTransponderModal, DeleteTransponderModal } from "@/app/ui/transponder/modal";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Transponder',
+  };
 
 export default async function Page({
     searchParams,

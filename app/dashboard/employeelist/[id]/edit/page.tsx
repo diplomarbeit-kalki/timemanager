@@ -3,6 +3,11 @@ import Breadcrumbs from '@/app/ui/employeelist/breadcrumbs';
 import { fetchEmployeeById } from '@/app/lib/data/datafetching';
 import { notFound } from 'next/navigation';
 import { DeleteTagFromEmployeeModal  } from "@/app/ui/employeelist/modal";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Mitarbeiter bearbeiten',
+  };
 
 export default async function Page({
     params,

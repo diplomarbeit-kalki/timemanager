@@ -1,9 +1,9 @@
 import Link from "next/link";
 import NavLinks from "@/app/ui/dashboard/nav-links";
+import MomentLogo from "../moment-logo";
+import ThemeSwitch from "../ThemeSwitch";
 import { PowerIcon } from "@heroicons/react/24/outline";
 import { signOut } from '@/auth';
-import ThemeSwitch from "../ThemeSwitch";
-
 import Image from "next/image"
 
 export default function SideNav() {
@@ -13,8 +13,8 @@ export default function SideNav() {
                 className="mb-2 flex h-20 items-end justify-start rounded-md bg-slate-700 dark:bg-zinc-950  p-4 md:h-40"
                 href="/dashboard"
             >
-                <div className="flex flex-row w-32 text-white md:w-40">
-                    TimeManager
+                <div className="w-32 text-white md:w-40">
+                    <MomentLogo />
                 </div>
             </Link>
             <div className="flex grow flex-row justify-between space-x-1 md:flex-col md:space-x-0 md:space-y-2">

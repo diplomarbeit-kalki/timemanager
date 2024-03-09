@@ -3,6 +3,11 @@ import EmployeesTable from '@/app/ui/employeelist/employees-table';
 import Search from '@/app/ui/employeelist/search';
 import { EmployeeArchive, CreateEmployee } from '@/app/ui/employeelist/buttons';
 import { ArchiveEmployeeModal } from "@/app/ui/employeelist/modal";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Mitarbeiter',
+};
 
 export default async function Page({
   searchParams,

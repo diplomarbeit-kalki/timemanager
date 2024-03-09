@@ -23,7 +23,10 @@ const inter = Inter({ subsets: ["latin"] });
 // }
 
 export const metadata: Metadata = {
-  title: "Timemanager",
+  title: {
+    template: '%s | Moment',
+    default: 'Moment',
+  },
   description: "Online Timemanager Application",
 };
 

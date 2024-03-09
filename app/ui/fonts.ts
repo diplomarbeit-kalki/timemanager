@@ -1,4 +1,4 @@
-import { Inter, Lusitana, Oswald } from 'next/font/google';
+import { Inter, Lusitana, Oswald,  } from 'next/font/google';
 
 export const inter = Inter({ subsets: ['latin'] });
 
