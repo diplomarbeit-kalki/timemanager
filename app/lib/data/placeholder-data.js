@@ -262,27 +262,27 @@ const transponders = [
 const timerecords = [
     {
         emppsnr: 1,
-        date: "2024-01-01",
+        date: "01-01-2024",
         stamps: [
             {
                 number: 1,
                 type: "kommt",
-                timestamp: new Date("2024-01-01T05:00:00Z")
+                timestamp: "05:00:00"
             },
             {
                 number: 2,
                 type: "geht",
-                timestamp: new Date("2024-01-01T12:00:00Z")
+                timestamp: "12:00:00"
             },
             {
                 number: 3,
                 type: "kommt",
-                timestamp: new Date("2024-01-01T13:00:00Z")
+                timestamp: "13:00:00"
             },
             {
                 number: 4,
                 type: "geht",
-                timestamp: new Date("2024-01-01T14:00:00Z")
+                timestamp: "14:00:00"
             }
         ],
         workingtime: "08:00",
@@ -292,27 +292,27 @@ const timerecords = [
     },
     {
         emppsnr: 2,
-        date: "2024-01-01",
+        date: "01-01-2024",
         stamps: [
             {
                 number: 1,
                 type: "kommt",
-                timestamp: new Date("2024-01-01T05:00:00Z")
+                timestamp: "05:00:00"
             },
             {
                 number: 2,
                 type: "geht",
-                timestamp: new Date("2024-01-01T12:00:00Z")
+                timestamp: "12:00:00"
             },
             {
                 number: 3,
                 type: "kommt",
-                timestamp: new Date("2024-01-01T13:00:00Z")
+                timestamp: "13:00:00"
             },
             {
                 number: 4,
                 type: "geht",
-                timestamp: new Date("2024-01-01T18:00:00Z")
+                timestamp: "14:00:00"
             }
         ],
         workingtime: "13:00",
@@ -322,27 +322,27 @@ const timerecords = [
     },
     {
         emppsnr: 1,
-        date: "2024-01-02",
+        date: "02-01-2024",
         stamps: [
             {
                 number: 1,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T06:00:00Z")
+                timestamp: "06:00:00"
             },
             {
                 number: 2,
                 type: "geht",
-                timestamp: new Date("2024-01-02T12:00:00Z")
+                timestamp: "12:00:00"
             },
             {
                 number: 3,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T12:30:00Z")
+                timestamp: "12:30:00"
             },
             {
                 number: 4,
                 type: "geht",
-                timestamp: new Date("2024-01-02T13:00:00Z")
+                timestamp: "13:00:00"
             }
         ],
         workingtime: "06:30",
@@ -352,53 +352,53 @@ const timerecords = [
     },
     {
         emppsnr: 2,
-        date: "2024-01-02",
+        date: "02-01-2024",
         stamps: [
             {
                 number: 1,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T06:00:00Z")
+                timestamp: "06:00:00"
             },
             {
                 number: 2,
                 type: "geht",
-                timestamp: new Date("2024-01-02T12:00:00Z")
+                timestamp: "12:00:00"
             },
             {
                 number: 3,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T12:30:00Z")
+                timestamp: "12:30:00"
             },
             {
                 number: 4,
                 type: "geht",
-                timestamp: new Date("2024-01-02T18:00:00Z")
+                timestamp: "18:00:00"
             }
         ]
     },
     {
         emppsnr: 1,
-        date: "2024-01-03",
+        date: "03-01-2024",
         stamps: [
             {
                 number: 1,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T06:15:00Z")
+                timestamp: "06:15:00Z"
             },
             {
                 number: 2,
                 type: "geht",
-                timestamp: new Date("2024-01-02T12:00:00Z")
+                timestamp: "12:00:00"
             },
             {
                 number: 3,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T12:45:00Z")
+                timestamp: "12:45:00"
             },
             {
                 number: 4,
                 type: "geht",
-                timestamp: new Date("2024-01-02T13:00:00Z")
+                timestamp: "13:00:00"
             }
         ],
         workingtime: "05:30",
@@ -408,27 +408,27 @@ const timerecords = [
     },
     {
         emppsnr: 1,
-        date: "2024-01-04",
+        date: "04-01-2024",
         stamps: [
             {
                 number: 1,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T06:00:00Z")
+                timestamp: "06:00:00"
             },
             {
                 number: 2,
                 type: "geht",
-                timestamp: new Date("2024-01-02T12:00:00Z")
+                timestamp: "12:00:00"
             },
             {
                 number: 3,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T12:25:00Z")
+                timestamp: "12:25:00"
             },
             {
                 number: 4,
                 type: "geht",
-                timestamp: new Date("2024-01-02T14:30:00Z")
+                timestamp: "14:30:00"
             }
         ],
         workingtime: "08:05",
@@ -438,27 +438,27 @@ const timerecords = [
     },
     {
         emppsnr: 1,
-        date: "2024-01-05",
+        date: "05-01-2024",
         stamps: [
             {
                 number: 1,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T07:15:00Z")
+                timestamp: "07:15:00"
             },
             {
                 number: 2,
                 type: "geht",
-                timestamp: new Date("2024-01-02T12:20:00Z")
+                timestamp: "12:20:00"
             },
             {
                 number: 3,
                 type: "kommt",
-                timestamp: new Date("2024-01-02T12:50:00Z")
+                timestamp: "12:50:00"
             },
             {
                 number: 4,
                 type: "geht",
-                timestamp: new Date("2024-01-02T14:00:00Z")
+                timestamp: "14:00:00"
             }
         ],
         workingtime: "06:15",
