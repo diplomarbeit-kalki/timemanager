@@ -92,6 +92,13 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
       setIsCalendarOpen(false);
       // Setze den Wert des Eingabefelds auf den ausgewählten Zeitraum
       setInputValue(`${dateFns.format(dateRange.startDate, "dd.MM.yyyy", { locale: de })} - ${dateFns.format(dateRange.endDate, "dd.MM.yyyy", { locale: de })}`);
+      const formattedFirstDate = dateFns.format(dateRange.startDate, "yyyy-MM-dd");
+      const formattedLastDate = dateFns.format(dateRange.endDate, "yyyy-MM-dd");
+      const currentParams = new URLSearchParams(window.location.search);
+      currentParams.set('firstdate', formattedFirstDate);
+      currentParams.set('lastdate', formattedLastDate);
+      const newUrl = `${window.location.pathname}?${currentParams.toString()}`;
+      window.history.pushState({}, '', newUrl);
     }
   }, [dateRange, onUpdate])
 
@@ -128,7 +135,6 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
       setCurrYear(today.getFullYear());
     }
   };
-  
 
   const handleInputClick = () => {
     setIsCalendarOpen(true);
@@ -160,6 +166,7 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
   // Handle confirmation button click
   const handleConfirm = () => {
     onUpdate?.(dateRange);
+    console.log("dateRange: " + JSON.stringify(dateRange));
     closeModal();
   };
 
@@ -180,7 +187,7 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
           <div className="bg-white dark:bg-zinc-900 w-full md:max-w-lg p-6 rounded-lg shadow-lg">
             {/* Calendar content */}
             <div ref={calendarRef}>
-            <div className=" min-w-[10rem] p-3 rounded-lg bg-white dark:bg-zinc-900 flex flex-col">
+              <div className=" min-w-[10rem] p-3 rounded-lg bg-white dark:bg-zinc-900 flex flex-col">
                 <div className="flex justify-between items-center rounded-lg border dark:border-zinc-700 p-3">
                   <h3 className="text-lg">
                     {dateFns.format(new Date(currYear, currMonth), "LLLL", { locale: de })}{" "}
@@ -198,7 +205,7 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
                         setCurrYear(d.getFullYear())
                       }}
                     >
-                      <ChevronLeftIcon className="w-4 h-4"/>
+                      <ChevronLeftIcon className="w-4 h-4" />
                     </button>
                     <button
                       type="button"
@@ -211,7 +218,7 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
                         setCurrYear(d.getFullYear())
                       }}
                     >
-                      <ChevronRightIcon className="w-4 h-4"/>
+                      <ChevronRightIcon className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -230,29 +237,25 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
                         type="button"
                         key={i}
                         // TODO: Fix bg-color bug with boundary days in selected Range
-                        className={`rounded-lg border dark:border-zinc-600 flex min-w-full p-2 justify-center hover:bg-blue-700 dark:hover:bg-zinc-400 hover:text-white dark:hover:text-black ${
-                          dateFns.isSameDay(
-                            new Date(currYear, currMonth, v),
-                            dateRange.startDate!
-                          )
+                        className={`rounded-lg border dark:border-zinc-600 flex min-w-full p-2 justify-center hover:bg-blue-700 dark:hover:bg-zinc-400 hover:text-white dark:hover:text-black ${dateFns.isSameDay(
+                          new Date(currYear, currMonth, v),
+                          dateRange.startDate!
+                        )
                             ? "bg-blue-700 dark:bg-zinc-400 text-white dark:text-black"
                             : ""
-                        } ${
-                          dateFns.isSameDay(
+                          } ${dateFns.isSameDay(
                             new Date(currYear, currMonth, v),
                             new Date()
                           )
                             ? "ring-blue-400 dark:ring-cyan-600 ring-2"
                             : ""
-                        } ${
-                          dateFns.isSameDay(
+                          } ${dateFns.isSameDay(
                             new Date(currYear, currMonth, v),
                             dateRange.endDate!
                           )
                             ? "bg-blue-700 dark:bg-zinc-400 text-white dark:text-black"
                             : ""
-                        } ${
-                          isBetween(
+                          } ${isBetween(
                             new Date(currYear, currMonth, v),
                             dateRange.startDate!,
                             dateRange.endDate!,
@@ -260,17 +263,17 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
                           )
                             ? "bg-blue-200 dark:bg-zinc-700"
                             : ""
-                        }`}
+                          }`}
                         onClick={() => {
                           const clickedDate = new Date(currYear, currMonth, v);
-                          
+
                           // Wenn kein Startdatum ausgewählt ist, wird das aktuelle Datum das Startdatum
                           if (!dateRange.startDate) {
                             setDateRange((d) => ({
                               ...d,
                               startDate: clickedDate,
                             }));
-                          } 
+                          }
                           // Wenn ein Startdatum, aber kein Enddatum ausgewählt ist
                           else if (dateRange.startDate && !dateRange.endDate) {
                             // Überprüfen, ob das ausgewählte Datum vor dem Startdatum liegt
@@ -287,7 +290,7 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
                                 endDate: clickedDate,
                               }));
                             }
-                          } 
+                          }
                           // Wenn sowohl Start- als auch Enddatum ausgewählt sind
                           else if (dateRange.startDate && dateRange.endDate) {
                             // Das ausgewählte Datum wird das Startdatum und das Enddatum wird null
@@ -315,7 +318,7 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
                     </span>
                   )}
                 </div> */}
-                
+
                 <div className="flex justify-between gap-2 mx-3">
                   {/* Button "Heute" */}
                   <button
