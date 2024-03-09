@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation';
 import axios from 'axios';
 
 const EmployeeFormSchema = z.object({
-    id: z.string(),
     firstname: z.string(),
     lastname: z.string(),
     birthdate: z.string(),
@@ -14,19 +13,15 @@ const EmployeeFormSchema = z.object({
     residence: z.string(),
     postalcode: z.string(),
     phonenr: z.string(),
-    email: z.string(),
-    tag: z.string()
+    email: z.string()
 });
-const CreateEmployee = EmployeeFormSchema.omit({ id: true });
-const UpdateEmployee = EmployeeFormSchema.omit({ id: true });
 
 const AssignTagFormSchema = z.object({
     psnr: z.string()
 });
-const AssignTransponder = AssignTagFormSchema.omit({});
 
 export async function createEmployee(formData: FormData) {
-    const { firstname, lastname, birthdate, street, housenr, residence, postalcode, phonenr, email } = CreateEmployee.parse({
+    const { firstname, lastname, birthdate, street, housenr, residence, postalcode, phonenr, email } = EmployeeFormSchema.parse({
         firstname: formData.get('firstname'),
         lastname: formData.get('lastname'),
         birthdate: formData.get('birthdate'),
@@ -35,7 +30,7 @@ export async function createEmployee(formData: FormData) {
         residence: formData.get('residence'),
         postalcode: formData.get('postalcode'),
         phonenr: formData.get('phonenr'),
-        email: formData.get('email')
+        email: formData.get('email'),
     });
 
     const employeeform = {
@@ -68,7 +63,7 @@ export async function createEmployee(formData: FormData) {
 }
 
 export async function updateEmployee(id: string, formData: FormData) {
-    const { firstname, lastname, birthdate, street, housenr, residence, postalcode, phonenr, email } = UpdateEmployee.parse({
+    const { firstname, lastname, birthdate, street, housenr, residence, postalcode, phonenr, email } = EmployeeFormSchema.parse({
         firstname: formData.get('firstname'),
         lastname: formData.get('lastname'),
         birthdate: formData.get('birthdate'),
@@ -77,7 +72,8 @@ export async function updateEmployee(id: string, formData: FormData) {
         residence: formData.get('residence'),
         postalcode: formData.get('postalcode'),
         phonenr: formData.get('phonenr'),
-        email: formData.get('email')
+        email: formData.get('email'),
+       
     });
 
     const employeeform = {
@@ -209,7 +205,7 @@ export async function deleteTagFromEmployee(id: string) {
 }
 
 export async function assignTransponder(id: string, formData: FormData) {
-    const { psnr } = AssignTransponder.parse({
+    const { psnr } = AssignTagFormSchema.parse({
         psnr: formData.get('psnr')
     });
     const apiUrl = `http://localhost:3001/transponders/byId/${id}`;
