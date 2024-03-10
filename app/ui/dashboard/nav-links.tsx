@@ -18,8 +18,8 @@ const links = [
   { name: "Transponder", href: "/dashboard/transponder", icon: KeyIcon },
   { name: "Zeitstempel", href: "/dashboard/timestamps", icon: TicketIcon },
   { name: "Arbeitszeiten", href: "/dashboard/timesheet", icon: ClockIcon },
-  { name: "Test 1", href: "/dashboard/test/test1", icon: EyeIcon },
-  { name: "Test 2", href: "/dashboard/test/test2", icon: EyeIcon },
+  // { name: "Test 1", href: "/dashboard/test/test1", icon: EyeIcon },
+  // { name: "Test 2", href: "/dashboard/test/test2", icon: EyeIcon },
 ];
 
 export default function NavLinks() {

@@ -6,7 +6,7 @@ export function DeleteEmployeeModal({ id }: { id: string }) {
     const deleteEmployeeCons = deleteEmployeeArchive.bind(null, id);
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
-            <div className="p-8 w-102 shadow-lg rounded-md bg-white dark:bg-zinc-950">
+            <div className="p-8 max-w-sm md:max-w-md lg:max-w-lg mx-auto shadow-lg rounded-md bg-white dark:bg-zinc-950">
                 <div className="text-center">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Mitarbeiter löschen</h3>
                     <div className="mt-2 px-7 py-3">
@@ -40,7 +40,7 @@ export function ArchiveEmployeeModal({ id }: { id: string }) {
 
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
-            <div className="p-8 w-102 shadow-lg rounded-md bg-white dark:bg-zinc-950">
+            <div className="p-8 max-w-sm md:max-w-md lg:max-w-lg mx-auto shadow-lg rounded-md bg-white dark:bg-zinc-950">
                 <div className="text-center">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Mitarbeiter archivieren</h3>
                     <div className="mt-2 px-7 py-3">
@@ -74,7 +74,7 @@ export function RestoreEmployeeModal({ id }: { id: string }) {
 
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
-            <div className="p-8 w-102 shadow-lg rounded-md bg-white dark:bg-zinc-950">
+            <div className="p-8 max-w-sm md:max-w-md lg:max-w-lg mx-auto shadow-lg rounded-md bg-white dark:bg-zinc-950">
                 <div className="text-center">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Mitarbeiter aktivieren</h3>
                     <div className="mt-2 px-7 py-3">
@@ -108,7 +108,7 @@ export function DeleteTagFromEmployeeModal({ id }: { id: string }) {
     const backUrl = `/dashboard/employeelist/${id}/edit`;
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
-            <div className="p-8 w-102 shadow-lg rounded-md bg-white dark:bg-zinc-950">
+            <div className="p-8 max-w-sm md:max-w-md lg:max-w-lg mx-auto shadow-lg rounded-md bg-white dark:bg-zinc-950">
                 <div className="text-center">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Tag entfernen</h3>
                     <div className="mt-2 px-7 py-3">

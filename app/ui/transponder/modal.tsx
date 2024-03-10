@@ -7,7 +7,7 @@ export function AssignTransponderModal({ id }: { id: string }) {
     const assignTransponderConst = assignTransponder.bind(null, id);
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
-            <div className="p-8 w-102 shadow-lg rounded-md bg-white dark:bg-zinc-950">
+            <div className="p-8 max-w-sm md:max-w-md lg:max-w-lg mx-auto shadow-lg rounded-md bg-white dark:bg-zinc-950">
                 <div className="text-left">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Mitarbeiter einem Transponder zuordnen</h3>
                     <div className="py-3">
@@ -42,7 +42,7 @@ export function DeleteTransponderModal({ id }: { id: string }) {
     const deleteTransponderCons = deleteTransponder.bind(null, id);
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
-            <div className="p-8 w-102 shadow-lg rounded-md bg-white dark:bg-zinc-950">
+            <div className="p-8 max-w-sm md:max-w-md lg:max-w-lg mx-auto shadow-lg rounded-md bg-white dark:bg-zinc-950">
                 <div className="text-center">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Tag löschen</h3>
                     <div className="mt-2 px-7 py-3">

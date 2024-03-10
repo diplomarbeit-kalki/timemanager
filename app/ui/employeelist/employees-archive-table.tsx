@@ -21,26 +21,33 @@ export default async function EmployeesArchiveTable({
                                 key={String(employee._id)}
                                 className="mb-2 w-full rounded-md bg-white dark:bg-zinc-900 p-4"
                             >
-                                <div className="flex w-full items-center justify-between pt-4">
+                                <div className="w-full items-center justify-between pt-4">
                                     <div>
-                                        <p className="text-xl font-medium">
+                                        <p className="text-xl font-medium break-all">
                                             {employee.psnr}
                                         </p>
-                                        <p className="text-xl font-medium">
+                                        <p className="text-xl font-medium break-all">
                                             {employee.username}
                                         </p>
-                                        <p className="text-xl font-medium">
+                                        <p className="text-xl font-medium break-all">
                                             {employee.firstname}
                                         </p>
-                                        <p className="text-xl font-medium">
+                                        <p className="text-xl font-medium break-all">
                                             {employee.lastname}
                                         </p>
-                                        <p className="text-xl font-medium">
+                                        <p className="text-xl font-medium break-all">
                                             {employee.phonenr}
                                         </p>
-                                        <p className="text-xl font-medium">
+                                        <p className="text-xl font-medium break-all">
                                             {employee.email}
                                         </p>
+                                        <div className='mx-auto mt-4'>
+                                            <div className='flex w-full items-center justify-evenly p-2 rounded-lg bg-gray-300 dark:bg-zinc-950'>
+                                                <ShowEmployeeArchive id={String(employee._id)} />
+                                                <RestoreEmployee id={String(employee._id)} />
+                                                <DeleteEmployee id={String(employee._id)} />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

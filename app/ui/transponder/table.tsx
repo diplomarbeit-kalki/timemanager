@@ -24,7 +24,7 @@ export default async function TransponderTable() {
                                     key={String(unregisteredtag._id)}
                                     className="mb-2 w-full rounded-md bg-white dark:bg-zinc-900 p-4"
                                 >
-                                    <div className="flex w-full items-center justify-between pt-4">
+                                    <div className="w-full items-center justify-between pt-4">
                                         <div>
                                             <p className="text-xl font-medium">
                                                 {unregisteredtag.uid}
@@ -36,6 +36,12 @@ export default async function TransponderTable() {
                                             <p className="text-xl font-medium">
                                                 {createdDate.getDate()}.{createdDate.getMonth() + 1}.{createdDate.getFullYear()}
                                             </p>
+                                            <div className='mx-auto mt-4'>
+                                                <div className='flex w-full items-center justify-center gap-12 p-2 rounded-lg bg-gray-300 dark:bg-zinc-950'>
+                                                    <AssignTransponder id={String(unregisteredtag._id)} />
+                                                    <DeleteTransponder id={String(unregisteredtag._id)} />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

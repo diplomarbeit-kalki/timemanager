@@ -140,7 +140,7 @@ const SimpleDatePicker: FC<Props> = ({ initialDate, onUpdate }) => {
       <CalendarDaysIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-gray-200" />
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex justify-center items-center bg-gray-900 dark:bg-gray-600 bg-opacity-50 dark:bg-opacity-50">
-          <div className="bg-white dark:bg-zinc-900 w-full md:max-w-lg p-6 rounded-lg shadow-lg">
+          <div className="bg-white dark:bg-zinc-900 max-w-sm md:max-w-md lg:max-w-lg mx-auto p-6 rounded-lg shadow-lg">
             {/* Calendar content */}
             <div ref={calendarRef}>
               <div className=" min-w-[10rem] p-3 rounded-lg bg-white dark:bg-zinc-900 flex flex-col">

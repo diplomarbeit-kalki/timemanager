@@ -49,4 +49,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     + Landing Page (Animation): <br>
     https://app.lottiefiles.com/animation/e2608b23-c520-49b8-8f78-94b65431c41f?channel=web&source=public-animation&panel=download
 
++ Metadata: <br>
+    + Favicon: <br>
+    https://medium.com/@davegray_86804/next-js-favicon-svg-icon-apple-chrome-icons-2e3c686ede79
+
 

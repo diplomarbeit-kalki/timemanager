@@ -184,7 +184,7 @@ const DateRangePicker: FC<Props> = ({ initialRange, onUpdate }) => {
       </div>
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex justify-center items-center bg-gray-900 dark:bg-gray-600 bg-opacity-50 dark:bg-opacity-50">
-          <div className="bg-white dark:bg-zinc-900 w-full md:max-w-lg p-6 rounded-lg shadow-lg">
+          <div className="bg-white dark:bg-zinc-900 max-w-sm md:max-w-md lg:max-w-lg mx-auto p-6 rounded-lg shadow-lg">
             {/* Calendar content */}
             <div ref={calendarRef}>
               <div className=" min-w-[10rem] p-3 rounded-lg bg-white dark:bg-zinc-900 flex flex-col">
