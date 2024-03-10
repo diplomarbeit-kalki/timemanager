@@ -40,7 +40,7 @@ export default async function EmployeesTable({
                                             {employee.email}
                                         </p>
                                         <div className='mx-auto mt-4'>
-                                            <div className='flex w-full items-center justify-evenly p-2 rounded-lg bg-gray-300 dark:bg-zinc-950'>
+                                            <div className='flex w-full items-center justify-evenly p-2 rounded-lg bg-gray-100 dark:bg-zinc-950'>
                                                 <ShowEmployee id={String(employee._id)} />
                                                 <UpdateEmployee id={String(employee._id)} />
                                                 <ArchiveEmployee id={String(employee._id)} />
