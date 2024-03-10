@@ -77,6 +77,18 @@ export async function fetchTimestampsFromDay(
     }
 }
 
+export async function fetchTimerecordById(id: string) {
+    noStore();
+    try {
+        const apiUrl = `http://localhost:3001/timerecords/byId/${id}`;
+        const response = await axios.get(apiUrl);
+        return response.data;
+    }
+    catch (error) {
+        console.error('datafetching---Fehler:', error);
+    }
+}
+
 export async function fetchTimerecordsFromPeriod(
     psnr: number,
     firstdate: string,
@@ -109,7 +121,7 @@ export async function fetchTestPdf() {
         link.setAttribute('download', 'example.pdf');
         document.body.appendChild(link);
         link.click();
-    } 
+    }
     catch (error) {
         console.error('Fehler beim Herunterladen der PDF-Datei:', error);
     }

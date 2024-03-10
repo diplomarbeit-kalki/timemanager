@@ -1,12 +1,13 @@
 import { lusitana } from '@/app/ui/fonts';
-import TimestampsTable from '@/app/ui/timestamps/table';
-import { SearchPsnr, SearchDate } from '@/app/ui/timestamps/search';
+import TimestampsTable from '@/app/ui/timestamps/timestamps-table';
+import { SearchPsnr } from '@/app/ui/timestamps/search';
 import SimpleDatePicker from '@/app/ui/timestamps/simpledatepicker';
+import { UpdateTimestamps } from '@/app/ui/timestamps/buttons';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Zeitstempel',
-  };
+};
 
 export default async function Page({
     searchParams,
@@ -20,7 +21,6 @@ export default async function Page({
     const psnr = Number(searchParams?.psnr) || 0;
     const date = searchParams?.date || '';
 
-    // Einbaufähig: <CreateTimestamp/>
     return (
         <div className="w-full">
             <div className="flex w-full items-center justify-between">
@@ -38,6 +38,12 @@ export default async function Page({
                         <span className='text-gray-600 dark:text-gray-300'>Datum</span>
                         <div className='flow-root'>
                             <SimpleDatePicker />
+                        </div>
+                    </div>
+                    <div className='flex flex-col gap-2'>
+                        <span className='text-gray-600 dark:text-gray-300'>Bearbeiten</span>
+                        <div className='flow-root'>
+                            <UpdateTimestamps psnr={psnr} date={date} />
                         </div>
                     </div>
                 </div>
