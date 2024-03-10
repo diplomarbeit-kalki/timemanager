@@ -1,4 +1,5 @@
 import { fetchTimestampsFromDay } from '@/app/lib/data/datafetching';
+import { DeleteTimestamp } from '@/app/ui/timestamps/buttons';
 
 interface Timestamp {
     number: number;
@@ -8,15 +9,17 @@ interface Timestamp {
 
 export default async function TimestampsTable({
     psnr,
-    date
+    date,
+    id
 }: {
     psnr: number,
-    date: string
+    date: string,
+    id: string
 }) {
     var timestampsFromDay = await fetchTimestampsFromDay(psnr, date);
     if (!timestampsFromDay) {
         timestampsFromDay = [];
-    }
+    } 
 
     return (
         <div className="mt-6 flow-root">
@@ -79,6 +82,11 @@ export default async function TimestampsTable({
                                         <td className="whitespace-nowrap px-5 py-3">{timestampsFromDay.date}</td>
                                         <td className="whitespace-nowrap px-5 py-3">{stamps.timestamp}</td>
                                         <td className="whitespace-nowrap px-5 py-3">{stamps.type}</td>
+                                        <td className="whitespace-nowrap py-3 pl-6 pr-3">
+                                        <div className="flex justify-end gap-3">
+                                            <DeleteTimestamp id={id} number={stamps.number}/>
+                                        </div>
+                                    </td>
                                     </tr>
                                 );
                             })}

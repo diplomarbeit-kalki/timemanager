@@ -77,6 +77,18 @@ export async function fetchTimestampsFromDay(
     }
 }
 
+export async function fetchTimerecordById(id: string) {
+    noStore();
+    try {
+        const apiUrl = `http://localhost:3001/timerecords/byId/${id}`;
+        const response = await axios.get(apiUrl);
+        return response.data;
+    }
+    catch (error) {
+        console.error('datafetching---Fehler:', error);
+    }
+}
+
 export async function fetchTimerecordsFromPeriod(
     psnr: number,
     firstdate: string,
@@ -109,8 +121,31 @@ export async function fetchTestPdf() {
         link.setAttribute('download', 'example.pdf');
         document.body.appendChild(link);
         link.click();
-    } 
+    }
     catch (error) {
         console.error('Fehler beim Herunterladen der PDF-Datei:', error);
+    }
+}
+
+export async function fetchTestPicture() {
+    noStore();
+    try {
+        // Rufen Sie den PDF-Download-Endpunkt auf
+        const response = await axios.get('http://localhost:3001/media/profilepictures/byPsnr/2', {
+            responseType: 'blob', // Blob-Datentyp für binäre Daten
+        });
+
+        // Erstellen Sie einen Blob-URL für die heruntergeladene PDF-Datei
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+
+        // Erstellen Sie ein unsichtbares Link-Element und klicken Sie es an, um den Download zu starten
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'example.jpg');
+        document.body.appendChild(link);
+        link.click();
+    }
+    catch (error) {
+        console.error('Fehler beim Herunterladen der Datei:', error);
     }
 }

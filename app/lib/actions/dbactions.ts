@@ -20,6 +20,10 @@ const AssignTagFormSchema = z.object({
     psnr: z.string()
 });
 
+const CreateTimestampFormSchema = z.object({
+    time: z.string()
+});
+
 export async function createEmployee(formData: FormData) {
     const { firstname, lastname, birthdate, street, housenr, residence, postalcode, phonenr, email } = EmployeeFormSchema.parse({
         firstname: formData.get('firstname'),
@@ -73,7 +77,7 @@ export async function updateEmployee(id: string, formData: FormData) {
         postalcode: formData.get('postalcode'),
         phonenr: formData.get('phonenr'),
         email: formData.get('email'),
-       
+
     });
 
     const employeeform = {
@@ -105,10 +109,51 @@ export async function updateEmployee(id: string, formData: FormData) {
     }
 }
 
+export async function createTimestamp(id: string, formData: FormData) {
+
+    const { time } = CreateTimestampFormSchema.parse({
+        time: formData.get('time'),
+    });
+
+    try {
+        const response = await axios.put(`http://localhost:3001/timerecords/stamps?id=${id}&time=${time}`);
+        if (response.status === 200) {
+            console.log("dbActions---Zeitstempel mit timestamp: " + time + " erfolgreich hinzugefügt");
+        } else {
+            throw new Error('Failed to archive employee');
+        }
+        revalidatePath(`/dashboard/timestamps/${id}/edit`);
+    }
+    catch (error) {
+        console.log("dbActions---Fehler: " + error);
+    }
+    finally {
+        redirect(`/dashboard/timestamps/${id}/edit`);
+    }
+}
+
+export async function deleteTimestamp(id: string, number: number) {
+
+    try {
+        const response = await axios.delete(`http://localhost:3001/timerecords/stamps?id=${id}&number=${number}`);
+        if (response.status === 200) {
+            console.log("dbActions---Zeitstempel mit number: " + number + " gelöscht");
+        } else {
+            throw new Error('Failed to delete employee');
+        }
+        revalidatePath(`/dashboard/timestamps/${id}/edit`);
+    }
+    catch (error) {
+        console.log("dbActions---Fehler: " + error);
+    }
+    finally {
+        redirect(`/dashboard/timestamps/${id}/edit`);
+    }
+}
+
 export async function archiveEmployee(id: string) {
 
     try {
-        console.log("ID:" + id);
         const response = await axios.put(`http://localhost:3001/employeesArchive/intoArchive/withId/${id}`);
         if (response.status === 200) {
             console.log("dbActions---Mitarbeiter mit id: " + id + " erfolgreich archiviert");
@@ -252,5 +297,45 @@ export async function deleteTransponder(id: string) {
     }
     finally {
         redirect('/dashboard/transponder');
+    }
+}
+
+interface TimeRecordResponse {
+    _id: string;
+}
+
+export async function updateTimestamps(psnr: number, date: string) {
+    var response;
+    try {
+        console.log(`Psnr: ${psnr}, date: ${date}`);
+        response = await axios.get(`http://localhost:3001/timerecords/byPsnrAndDate?psnr=${psnr}&date=${date}`);
+        if (response.status === 200) {
+            console.log(`dbActions---Timerecord mit psnr=${psnr} & date=${date} gefetcht`);
+        } else {
+            throw new Error('Failed to fetch timerecord');
+        }
+    }
+    catch (error) {
+        console.log("dbActions---Fehler: " + error);
+    }
+    finally {
+        if (response) {
+            const timeRecordResponse: TimeRecordResponse = response.data;
+            redirect(`/dashboard/timestamps/${timeRecordResponse._id}/edit`);
+        }
+    }
+}
+
+export async function uploadPicture(psnr: number,formData: FormData) {
+    try {
+        const url = `http://localhost:3001/media/profilepictures/withPsnr/${psnr}`;
+        const response = await axios.post(url, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+        formData.delete('image');
+    } catch (error) {
+        console.error("Fehler beim Upload:", error);
     }
 }
