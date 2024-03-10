@@ -325,3 +325,17 @@ export async function updateTimestamps(psnr: number, date: string) {
         }
     }
 }
+
+export async function uploadPicture(psnr: number,formData: FormData) {
+    try {
+        const url = `http://localhost:3001/media/profilepictures/withPsnr/${psnr}`;
+        const response = await axios.post(url, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+        formData.delete('image');
+    } catch (error) {
+        console.error("Fehler beim Upload:", error);
+    }
+}
