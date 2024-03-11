@@ -18,7 +18,8 @@ export default async function Page({ params }: { params: { id: string } }) {
     }
 
     const employeeForm = {
-        id: id,
+        id: employee._id,
+        psnr: employee.psnr,
         firstname: employee.firstname,
         lastname: employee.lastname,
         birthdate: employee.birthdate,
