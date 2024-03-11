@@ -69,6 +69,18 @@ function UploadPictureField() {
     );
 }
 
+export function MyImage() {
+    return (
+        <Image
+            src={`http://localhost:3001/media/profilepictures/byPsnr/2?${Math.random()}`}
+            alt="Profilbild"
+            width={500}
+            height={500}
+            className="rounded-2xl"
+        />
+    )
+}
+
 export default function Page() {
 
     return (
@@ -79,13 +91,7 @@ export default function Page() {
             <DownloadButtonPDF />
             <DownloadButtonPicture />
             <UploadPictureField />
-            <Image
-                src="http://localhost:3001/media/profilepictures/byPsnr/3"
-                alt="Profilbild"
-                width={500}
-                height={500}
-                className="rounded-2xl"
-            />
+            <MyImage />
         </div>
     );
 }
