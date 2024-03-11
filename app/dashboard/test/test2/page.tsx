@@ -51,7 +51,7 @@ function UploadPictureField() {
             const formData = new FormData();
             formData.append('image', selectedFile);
 
-            await uploadPicture(2, formData);
+            //await uploadPicture(2, formData);
             alert('Bild erfolgreich hochgeladen.');
         } catch (error) {
             console.error('Fehler beim Hochladen des Bildes:', error);

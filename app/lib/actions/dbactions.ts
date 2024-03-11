@@ -326,8 +326,9 @@ export async function updateTimestamps(psnr: number, date: string) {
     }
 }
 
-export async function uploadPicture(psnr: number,formData: FormData) {
+export async function uploadPicture(id: string, psnr: string,formData: FormData) {
     console.log("dbactions called...");
+    const url = `/dashboard/employeelist/${id}/edit`;
     try {
         const url = `http://localhost:3001/media/profilepictures/withPsnr/${psnr}`;
         const response = await axios.post(url, formData, {
@@ -336,12 +337,13 @@ export async function uploadPicture(psnr: number,formData: FormData) {
             }
         });
         formData.delete('image');
-        revalidatePath('/dashboard/test/test2');
+        revalidatePath(url);
     } catch (error) {
-        console.error("Fehler beim Upload:", error);
+        //console.error("Fehler beim Upload:", error);
+        console.log("Fehler beim Upload");
     }
     finally {
         console.log("finally...");
-        redirect('/dashboard/test/test2');
+        redirect(url);
     }
 }
