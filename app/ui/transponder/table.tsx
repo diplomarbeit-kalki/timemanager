@@ -37,7 +37,7 @@ export default async function TransponderTable() {
                                                 {createdDate.getDate()}.{createdDate.getMonth() + 1}.{createdDate.getFullYear()}
                                             </p>
                                             <div className='mx-auto mt-4'>
-                                                <div className='flex w-full items-center justify-center gap-12 p-2 rounded-lg bg-gray-300 dark:bg-zinc-950'>
+                                                <div className='flex w-full items-center justify-center gap-12 p-2 rounded-lg bg-gray-100 dark:bg-zinc-950'>
                                                     <AssignTransponder id={String(unregisteredtag._id)} />
                                                     <DeleteTransponder id={String(unregisteredtag._id)} />
                                                 </div>

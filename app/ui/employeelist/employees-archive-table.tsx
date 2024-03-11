@@ -42,7 +42,7 @@ export default async function EmployeesArchiveTable({
                                             {employee.email}
                                         </p>
                                         <div className='mx-auto mt-4'>
-                                            <div className='flex w-full items-center justify-evenly p-2 rounded-lg bg-gray-300 dark:bg-zinc-950'>
+                                            <div className='flex w-full items-center justify-evenly p-2 rounded-lg bg-gray-100 dark:bg-zinc-950'>
                                                 <ShowEmployeeArchive id={String(employee._id)} />
                                                 <RestoreEmployee id={String(employee._id)} />
                                                 <DeleteEmployee id={String(employee._id)} />
