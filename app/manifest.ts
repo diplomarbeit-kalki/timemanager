@@ -7,13 +7,14 @@ export default function manifest(): MetadataRoute.Manifest {
         description: "Online Timemanager Application",
         start_url: '/',
         display: 'standalone',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
+        background_color: '#000000',
+        theme_color: '#000000',
         icons: [
             {
                 "src": "/images/icon-192.png",
                 "sizes": "192x192",
-                "type": "image/png"
+                "type": "image/png",
+                "purpose": "maskable"
             },
             {
                 "src": "/images/icon-512.png",
