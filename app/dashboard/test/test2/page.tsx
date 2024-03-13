@@ -51,7 +51,7 @@ function UploadPictureField() {
             const formData = new FormData();
             formData.append('image', selectedFile);
 
-            await uploadPicture(2, formData);
+            //await uploadPicture(2, formData);
             alert('Bild erfolgreich hochgeladen.');
         } catch (error) {
             console.error('Fehler beim Hochladen des Bildes:', error);
@@ -69,6 +69,7 @@ function UploadPictureField() {
     );
 }
 
+
 export default function Page() {
 
     return (
@@ -80,7 +81,7 @@ export default function Page() {
             <DownloadButtonPicture />
             <UploadPictureField />
             <Image
-                src="http://localhost:3001/media/profilepictures/byPsnr/3"
+                src={`http://localhost:3001/media/profilepictures/byPsnr/2?${Math.random()}`}
                 alt="Profilbild"
                 width={500}
                 height={500}

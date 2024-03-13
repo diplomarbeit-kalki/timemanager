@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 
 export default function EmployeeRegistration() {
   const [message, setMessage] = React.useState<string>("Keine Websocket Verbindung");
-  const [pictureSrc, setPictureSrc] = React.useState<string>(`/profilepictures/placeholder.jpg`);
+  const [pictureSrc, setPictureSrc] = React.useState<string>(`http://localhost:3001/media/profilepictures/byPsnr/placeholder`);
   const [employeeId, setEmployeeId] = useState("");
   const [imageLoaded, setImageLoaded] = useState(true);
 
@@ -13,7 +13,7 @@ export default function EmployeeRegistration() {
     setImageLoaded(false);
   };
 
-  const imageUrl = imageLoaded ? pictureSrc : '/profilepictures/placeholder.jpg';
+  const imageUrl = imageLoaded ? pictureSrc : 'http://localhost:3001/media/profilepictures/byPsnr/placeholder';
 
   // Clsx Color adaption for Status field
   const statusKommt = message.includes('kommt');
@@ -43,7 +43,7 @@ export default function EmployeeRegistration() {
         setMessage(receivedObj.message);
       }
       if (receivedObj.profilepicture) {
-        setPictureSrc(receivedObj.profilepicture);
+        setPictureSrc(`http://localhost:3001/media/profilepictures/byPsnr/` + receivedObj.psnr);
       }
       console.log("Daten vom Server erhalten: " + event.data);
       setTimeout(() => {
@@ -76,7 +76,7 @@ export default function EmployeeRegistration() {
       const date= `${timestampRaw.getDate().toString().padStart(2, '0')}-${(timestampRaw.getMonth()+1).toString().padStart(2, '0')}-${timestampRaw.getFullYear()}`;
       const timestamp = `${timestampRaw.getHours().toString().padStart(2, '0')}:${timestampRaw.getMinutes().toString().padStart(2, '0')}:${timestampRaw.getSeconds().toString().padStart(2, '0')}`;
       console.log(`POST Anfrage: { "psnr": ${employeeId}, "timestamp": ${JSON.stringify(timestamp)} }`);
-      const response = await fetch('http://localhost:3001/timerecords', {
+      const response = await fetch('http://localhost:3001/timerecords/withPsnr', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

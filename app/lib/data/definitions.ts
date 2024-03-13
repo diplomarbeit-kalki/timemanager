@@ -6,6 +6,7 @@ export type User = {
 
 export type EmployeeForm = {
   id: string;
+  psnr: number;
   tag: string | undefined;
   firstname: string;
   lastname: string;
