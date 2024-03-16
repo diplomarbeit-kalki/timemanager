@@ -14,6 +14,7 @@ import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { updateEmployee } from '@/app/lib/actions/dbactions';
 import { DeleteTransponderFromEmployee } from '@/app/ui/employeelist/buttons';
+import { EditEmployeeFormImage, FormImage, UploadPictureField } from '@/app/ui/employeelist/images';
 
 export default function Form({
     employee
@@ -26,47 +27,63 @@ export default function Form({
     return (
         <form action={updateEmployeeWithId}>
             <div className="rounded-md bg-gray-50 dark:bg-zinc-900 dark:text-gray-300 p-4 md:p-6">
-                {/* Vorname und Nachname in einer Zeile */}
-                <div className="flex mb-4 gap-4">
-                    <div className="flex-1">
-                        {/* Vorname */}
-                        <label htmlFor="firstname" className="mb-2 block text-sm font-medium">
-                            Vorname:
-                        </label>
-                        <div className="relative mt-2 rounded-md">
-                            <div className="relative">
-                                <input
-                                    id="firstname"
-                                    name="firstname"
-                                    type="string"
-                                    placeholder="Vorname"
-                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-                                    defaultValue={employee.firstname}
-                                    required
-                                />
-                                <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
+                {/* Profilbild */}
+                {/* <div className='flex justify-end mb-8'>
+                    <div className='flex flex-col gap-2'>
+                        <FormImage psnr={String(employee.psnr)} />
+                        <UploadPictureField id={employee.id} psnr={String(employee.psnr)} />
+                    </div>
+                </div> */}
+
+                <div className='flex justify-between gap-x-10'>
+                    {/* Vorname und Nachname in einer Zeile */}
+                    <div className="flex flex-col w-full">
+                        <div className="flex-1">
+                            {/* Vorname */}
+                            <label htmlFor="firstname" className="mb-2 block text-sm font-medium">
+                                Vorname:
+                            </label>
+                            <div className="relative mt-2 rounded-md">
+                                <div className="relative">
+                                    <input
+                                        id="firstname"
+                                        name="firstname"
+                                        type="string"
+                                        placeholder="Vorname"
+                                        className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                        defaultValue={employee.firstname}
+                                        required
+                                    />
+                                    <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex-1">
+                            {/* Nachname */}
+                            <label htmlFor="lastname" className="block text-sm font-medium">
+                                Nachname:
+                            </label>
+                            <div className="relative mt-2">
+                                <div className="relative">
+                                    <input
+                                        id="lastname"
+                                        name="lastname"
+                                        type="string"
+                                        placeholder="Nachname"
+                                        className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                        defaultValue={employee.lastname}
+                                        required
+                                    />
+                                    <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div className="flex-1">
-                        {/* Nachname */}
-                        <label htmlFor="lastname" className="mb-2 block text-sm font-medium">
-                            Nachname:
-                        </label>
-                        <div className="relative mt-2 rounded-md">
-                            <div className="relative">
-                                <input
-                                    id="lastname"
-                                    name="lastname"
-                                    type="string"
-                                    placeholder="Nachname"
-                                    className="peer block w-full rounded-md border border-gray-200 dark:border-gray-500 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-                                    defaultValue={employee.lastname}
-                                    required
-                                />
-                                <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:peer-focus:text-white" />
-                            </div>
+                    <div className='flex justify-end mb-8'>
+                        <div className='flex flex-col gap-2'>
+                            <EditEmployeeFormImage id={String(employee.id)} psnr={String(employee.psnr)} />
+                            {/* <UploadPictureField id={employee.id} psnr={String(employee.psnr)} /> */}
                         </div>
                     </div>
                 </div>

@@ -43,7 +43,7 @@ export default async function Page({
         phonenr: employee.phonenr,
         email: employee.email,
         tag: employee.tag
-    }
+        }
 
     return (
         <main>
@@ -58,8 +58,6 @@ export default async function Page({
                 ]}
             />
 
-            <FormImage psnr={String(employeeForm.psnr)} />
-            <UploadPictureField id={employeeForm.id} psnr={String(employeeForm.psnr)} />
             <Form employee={employeeForm} />
             {showDeleteTag && <DeleteTagFromEmployeeModal id={String(id)} />}
         </main>
