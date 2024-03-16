@@ -13,7 +13,7 @@ const employees = [
     {
         psnr: 1,
         tag: null,
-        profilepicture: '/profilepictures/1_Elias_Kalkhofer.jpg',
+        profilepicture: null,
         username: 'KALELI',
         firstname: 'Elias',
         lastname: 'Kalkhofer',
@@ -30,7 +30,7 @@ const employees = [
     {
         psnr: 2,
         tag: null,
-        profilepicture: '/profilepictures/2_Gabriel_Kalkhofer.jpg',
+        profilepicture: null,
         username: 'KALGAB',
         firstname: 'Gabriel',
         lastname: 'Kalkhofer',
@@ -47,7 +47,7 @@ const employees = [
     {
         psnr: 3,
         tag: null,
-        profilepicture: '/profilepictures/3_Anna_Kalkhofer.jpg',
+        profilepicture: null,
         username: 'KALANN',
         firstname: 'Anna',
         lastname: 'Kalkhofer',
@@ -64,6 +64,7 @@ const employees = [
     {
         psnr: 4,
         tag: null,
+        profilepicture: null,
         username: 'KALCHR',
         firstname: 'Christian',
         lastname: 'Kalkhofer',
@@ -80,7 +81,7 @@ const employees = [
     {
         psnr: 5,
         tag: null,
-        profilepicture: '/profilepictures/5_Evelyn_Kalkhofer.jpg',
+        profilepicture: null,
         username: 'KALEVE',
         firstname: 'Evelyn',
         lastname: 'Kalkhofer',
@@ -97,6 +98,7 @@ const employees = [
     {
         psnr: 9,
         tag: null,
+        profilepicture: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -113,6 +115,7 @@ const employees = [
     {
         psnr: 10,
         tag: null,
+        profilepicture: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -129,6 +132,7 @@ const employees = [
     {
         psnr: 11,
         tag: null,
+        profilepicture: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -145,6 +149,7 @@ const employees = [
     {
         psnr: 12,
         tag: null,
+        profilepicture: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -161,6 +166,7 @@ const employees = [
     {
         psnr: 13,
         tag: null,
+        profilepicture: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -177,6 +183,7 @@ const employees = [
     {
         psnr: 14,
         tag: null,
+        profilepicture: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -193,6 +200,7 @@ const employees = [
     {
         psnr: 15,
         tag: null,
+        profilepicture: null,
         username: 'TESVOR',
         firstname: 'Vorname',
         lastname: 'Nachname',
@@ -262,128 +270,12 @@ const transponders = [
 const timerecords = [
     {
         emppsnr: 1,
-        date: "01-01-2024",
-        stamps: [
-            {
-                number: 1,
-                type: "kommt",
-                timestamp: "05:00:00"
-            },
-            {
-                number: 2,
-                type: "geht",
-                timestamp: "12:00:00"
-            },
-            {
-                number: 3,
-                type: "kommt",
-                timestamp: "13:00:00"
-            },
-            {
-                number: 4,
-                type: "geht",
-                timestamp: "14:00:00"
-            }
-        ],
-        workingtime: "08:00",
-        workingminutes: "480",
-        breaktime: "01:00",
-        breakminutes: "60",
-    },
-    {
-        emppsnr: 2,
-        date: "01-01-2024",
-        stamps: [
-            {
-                number: 1,
-                type: "kommt",
-                timestamp: "05:00:00"
-            },
-            {
-                number: 2,
-                type: "geht",
-                timestamp: "12:00:00"
-            },
-            {
-                number: 3,
-                type: "kommt",
-                timestamp: "13:00:00"
-            },
-            {
-                number: 4,
-                type: "geht",
-                timestamp: "14:00:00"
-            }
-        ],
-        workingtime: "13:00",
-        workingminutes: "780",
-        breaktime: "01:00",
-        breakminutes: "60",
-    },
-    {
-        emppsnr: 1,
-        date: "02-01-2024",
+        date: "08-01-2024",
         stamps: [
             {
                 number: 1,
                 type: "kommt",
                 timestamp: "06:00:00"
-            },
-            {
-                number: 2,
-                type: "geht",
-                timestamp: "12:00:00"
-            },
-            {
-                number: 3,
-                type: "kommt",
-                timestamp: "12:30:00"
-            },
-            {
-                number: 4,
-                type: "geht",
-                timestamp: "13:00:00"
-            }
-        ],
-        workingtime: "06:30",
-        workingminutes: "390",
-        breaktime: "00:30",
-        breakminutes: "30",
-    },
-    {
-        emppsnr: 2,
-        date: "02-01-2024",
-        stamps: [
-            {
-                number: 1,
-                type: "kommt",
-                timestamp: "06:00:00"
-            },
-            {
-                number: 2,
-                type: "geht",
-                timestamp: "12:00:00"
-            },
-            {
-                number: 3,
-                type: "kommt",
-                timestamp: "12:30:00"
-            },
-            {
-                number: 4,
-                type: "geht",
-                timestamp: "18:00:00"
-            }
-        ]
-    },
-    {
-        emppsnr: 1,
-        date: "03-01-2024",
-        stamps: [
-            {
-                number: 1,
-                type: "kommt",
-                timestamp: "06:15:00Z"
             },
             {
                 number: 2,
@@ -398,17 +290,17 @@ const timerecords = [
             {
                 number: 4,
                 type: "geht",
-                timestamp: "13:00:00"
+                timestamp: "15:00:00"
             }
         ],
-        workingtime: "05:30",
-        workingminutes: "330",
+        workingtime: "08:15",
+        workingminutes: "495",
         breaktime: "00:45",
         breakminutes: "45",
     },
     {
         emppsnr: 1,
-        date: "04-01-2024",
+        date: "09-01-2024",
         stamps: [
             {
                 number: 1,
@@ -423,48 +315,1228 @@ const timerecords = [
             {
                 number: 3,
                 type: "kommt",
-                timestamp: "12:25:00"
-            },
-            {
+                timestamp: "13:00:00",
                 number: 4,
                 type: "geht",
-                timestamp: "14:30:00"
+                timestamp: "15:00:00"
             }
         ],
-        workingtime: "08:05",
-        workingminutes: "485",
-        breaktime: "00:25",
-        breakminutes: "25",
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
     },
     {
         emppsnr: 1,
-        date: "05-01-2024",
+        date: "10-01-2024",
         stamps: [
             {
                 number: 1,
                 type: "kommt",
-                timestamp: "07:15:00"
+                timestamp: "06:00:00"
             },
             {
                 number: 2,
                 type: "geht",
-                timestamp: "12:20:00"
+                timestamp: "12:00:00"
             },
             {
                 number: 3,
                 type: "kommt",
-                timestamp: "12:50:00"
+                timestamp: "12:30:00"
             },
             {
                 number: 4,
                 type: "geht",
-                timestamp: "14:00:00"
+                timestamp: "15:00:00"
             }
         ],
-        workingtime: "06:15",
-        workingminutes: "375",
+        workingtime: "08:30",
+        workingminutes: "510",
         breaktime: "00:30",
         breakminutes: "30",
+    },
+    {
+        emppsnr: 1,
+        date: "11-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "07:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "07:15",
+        workingminutes: "435",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 1,
+        date: "12-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "16:00:00"
+            }
+        ],
+        workingtime: "09:15",
+        workingminutes: "555",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 1,
+        date: "15-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:15",
+        workingminutes: "495",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 1,
+        date: "16-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "13:00:00",
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
+    },
+    {
+        emppsnr: 1,
+        date: "17-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:30:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:30",
+        workingminutes: "510",
+        breaktime: "00:30",
+        breakminutes: "30",
+    },
+    {
+        emppsnr: 1,
+        date: "18-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "07:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "07:15",
+        workingminutes: "435",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 1,
+        date: "19-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "16:00:00"
+            }
+        ],
+        workingtime: "09:15",
+        workingminutes: "555",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 1,
+        date: "22-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:15",
+        workingminutes: "495",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 1,
+        date: "23-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "13:00:00",
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
+    },
+    {
+        emppsnr: 1,
+        date: "24-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:30:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:30",
+        workingminutes: "510",
+        breaktime: "00:30",
+        breakminutes: "30",
+    },
+    {
+        emppsnr: 1,
+        date: "25-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "07:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "07:15",
+        workingminutes: "435",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 1,
+        date: "26-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "16:00:00"
+            }
+        ],
+        workingtime: "09:15",
+        workingminutes: "555",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 1,
+        date: "29-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:15",
+        workingminutes: "495",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 1,
+        date: "30-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "13:00:00",
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
+    },
+    {
+        emppsnr: 1,
+        date: "31-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:30:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:30",
+        workingminutes: "510",
+        breaktime: "00:30",
+        breakminutes: "30",
+    },
+    {
+        emppsnr: 2,
+        date: "08-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:15",
+        workingminutes: "495",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "09-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "13:00:00",
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
+    },
+    {
+        emppsnr: 2,
+        date: "10-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:30:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:30",
+        workingminutes: "510",
+        breaktime: "00:30",
+        breakminutes: "30",
+    },
+    {
+        emppsnr: 2,
+        date: "11-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "07:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "07:15",
+        workingminutes: "435",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "12-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "16:00:00"
+            }
+        ],
+        workingtime: "09:15",
+        workingminutes: "555",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "15-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:15",
+        workingminutes: "495",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "16-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "13:00:00",
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
+    },
+    {
+        emppsnr: 2,
+        date: "17-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:30:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:30",
+        workingminutes: "510",
+        breaktime: "00:30",
+        breakminutes: "30",
+    },
+    {
+        emppsnr: 2,
+        date: "18-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "07:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "07:15",
+        workingminutes: "435",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "19-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "16:00:00"
+            }
+        ],
+        workingtime: "09:15",
+        workingminutes: "555",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "22-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:15",
+        workingminutes: "495",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "23-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "13:00:00",
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
+    },
+    {
+        emppsnr: 2,
+        date: "24-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:30:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:30",
+        workingminutes: "510",
+        breaktime: "00:30",
+        breakminutes: "30",
+    },
+    {
+        emppsnr: 2,
+        date: "25-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "07:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "07:15",
+        workingminutes: "435",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "26-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "16:00:00"
+            }
+        ],
+        workingtime: "09:15",
+        workingminutes: "555",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "29-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:15",
+        workingminutes: "495",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "30-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "13:00:00",
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
+    },
+    {
+        emppsnr: 2,
+        date: "31-01-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:30:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:30",
+        workingminutes: "510",
+        breaktime: "00:30",
+        breakminutes: "30",
+    },
+    {
+        emppsnr: 2,
+        date: "01-02-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:15",
+        workingminutes: "495",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "02-02-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "13:00:00",
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
+    },
+    {
+        emppsnr: 2,
+        date: "05-02-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:30:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:30",
+        workingminutes: "510",
+        breaktime: "00:30",
+        breakminutes: "30",
+    },
+    {
+        emppsnr: 2,
+        date: "06-02-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "07:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "07:15",
+        workingminutes: "435",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "07-02-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "16:00:00"
+            }
+        ],
+        workingtime: "09:15",
+        workingminutes: "555",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "08-02-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "12:45:00"
+            },
+            {
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:15",
+        workingminutes: "495",
+        breaktime: "00:45",
+        breakminutes: "45",
+    },
+    {
+        emppsnr: 2,
+        date: "09-02-2024",
+        stamps: [
+            {
+                number: 1,
+                type: "kommt",
+                timestamp: "06:00:00"
+            },
+            {
+                number: 2,
+                type: "geht",
+                timestamp: "12:00:00"
+            },
+            {
+                number: 3,
+                type: "kommt",
+                timestamp: "13:00:00",
+                number: 4,
+                type: "geht",
+                timestamp: "15:00:00"
+            }
+        ],
+        workingtime: "08:00",
+        workingminutes: "480",
+        breaktime: "01:00",
+        breakminutes: "60",
     }
 ]
 
@@ -472,6 +1544,7 @@ const employeesArchive = [
     {
         psnr: 6,
         tag: null,
+        profilepicture: null,
         username: 'MAYELI',
         firstname: 'Elias',
         lastname: 'Mayer',
@@ -488,6 +1561,7 @@ const employeesArchive = [
     {
         psnr: 7,
         tag: null,
+        profilepicture: null,
         username: 'MAYGAB',
         firstname: 'Gabriel',
         lastname: 'Mayer',
@@ -504,6 +1578,7 @@ const employeesArchive = [
     {
         psnr: 8,
         tag: null,
+        profilepicture: null,
         username: 'MAYANN',
         firstname: 'Anna',
         lastname: 'Mayer',
