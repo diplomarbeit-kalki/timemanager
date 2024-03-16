@@ -52,12 +52,12 @@ export default async function TimesheetTable({
                                         key={timerecord._id}
                                         className="w-full border-b dark:border-gray-600 py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
                                     >
-                                        <td className="whitespace-nowrap px-5 py-3">{timerecord.date}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{daysOfWeek[dayOfWeek]}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{timerecord.workingtime}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{timerecord.workingminutes}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{timerecord.breaktime}</td>
-                                        <td className="whitespace-nowrap px-5 py-3">{timerecord.breakminutes}</td>
+                                        <td className="whitespace-nowrap px-6 py-3">{timerecord.date}</td>
+                                        <td className="whitespace-nowrap px-6 py-3">{daysOfWeek[dayOfWeek]}</td>
+                                        <td className="whitespace-nowrap px-6 py-3">{timerecord.workingtime}</td>
+                                        <td className="whitespace-nowrap px-6 py-3">{timerecord.workingminutes}</td>
+                                        <td className="whitespace-nowrap px-6 py-3">{timerecord.breaktime}</td>
+                                        <td className="whitespace-nowrap px-6 py-3">{timerecord.breakminutes}</td>
                                     </tr>
                                 );
                             })}

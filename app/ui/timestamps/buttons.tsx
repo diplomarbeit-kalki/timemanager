@@ -8,7 +8,7 @@ export function CreateTimestamp({ id }: { id: string }) {
     return (
         <Link
             href={url}
-            className="flex h-10 items-center rounded-lg bg-blue-600 dark:bg-cyan-900 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-500 dark:hover:bg-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            className="flex h-10 items-center rounded-lg bg-blue-600 dark:bg-cyan-900 px-4 text-sm mt-4 font-medium text-white transition-colors hover:bg-blue-500 dark:hover:bg-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         >
             <span className="hidden md:block">Zeitstempel hinzufügen</span>{' '}
             <PlusIcon className="h-5 md:ml-4" />
@@ -34,8 +34,8 @@ export function UpdateTimestamps({ psnr, date }: { psnr: number, date: string })
 
     return (
         <form action={updateTimestampsCons}>
-            <button className="rounded-md border border-gray-400 dark:border-gray-500 p-2 bg-orange-300 dark:bg-orange-500 hover:bg-orange-400 dark:hover:bg-orange-600">
-                <span className="hidden md:block">Timestamps bearbeiten hinzufügen</span>{' '}
+            <button className="flex h-10 items-center rounded-lg bg-blue-600 dark:bg-cyan-900 px-32 text-sm font-medium text-white transition-colors hover:bg-blue-500 dark:hover:bg-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                <span className="hidden md:block">Bearbeiten</span>{' '}
             </button>
         </form>
     );

@@ -64,7 +64,7 @@ export default async function TimestampsTable({
                                     Uhrzeit
                                 </th>
                                 <th scope="col" className="px-5 py-5 font-medium sm:pl-6">
-                                    Type
+                                    Typ
                                 </th>
                             </tr>
                         </thead>
