@@ -327,7 +327,6 @@ export async function updateTimestamps(psnr: number, date: string) {
 }
 
 export async function uploadPicture(id: string, psnr: string,formData: FormData) {
-    console.log("dbactions called...");
     const url = `/dashboard/employeelist/${id}/edit`;
     try {
         const url = `http://localhost:3001/media/profilepictures/withPsnr/${psnr}`;
@@ -339,11 +338,8 @@ export async function uploadPicture(id: string, psnr: string,formData: FormData)
         formData.delete('image');
         revalidatePath(url);
     } catch (error) {
-        //console.error("Fehler beim Upload:", error);
-        console.log("Fehler beim Upload");
     }
     finally {
-        console.log("finally...");
         redirect(url);
     }
 }
