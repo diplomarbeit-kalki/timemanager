@@ -18,28 +18,30 @@ const SimpleDatePicker: FC<Props> = ({ initialDate, onUpdate }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const calendarRef = useRef<HTMLDivElement>(null);
 
-  const isBetween = (
-    date: Date,
-    from: Date,
-    to: Date,
-    inclusivity: "()" | "[]" | "(]" | "[)" = "()"
-  ) => {
-    if (!["()", "[]", "(]", "[)"].includes(inclusivity)) {
-      throw new Error("Inclusivity parameter must be one of (), [], (], [)")
-    }
+  // ****************************** Nicht benötigt -> ********************************
+  // const isBetween = (
+  //   date: Date,
+  //   from: Date,
+  //   to: Date,
+  //   inclusivity: "()" | "[]" | "(]" | "[)" = "()"
+  // ) => {
+  //   if (!["()", "[]", "(]", "[)"].includes(inclusivity)) {
+  //     throw new Error("Inclusivity parameter must be one of (), [], (], [)")
+  //   }
 
-    const isBeforeEqual = inclusivity[0] === "[",
-      isAfterEqual = inclusivity[1] === "]"
+  //   const isBeforeEqual = inclusivity[0] === "[",
+  //     isAfterEqual = inclusivity[1] === "]"
 
-    return (
-      (isBeforeEqual
-        ? dateFns.isEqual(from, date) || dateFns.isBefore(from, date)
-        : dateFns.isBefore(from, date)) &&
-      (isAfterEqual
-        ? dateFns.isEqual(to, date) || dateFns.isAfter(to, date)
-        : dateFns.isAfter(to, date))
-    )
-  }
+  //   return (
+  //     (isBeforeEqual
+  //       ? dateFns.isEqual(from, date) || dateFns.isBefore(from, date)
+  //       : dateFns.isBefore(from, date)) &&
+  //     (isAfterEqual
+  //       ? dateFns.isEqual(to, date) || dateFns.isAfter(to, date)
+  //       : dateFns.isAfter(to, date))
+  //   )
+  // }
+  // ****************************** <- Nicht benötigt ********************************
 
   const generateCalendar = ({
     month,
