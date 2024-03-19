@@ -2,7 +2,7 @@
 
 import { DocumentTextIcon, ClockIcon, UserGroupIcon, ArrowDownTrayIcon, KeyIcon } from "@heroicons/react/24/outline";
 import { inter, lusitana } from "@/app/ui/fonts";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { format } from "date-fns";
 import de from "date-fns/locale/de"
 import Link from "next/link";
@@ -17,6 +17,8 @@ import MonthPicker from "./monthpicker";
 //     totalPaidInvoices,
 //     totalPendingInvoices,
 //   } = await fetch;
+
+import { countFetchedTransponders } from '@/app/lib/data/datafetching';
   
 const iconMap = {
   download: DocumentTextIcon,
@@ -29,12 +31,27 @@ export default function CardWrapper() {
   const currentDate = new Date();
   const currentMonth = format(currentDate, 'MMMM', { locale: de});
 
+  /**************************** HIER Ändern für Transponder! **************************************/
+  const [freeTransponders, setFreeTransponders] = useState(0);
+
+  useEffect(() => {
+    // Beim Laden der Komponente die Anzahl der freien Transponder abrufen und setzen
+    async function fetchFreeTranspondersCount() {
+      const count = await countFetchedTransponders();
+      setFreeTransponders(count);
+    }
+
+    fetchFreeTranspondersCount();
+  }, []);
+  
+  /**************************** HIER Ändern für Transponder! **************************************/
+
   return (
     <>  
       <DownloadPdfCard title="Arbeitsbericht Monat" value={`Bericht ${currentMonth}`} type="download" isFirstCard />
       <DownloadOtherPdfCard title="Anderer Arbeitsbericht" value={"Tobias Mitterwallner"} type="downloadOther" />
       <Card title="Arbeitende Mitarbeiter" value={"3"} type="working" />
-      <Card title="Freie Transponder" value={"4"} type="transponder" />
+      <Card title="Freie Transponder" value={freeTransponders} type="transponder" />
     </>
   );
 }
@@ -66,7 +83,7 @@ export function Card({
   );
 }
 
-export async function DownloadPdfCard({
+export function DownloadPdfCard({
   title,
   value,
   type,

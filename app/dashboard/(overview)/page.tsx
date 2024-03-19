@@ -1,4 +1,5 @@
 import CardWrapper, { Card } from '@/app/ui/dashboard/cards';
+import EmployeeChart from '@/app/ui/dashboard/chart/employee-chart';
 import { lusitana } from '@/app/ui/fonts';
 
 export default async function Page() {
@@ -13,6 +14,10 @@ export default async function Page() {
                 <Card title="Arbeitende Mitarbeiter" value={"Test"} type="working" />
                 <Card title="Total Customers" value={"Test"} type="transponder" /> */}
                 <CardWrapper />
+            </div>
+            
+            <div className='mt-6'>
+                <EmployeeChart />
             </div>
             
             {/* <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">

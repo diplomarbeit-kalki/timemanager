@@ -1,7 +1,7 @@
 "use client";
 import { lusitana } from '@/app/ui/fonts';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
-import { fetchTestPdf, fetchTestPicture } from '@/app/lib/data/datafetching';
+import { fetchTestPdf, fetchTimeSheetFromMonthAllPsnr, fetchTestPicture } from '@/app/lib/data/datafetching';
 import React, { useState, ChangeEvent, useEffect } from 'react';
 import { uploadPicture } from '@/app/lib/actions/dbactions';
 import Image from "next/image"
@@ -9,7 +9,7 @@ import Image from "next/image"
 
 function DownloadButtonPDF({ }: {}) {
 
-    const testfunctionCons = fetchTestPdf.bind(null);
+    const testfunctionCons = fetchTimeSheetFromMonthAllPsnr.bind(null);
 
     return (
         <form action={testfunctionCons}>

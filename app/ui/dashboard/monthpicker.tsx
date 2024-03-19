@@ -42,7 +42,6 @@ const MonthPicker: FC<Props> = ({ onSelectMonth, onSelectYear }) => {
     }
   };
   
-
   const updateSelectedMonth = (year: number, month: number) => {
     const selectedMonthFormatted = dateFns.format(new Date(year, month - 1), 'MMMM yyyy', { locale: de });
     onSelectMonth(selectedMonthFormatted);
