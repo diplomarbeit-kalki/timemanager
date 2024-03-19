@@ -73,7 +73,6 @@ export default function Form({
                             {/* <UploadPictureField id={employee.id} psnr={String(employee.psnr)} /> */}
                         </div>
                     </div>
-
                 </div>
 
                 {/* Geburtsdatum */}

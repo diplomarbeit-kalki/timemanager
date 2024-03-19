@@ -17,6 +17,18 @@ export function FormImage({ psnr }: { psnr: string }) {
     )
 }
 
+export function FormImageArchive({ psnr }: { psnr: string }) {
+  return (
+      <Image
+          src={`http://localhost:3001/media/profilepictures/byPsnrArchived/${psnr}?${Math.random()}`}
+          alt="Profilbild"
+          width={200}
+          height={200}
+          className="rounded-lg p-1 border border-gray-200 dark:border-gray-500 mt-7"
+      />
+  )
+}
+
 // *******************************************************************************************************************************************************
 
 export function EditEmployeeFormImage({ id, psnr }: { id: string, psnr: string }) {
