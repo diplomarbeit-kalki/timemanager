@@ -50,8 +50,8 @@ export default function CardWrapper() {
     <>  
       <DownloadPdfCard title="Arbeitsbericht Monat" value={`Bericht ${currentMonth}`} type="download" isFirstCard />
       <DownloadOtherPdfCard title="Anderer Arbeitsbericht" value={"Tobias Mitterwallner"} type="downloadOther" />
-      <Card title="Arbeitende Mitarbeiter" value={"3"} type="working" />
-      <Card title="Freie Transponder" value={freeTransponders} type="transponder" />
+      <Card title="Arbeitende Mitarbeiter" value={"3"} type="working" linkTo="/dashboard/employeelist"/>
+      <Card title="Freie Transponder" value={freeTransponders} type="transponder" linkTo="/dashboard/transponder" />
     </>
   );
 }
@@ -60,10 +60,12 @@ export function Card({
   title,
   value,
   type,
+  linkTo
 }: {
   title: string;
   value: number | string;
   type: "working" | "transponder";
+  linkTo?: string;
 }) {
   const Icon = iconMap[type];
 
@@ -73,12 +75,18 @@ export function Card({
         {Icon ? <Icon className="h-5 w-5 text-gray-700 dark:text-white" /> : null}
         <h3 className="ml-2 text-sm font-medium">{title}</h3>
       </div>
-      <p
-        className={`${lusitana.className}
-          truncate rounded-xl bg-white dark:bg-zinc-900 px-4 py-10 text-center text-2xl`}
-      >
-        {value}
-      </p>
+      {linkTo && (
+        <Link href={linkTo}>
+          <p className={`${lusitana.className} truncate rounded-xl bg-white dark:bg-zinc-900 px-4 py-10 text-center text-2xl cursor-pointer`}>
+            {value}
+          </p>
+        </Link>
+      )}
+      {!linkTo && (
+        <p className={`${lusitana.className} truncate rounded-xl bg-white dark:bg-zinc-900 px-4 py-10 text-center text-2xl`}>
+          {value}
+        </p>
+      )}
     </div>
   );
 }
@@ -98,11 +106,7 @@ export function DownloadPdfCard({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
-      className="rounded-xl bg-gray-50 dark:bg-zinc-950 p-2 shadow-sm"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="rounded-xl bg-gray-50 dark:bg-zinc-950 p-2 shadow-sm">
       <div 
         className={`flex p-4 ${isFirstCard ? 'cursor-auto' : ''}`}>
         {Icon ? <Icon className="h-5 w-5 text-gray-700 dark:text-white" /> : null}
@@ -111,6 +115,8 @@ export function DownloadPdfCard({
       <div
         className={`${lusitana.className}
           truncate flex flex-row justify-between gap-4 rounded-xl bg-white dark:bg-zinc-900 px-4 py-10 text-center text-2xl`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         {value}
 
@@ -181,7 +187,7 @@ export function DownloadOtherPdfCard({
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Mitarbeiter auswählen</h3>
                   <div className="py-3">
                       <p className="text-lg text-gray-900 dark:text-gray-400 mt-4 mb-2">Wählen Sie einen Mitarbeiter aus, dessen Monatsbericht angezeigt werden soll.</p>
-                      <form action={() => console.log('Bericht von {gewähltes Monat, gewähltes Jaht} ausgewählt')}>
+                      <form action={() => console.log('Bericht von {EmployeeId, gewähltes Monat, gewähltes Jaht} heruntergeladen')}>
                         <div className="flex flex-col gap-8 mt-4 text-start">
                           <div>
                             <label htmlFor="firstname" className="mb-1 block text-md font-medium">

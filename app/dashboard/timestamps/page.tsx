@@ -47,7 +47,6 @@ export default async function Page({
                         </div>
                     </div>
                 </div>
-
             </div>
             <div className="mt-6">
                 <TimestampsTable psnr={psnr} date={date} />
