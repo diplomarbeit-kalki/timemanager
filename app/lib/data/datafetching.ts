@@ -1,5 +1,7 @@
 import { unstable_noStore as noStore } from 'next/cache';
 import axios from 'axios';
+import { redirect } from 'next/navigation';
+import { z } from 'zod';
 
 const ITEMS_PER_PAGE = 5;
 
@@ -63,16 +65,30 @@ export async function fetchTransponders() {
     }
 }
 
-/*********************************** Hier Ändern für Transponder! *********************************************/
-export async function countFetchedTransponders() {
-    const transponders = await fetchTransponders();
-    if (transponders) {
-        return transponders.length;
-    } else {
-        return 0;
+export async function fetchCountTransponders() {
+    //noStore();
+    try {
+        const apiUrl = `http://localhost:3001/cards/countTransponders`;
+        const response = await axios.get(apiUrl);
+        return response.data;
+    }
+    catch (error) {
+        console.error('datafetching---Fehler:', error);
     }
 }
-/*********************************** Hier Ändern für Transponder! *********************************************/
+
+export async function fetchCountActualWorkingEmployees() {
+    //noStore();
+    try {
+        const apiUrl = `http://localhost:3001/cards/countWorkingEmployees`;
+        const response = await axios.get(apiUrl);
+        console.log("reponse: " + response.data)
+        return response.data;
+    }
+    catch (error) {
+        console.error('datafetching---Fehler:', error);
+    }
+}
 
 export async function fetchTimestampsFromDay(
     psnr: number,
@@ -115,15 +131,18 @@ export async function fetchTimerecordsFromPeriod(
     }
 }
 
-/*********************************** Hier Ändern für PDFs! *********************************************/
-export async function fetchTimeSheetFromMonthAllPsnr() {
+
+export async function fetchActualTimeSheetFromMonthAllPsnr() {
     noStore();
     try {
-        // Rufen Sie den PDF-Download-Endpunkt auf
-        const response = await axios.get('http://localhost:3001/pdf/timesheetFromMonth/AllPsnr', {
+        const date = new Date();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+
+        const apiUrl = `http://localhost:3001/pdf/timesheetFromMonth/AllPsnr?month=${month}&year=${year}`;
+        const response = await axios.get(apiUrl, {
             responseType: 'blob', // Blob-Datentyp für binäre Daten
         });
-
         // Erstellen Sie einen Blob-URL für die heruntergeladene PDF-Datei
         const url = window.URL.createObjectURL(new Blob([response.data]));
 
@@ -135,11 +154,48 @@ export async function fetchTimeSheetFromMonthAllPsnr() {
         link.click();
     }
     catch (error) {
-        console.error('Fehler beim Herunterladen der PDF-Datei:', error);
+        //console.error('Fehler beim Herunterladen der PDF-Datei:', error);
+        redirect('/dashboard?showPdfError=true');
+
     }
 }
-/*********************************** Hier Ändern für Transponder! *********************************************/
 
+const SelectEmployeeAndDateFormSchema = z.object({
+    psnr: z.string(),
+    month: z.string(),
+    year: z.string(),
+});
+
+export async function fetchTimeSheetFromMonthWithPsnr(formData: FormData) {
+    const { psnr, month, year } = SelectEmployeeAndDateFormSchema.parse({
+        psnr: formData.get('psnr'),
+        month: formData.get('month'),
+        year: formData.get('year')
+    });
+
+    noStore();
+    try {
+
+        const apiUrl = `http://localhost:3001/pdf/timesheetFromMonth/WithPsnr?psnr=${psnr}&month=${month}&year=${year}`;
+        const response = await axios.get(apiUrl, {
+            responseType: 'blob', // Blob-Datentyp für binäre Daten
+        });
+        // Erstellen Sie einen Blob-URL für die heruntergeladene PDF-Datei
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+
+        // Erstellen Sie ein unsichtbares Link-Element und klicken Sie es an, um den Download zu starten
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'Monatsbericht.pdf');
+        document.body.appendChild(link);
+        link.click();
+
+    }
+    catch (error) {
+        console.error('Fehler beim Herunterladen der PDF-Datei:', error);
+        redirect('/dashboard?showPdfError=true');
+    }
+}
 
 export async function fetchTestPdf() {
     noStore();
