@@ -59,13 +59,13 @@ const MonthPicker: FC<Props> = ({ onSelectMonth, onSelectYear }) => {
               value={selectedMonth.getMonth() + 1}
               onChange={handleMonthChange}
             >
-              <input type="hidden" name="month" value={selectedMonth.getMonth() + 1} />
               {Array.from({ length: 12 }, (_, i) => (
                 <option key={i + 1} value={i + 1}>
                   {dateFns.format(new Date(selectedMonth.getFullYear(), i), 'MMMM', { locale: de })}
                 </option>
               ))}
             </select>
+            <input type="hidden" name="month" value={selectedMonth.getMonth() + 1} />
           </div>
           <div className='flex flex-col'>
             <span className='text-md mb-1 block text-md font-medium text-black dark:text-white'>Jahr</span>
