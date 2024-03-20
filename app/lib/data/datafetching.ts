@@ -242,3 +242,25 @@ export async function fetchTestPicture() {
         console.error('Fehler beim Herunterladen der Datei:', error);
     }
 }
+
+export async function fetchAverageWorkinghoursFromActualMonth() {
+    //noStore();
+    try {
+        const apiUrl = `http://localhost:3001/cards/averageWorkinghoursFromActualMonth`;
+        const response = await axios.get(apiUrl);
+        return response.data;
+    }
+    catch (error) {
+    }
+}
+
+export async function fetchWorkingEmployeesCountFromActualMonth() {
+    //noStore();
+    try {
+        const apiUrl = `http://localhost:3001/cards/workingEmployeesCountFromActualMonth`;
+        const response = await axios.get(apiUrl);
+        return response.data;
+    }
+    catch (error) {
+    }
+}
