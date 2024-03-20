@@ -63,6 +63,17 @@ export async function fetchTransponders() {
     }
 }
 
+/*********************************** Hier Ändern für Transponder! *********************************************/
+export async function countFetchedTransponders() {
+    const transponders = await fetchTransponders();
+    if (transponders) {
+        return transponders.length;
+    } else {
+        return 0;
+    }
+}
+/*********************************** Hier Ändern für Transponder! *********************************************/
+
 export async function fetchTimestampsFromDay(
     psnr: number,
     date: string
@@ -103,6 +114,32 @@ export async function fetchTimerecordsFromPeriod(
     catch (error) {
     }
 }
+
+/*********************************** Hier Ändern für PDFs! *********************************************/
+export async function fetchTimeSheetFromMonthAllPsnr() {
+    noStore();
+    try {
+        // Rufen Sie den PDF-Download-Endpunkt auf
+        const response = await axios.get('http://localhost:3001/pdf/timesheetFromMonth/AllPsnr', {
+            responseType: 'blob', // Blob-Datentyp für binäre Daten
+        });
+
+        // Erstellen Sie einen Blob-URL für die heruntergeladene PDF-Datei
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+
+        // Erstellen Sie ein unsichtbares Link-Element und klicken Sie es an, um den Download zu starten
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'Monatsbericht.pdf');
+        document.body.appendChild(link);
+        link.click();
+    }
+    catch (error) {
+        console.error('Fehler beim Herunterladen der PDF-Datei:', error);
+    }
+}
+/*********************************** Hier Ändern für Transponder! *********************************************/
+
 
 export async function fetchTestPdf() {
     noStore();

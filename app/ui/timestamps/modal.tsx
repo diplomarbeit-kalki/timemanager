@@ -1,24 +1,44 @@
+'use client';
+
 import { createTimestamp, deleteTimestamp } from '@/app/lib/actions/dbactions';
 import Link from "next/link";
+import SimpleTimePicker from './timepicker';
+import React, { useState } from 'react';
+
+interface Props {
+    onSelectTime: (time: string) => void;
+}
 
 export function CreateTimestampModal({ id }: { id: string }) {
     const backUrl = `/dashboard/timestamps/${id}/edit`;
     const createTimestampCons = createTimestamp.bind(null, id);
 
+    const [selectedTime, setSelectedTime] = useState('');
+
+    const handleSelectTime = (time: React.SetStateAction<string>) => {
+        setSelectedTime(time);
+    };
+
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
-            <div className="p-8 w-102 shadow-lg rounded-md bg-white dark:bg-zinc-950">
+            <div className="p-8 max-w-sm md:max-w-md lg:max-w-lg mx-auto shadow-lg rounded-md bg-white dark:bg-zinc-950">
                 <div className="text-center">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Zeitstempel hinzufügen</h3>
                     <div className="mt-2 px-7 py-3">
-                        <p className="text-lg text-gray-900 dark:text-gray-400">Wollen Sie den Zeitstempel wirklich hinzufügen? </p>
+                        {/* <p className="text-lg text-gray-900 dark:text-gray-400 mb-4">Wollen Sie den Zeitstempel wirklich hinzufügen? </p> */}
                         <form action={createTimestampCons}>
-                            <input
+                            {/* <input
                                 type="text"
                                 name="time"
                                 placeholder='Uhrzeit angeben'
                                 className='bg-white dark:bg-zinc-900 placeholder:text-gray-500 dark:placeholder:text-gray-500 p-2 outline-none'
-                            />
+                            /> */}
+                            <SimpleTimePicker onSelectTime={handleSelectTime}/>
+                            {/* <input
+                                type = "text"
+                                name = "time"
+                                className="hidden"
+                            /> */}
                             <div className="flex flex-row justify-end mt-8 gap-4">
                                 <Link
                                     href={backUrl}
@@ -47,11 +67,11 @@ export function DeleteTimestampModal({ id, number }: { id: string, number: numbe
     const deleteTimestampCons = deleteTimestamp.bind(null, id, number);
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
-            <div className="p-8 w-102 shadow-lg rounded-md bg-white dark:bg-zinc-950">
+            <div className="p-8 max-w-sm md:max-w-md lg:max-w-lg mx-auto shadow-lg rounded-md bg-white dark:bg-zinc-950">
                 <div className="text-center">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Timestamp löschen</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-300">Zeitstempel löschen</h3>
                     <div className="mt-2 px-7 py-3">
-                        <p className="text-lg text-gray-900 dark:text-gray-400">Wollen Sie den Timestamp wirklich löschen? </p>
+                        <p className="text-lg text-gray-900 dark:text-gray-400">Wollen Sie den Zeitstempel wirklich löschen? </p>
                         <form action={deleteTimestampCons}>
                             <div className="flex flex-row justify-end mt-8 gap-4">
                                 <Link

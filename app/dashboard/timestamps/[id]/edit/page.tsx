@@ -66,7 +66,7 @@ export default async function Page({
                         </div>
                     </div>
                     <div className='flex flex-col gap-2'>
-                        <span className='text-gray-600 dark:text-gray-300'>Bearbeiten</span>
+                        {/* <span className='text-gray-600 dark:text-gray-300'>Bearbeiten</span> */}
                         <div className='flow-root'>
                             <CreateTimestamp id={id} />
                         </div>

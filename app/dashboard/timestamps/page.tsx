@@ -40,14 +40,13 @@ export default async function Page({
                             <SimpleDatePicker />
                         </div>
                     </div>
-                    <div className='flex flex-col gap-2'>
-                        <span className='text-gray-600 dark:text-gray-300'>Bearbeiten</span>
+                    <div className='flex flex-col gap-2 mt-8'>
+                        {/* <span className='text-gray-600 dark:text-gray-300'>Bearbeiten</span> */}
                         <div className='flow-root'>
                             <UpdateTimestamps psnr={psnr} date={date} />
                         </div>
                     </div>
                 </div>
-
             </div>
             <div className="mt-6">
                 <TimestampsTable psnr={psnr} date={date} />
