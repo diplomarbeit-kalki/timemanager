@@ -38,7 +38,7 @@ export const options: Partial<any> = {
     x: {
       type: "time",
       time: {
-        parser: "YYYY-MM-DD", // Format des Datums
+        parser: "dd-MM-yyyy", // Format des Datums
         unit: "day", // Einheit für die Zeitachse
         displayFormats: {
           day: "dd.MM.yyyy", // Anzeigeformat für Tage
