@@ -82,7 +82,7 @@ export async function fetchCountActualWorkingEmployees() {
     try {
         const apiUrl = `http://localhost:3001/cards/countWorkingEmployees`;
         const response = await axios.get(apiUrl);
-        console.log("reponse: " + response.data)
+        // console.log("reponse: " + response.data)
         return response.data;
     }
     catch (error) {
